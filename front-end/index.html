@@ -32,28 +32,48 @@
         color: #fff;
         border: none;
         background-color: #333;
+        opacity: 90%;
+        transition: 250ms;
       }
 
       .btn-style1:hover{
         color: #fff;
         border: none;
         background-color: #555;
+        transform: scale(1.1);
       }
       
+      .btn-style-menu{
+        color: #fff;
+        border: none;
+        background-color: #005050;
+        transition: 250ms ease-in-out;
+        transition: 250ms;
+      }
+
+      .btn-style-menu:hover{
+        color: #fff;
+        border: none;
+        background-color: #007070;
+        transform: scale(1.05);
+      }
+
       .btn-style2{
         color: #fff;
         border: none;
         background-color: #006060;
+        transition: 250ms ease-in-out;
       }
 
       .btn-style2:hover{
         color: #fff;
         border: none;
-        background-color: #008080;
+        background-color: #008585;
+        transform: scale(1.05);
       }
 
       .color-bar{
-        background: linear-gradient(90deg,#006060,#004545) ;
+        background: linear-gradient(90deg,#007575,#004545) ;
         color: white;
       }
 
@@ -61,6 +81,43 @@
         font-size: 16px;
         margin-left: 6px;
         margin-right: 2px;
+      }
+
+      .dd-space{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      ul.dropdown-menu>li>a{
+        color: #333 !important; 
+        background: #eee !important;
+        transition: 250ms ease-in-out;
+      } 
+
+      ul.dropdown-menu>li>a:hover{
+        color: #fff !important; 
+        background: #008080 !important;
+        font-size: 17px;
+      } 
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+
+      .dropdown-menu{
+        background-color: #eee;
+        width: 200px;
+        border: none;
+        border-radius: 2px 2px 8px 8px;
+      }
+
+      .navbar-brand{
+        transition: 250ms;
+      }
+
+      .navbar-brand:hover{
+        transform: scale(1.2);
       }
 
     </style>
@@ -87,46 +144,38 @@
                 <a class="nav-link active" href="#">Inicio</a>
               </li>
               <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
+                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Autoridades</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Docentes</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Investigación</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Elecciones</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Autoridades</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Docentes</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Investigación</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Elecciones</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
+                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Plan de Estudio</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Materias Optativas</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Calendario Académico</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Proyectos Fianles</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">PPS</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Plan de Estudio</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Materias Optativas</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Calendario Académico</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Proyectos Fianles</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">PPS</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
+                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Últimas Noticias</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Bolsa de Trabajo</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Últimas Noticias</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Bolsa de Trabajo</a></li>
                 </ul>
               </li>
               <li class="nav-item letter-size">
-                  <a class="nav-link" href="#">Contacto</a>
+                  <a class="nav-link active" href="#">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">
               <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search-!-->
-              <button class="btn btn-outline-success btn-style2" type="submit">Ingresar</button>
+              <button class="btn btn-outline-success btn-style-menu" type="submit">Ingresar</button>
             </form>
           </div>
         </div>
@@ -146,9 +195,9 @@
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Departamento <br/> Ingeniería Informática</h1>
+                <h1>Departamento de <br/> Ingeniería Informática</h1>
                 <p>Bienvenido al sitio oficial del departamento de Ingeniería Informática de la Universidad Nacional de Mar del Plata.</p>
-                <p><a class="btn btn-lg btn-primary btn-style1" href="#">Saludar!</a></p>
+                <p><a class="btn btn-lg btn-primary btn-style1" href="#">Ver más</a></p>
               </div>
             </div>
           </div>
@@ -225,8 +274,8 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">FI UNMDP.<span class="text-muted"> </span>Sobre la Institución y sus Dirigentes.</h2>
-            <p class="lead">Info aquí</p>
+            <h2 class="featurette-heading">FI UNMDP.<span class="text-muted"> Institución y dirigentes.</span></h2>
+            <p class="lead">...</p>
           </div>
           <div class="col-md-5">
             <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
@@ -238,8 +287,8 @@
 
         <div class="row featurette" id="carrera">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Sobre la carrera.<span class="text-muted">Qué necesito saber?</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading">Ingeniería Informática. <span class="text-muted"> Sobre nuestra carrera.</span></h2>
+            <p class="lead">...</p>
           </div>
           <div class="col-md-5 order-md-1">
             <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
@@ -251,8 +300,8 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading">Noticias. <span class="text-muted"> Y principales novedades.</span></h2>
+            <p class="lead">...</p>
           </div>
           <div class="col-md-5">
             <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
