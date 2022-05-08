@@ -3,6 +3,9 @@ let btnCarrera = document.getElementById("btn-carrera");
 let btnNovedades = document.getElementById("btn-novedades");
 let btnTop = document.getElementById("btn-back-to-top");
 
+// Para arrancar la librería Animate On Scroll
+AOS.init();
+
 window.onscroll = function () {
     scrollFunction();
 };
