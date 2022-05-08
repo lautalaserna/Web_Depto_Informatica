@@ -8,131 +8,21 @@
     <meta name="generator" content="FI UNMDP 2022">
     <title>Departamento de Informática</title>
     <link href="img\logo-verde.svg" rel="shortcut icon" type="image/png">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/"> 
     
-    <!-- Bootstrap core CSS -->
+    <!-- Referencias -->
     <link href="css\bootstrap.min.css" rel="stylesheet">
-    <style>
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .btn-style1{
-        color: #fff;
-        border: none;
-        background-color: #333;
-        opacity: 90%;
-        transition: 250ms;
-      }
-
-      .btn-style1:hover{
-        color: #fff;
-        border: none;
-        background-color: #555;
-        transform: scale(1.1);
-      }
-      
-      .btn-style-menu{
-        color: #fff;
-        border: none;
-        background-color: #005050;
-        transition: 250ms ease-in-out;
-        transition: 250ms;
-      }
-
-      .btn-style-menu:hover{
-        color: #fff;
-        border: none;
-        background-color: #007070;
-        transform: scale(1.05);
-      }
-
-      .btn-style2{
-        color: #fff;
-        border: none;
-        background-color: #006060;
-        transition: 250ms ease-in-out;
-      }
-
-      .btn-style2:hover{
-        color: #fff;
-        border: none;
-        background-color: #008585;
-        transform: scale(1.05);
-      }
-
-      .color-bar{
-        background: linear-gradient(90deg,#007575,#004545) ;
-        color: white;
-      }
-
-      .letter-size{
-        font-size: 16px;
-        margin-left: 6px;
-        margin-right: 2px;
-      }
-
-      .dd-space{
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      ul.dropdown-menu>li>a{
-        color: #333 !important; 
-        background: #eee !important;
-        transition: 250ms ease-in-out;
-      } 
-
-      ul.dropdown-menu>li>a:hover{
-        color: #fff !important; 
-        background: #008080 !important;
-        font-size: 17px;
-      } 
-
-      .dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-      }
-
-      .dropdown-menu{
-        background-color: #eee;
-        width: 200px;
-        border: none;
-        border-radius: 2px 2px 8px 8px;
-      }
-
-      .navbar-brand{
-        transition: 250ms;
-      }
-
-      .navbar-brand:hover{
-        transform: scale(1.2);
-      }
-
-    </style>
-    <!-- Custom styles for this template -->
+    <link href="css\list-groups.css" rel="stylesheet">
     <link href="css\carousel.rtl.css" rel="stylesheet">
+    <link href="css\custom-style.css" rel="stylesheet">
+
   </head>
 
   <body>
-   
     <header>
-
-      <!-- NAV BAR -->>
+      <!-- NAVBAR -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top color-bar">
         <div class="container-fluid">
-          <a class="navbar-brand mx-3" href="">
+          <a class="navbar-brand hovereable mx-3" href="">
             <img src="img\logo-blanco.svg"width="50" height="50">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,8 +48,7 @@
                   <li><a class="dropdown-item dd-space" href="#">Plan de Estudio</a></li>
                   <li><a class="dropdown-item dd-space" href="#">Materias Optativas</a></li>
                   <li><a class="dropdown-item dd-space" href="#">Calendario Académico</a></li>
-                  <li><a class="dropdown-item dd-space" href="#">Proyectos Fianles</a></li>
-                  <li><a class="dropdown-item dd-space" href="#">PPS</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Alumnos Graduados</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown letter-size">
@@ -167,6 +56,8 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item dd-space" href="#">Últimas Noticias</a></li>
                   <li><a class="dropdown-item dd-space" href="#">Bolsa de Trabajo</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">Proyectos Fianles</a></li>
+                  <li><a class="dropdown-item dd-space" href="#">PPS</a></li>
                 </ul>
               </li>
               <li class="nav-item letter-size">
@@ -180,9 +71,11 @@
           </div>
         </div>
       </nav>
+      <!-- NAVBAR END -->
     </header>
 
     <main>
+      <!-- CAROUSEL -->
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -191,33 +84,29 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <!-- svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#007272"/></!-->
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Departamento de <br/> Ingeniería Informática</h1>
-                <p>Bienvenido al sitio oficial del departamento de Ingeniería Informática de la Universidad Nacional de Mar del Plata.</p>
-                <p><a class="btn btn-lg btn-primary btn-style1" href="#">Ver más</a></p>
+                <h1 class="title">Departamento de <br/> Ingeniería Informática</h1>
+                <p>Bienvenido al sitio oficial del departamento de Ingeniería Informática de la Universidad Nacional de Mar del Plata.<br/><br/><br/></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <!-- vg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#399"/></!-->
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Novedades</h1>
+                <h1 class="title">Novedades</h1>
                 <p>Nuevas novedades disponibles</p>
                 <p><a class="btn btn-lg btn-primary btn-style1" href="#">Ver Novedades</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <!-- svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#2AA"/></!-->
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption text-end">
-                <h1>Bolsa de Trabajo</h1>
+                <h1 class="title">Bolsa de Trabajo</h1>
                 <p>Oportunidades laborales del departamento.</p>
                 <p><a class="btn btn-lg btn-primary btn-style1" href="#">Enter</a></p>
               </div>
@@ -226,100 +115,180 @@
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
+      <!-- CAROUSEL END -->
 
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
-
+      <!-- BOTONES -->
       <div class="container marketing">
-        <!-- Three columns of text below the carousel -->
         <div class="row">
+
           <div class="col-lg-4">
-            <!-- svg><image src="business-outline.svg"></svg -->
-            <img class="green" src="img\business-outline.svg" width="90" height="140">
-            <!-- svg class="bd-placeholder-img rounded-circle" width="140" height="140" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></!-->
+            <img class="green" src="img\business.svg" width="90" height="140">
             <h2>Institucional</h2>
             <p>Descripción sobre la institucion y sus principales dirigentes.</p>
-            <p><a class="btn btn-lg btn-style2" href="#institucional">Ver más &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img src="img\hardware-chip-outline.svg" width="90" height="140">
-            <!-- svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></!-->
+            <p><a class="btn btn-lg btn-style2" id="btn-institucional">Ver más &raquo;</a></p>
+          </div>
 
+          <div class="col-lg-4">
+            <img src="img\hardware-chip.svg" width="90" height="140">
             <h2>Carrera</h2>
             <p>Información sobre la carrera. Plan de estudio, asignatures optativas, etc.</p>
-            <p><a class="btn btn-lg btn-style2" href="#carrera">Ver más &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img src="img\newspaper-outline.svg" width="90" height="140">
-            <!-- svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></!-->
+            <p><a class="btn btn-lg btn-style2" id="btn-carrera">Ver más &raquo;</a></p>
+          </div>
 
+          <div class="col-lg-4">
+            <img src="img\newspaper.svg" width="90" height="140">
             <h2>Novedades</h2>
             <p>Últimas noticias sobre la facultad de ingenieria y el departamento de informática.</p>
-            <p><a class="btn btn-lg btn-style2" href="#contacto">Ver más &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider" id="institucional">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">FI UNMDP.<span class="text-muted"> Institución y dirigentes.</span></h2>
-            <p class="lead">...</p>
+            <p><a class="btn btn-lg btn-style2" id="btn-novedades">Ver más &raquo;</a></p>
           </div>
-          <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-          </div>
+        
         </div>
 
+        <a class="btn btn-floating btn-lg" id="btn-back-to-top"> <img src="img\arrow-up.svg" height="40" width="26" class="white-filter"> </a>
+
+        <!-- INSTITUCIONAL -->
         <hr class="featurette-divider">
 
-        <div class="row featurette" id="carrera">
+        <div class="row featurette">
+          
+          <div class="col-md-7">
+
+            <h2 class="title">Institucional</h2>
+            <div class="row justify-content-start">
+              
+              <div class="col-5 d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\briefcase.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Autoridades</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\search.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Investigación</h3>
+                </a>
+              </div>
+              
+              <div class="col-5 d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\book.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Docentes</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\mail.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Elecciones</h3>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            <img src="img/Leaves.jpg" height="500" width="500">
+          </div>
+
+        </div>
+
+        <!-- CARRERA -->
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Ingeniería Informática. <span class="text-muted"> Sobre nuestra carrera.</span></h2>
-            <p class="lead">...</p>
+            
+            <h2 class="title">Carrera</h2>
+            <div class="row justify-content-start">
+
+              <div class="col-5  d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\git-branch.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Plan de Estudio</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\calendar-check.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Calendario</h3>
+                </a>
+              </div>
+
+              <div class="col-5 d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\code-slash.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Optativas</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\school.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Graduados</h3>
+                </a>
+              </div>
+
+            </div>
           </div>
+
           <div class="col-md-5 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+            <img src="img/Leaves.jpg" height="500" width="500">
           </div>
+
         </div>
-
-        <hr class="featurette-divider" id="contacto">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Noticias. <span class="text-muted"> Y principales novedades.</span></h2>
-            <p class="lead">...</p>
-          </div>
-          <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-          </div>
-        </div>
+      
+        <!-- NOTICIAS -->
 
         <hr class="featurette-divider">
 
-        <!-- /END THE FEATURETTES -->
-      </div><!-- /.container -->
+        <div class="row featurette">
+          <div class="col-md-7">
+            
+            <h2 class="title">Novedades</h2>
+            <div class="row justify-content-start">
+
+              <div class="col-5 d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\newspaper.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Noticias</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\medal.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Proyectos Finales</h3>
+                </a>
+              </div>
+              <div class="col-5 d-grid">
+                <a class="btn btn-style2 btn-section rounded mt-5 mb-3" href=""> 
+                  <img src="img\file.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>Bolsa de Trabajo</h3>
+                </a>
+                <a class="btn btn-style2 btn-section rounded mt-3 mb-5" href="">
+                  <img src="img\puzzle.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
+                  <h3>PPS</h3>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-5">
+            <img src="img/Leaves.jpg" height="500" width="500">
+          </div>
+        </div>
+
+        <hr class="featurette-divider mb-4">
+        
+      </div>
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-end"><a href="#">Volver al Inicio</a></p>
-        <p>&copy; FI UNMDP &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a></p>
+        <p class="btn float"><img class="hovereable" src="img\logo-uni.svg" height="45" width="45"></p>
+        <p class="btn float"><img class="hovereable" src="img\logo-verde.svg" height="50" width="50"></p>
+        <p class="btn float-end"><img class="grey-filter" src="img\logo-instagram.svg" height="35" width="35" alt=""></p>
+        <p class="btn float-end"><img class="grey-filter" src="img\logo-twitter.svg" height="35" width="35" alt=""></p>
+        <p class="btn float-end"><img class="grey-filter" src="img\logo-facebook.svg" height="35" width="35" alt=""></p>
+
       </footer>
+
     </main>
     <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="js\scroll.js"></script>
   </body>
 </html>
