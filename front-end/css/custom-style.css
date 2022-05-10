@@ -75,6 +75,18 @@ body{
     transform: translateY(-10px);
 }
 
+.btn-style4{
+    border:double #006060 10px!important;
+    background-color: #fff !important;
+    transition: 250ms ease-in-out;
+}
+
+.btn-style4:hover{
+    border:double #006060 10px!important;
+    background-color: #fff !important;
+    transition: 250ms ease-in-out;
+}
+
 .rounded{
     border-radius: 15px !important;
 }
@@ -178,13 +190,18 @@ h3{
 
 h6{
     font-weight: 100;
-    padding-bottom: 3%;
+    padding-bottom: 1%;
+}
+
+h5{
+    font-weight: 100;
+    padding-bottom: 1%;
 }
 
 .title {
     font-size: 60px !important;
     font-weight: 300 !important;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
     margin-top: 0%;
     padding: 0px;
 }
@@ -222,6 +239,6 @@ h6{
 }
 
 .hero-header{
-    background: linear-gradient(90deg,#008080,#006565)!important;;
+    background: linear-gradient(90deg,#006060,#008080)!important;;
     color: #fff;
 }
