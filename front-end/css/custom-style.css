@@ -72,19 +72,7 @@ body{
     color: #fff !important;
     border: none !important;
     background-color: #008080 !important;
-    transform: translateY(-10px);
-}
-
-.btn-style4{
-    border:double #006060 10px!important;
-    background-color: #fff !important;
-    transition: 250ms ease-in-out;
-}
-
-.btn-style4:hover{
-    border:double #006060 10px!important;
-    background-color: #fff !important;
-    transition: 250ms ease-in-out;
+    transform: translateY(-15px);
 }
 
 .rounded{
@@ -169,6 +157,20 @@ ul.dropdown-menu>li>a:hover{
     max-height: 200px;
     min-height: 200px;
 }
+
+.btn-long{
+    margin: 1%;
+    max-width: 280px;
+    min-width: 280px;
+    max-height: 200px;
+    min-height: 200px;
+    transition: 250ms ease-in-out;
+}
+
+.btn-long:hover{
+    transform: translateY(-10px);
+}
+
 
 .white-filter{
     filter: invert(100%) brightness(1000%) contrast(100%);
