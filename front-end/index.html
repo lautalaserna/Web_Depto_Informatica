@@ -31,11 +31,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item letter-size">
-                <a class="nav-link active" href="index.html">Inicio</a>
+              <li class="nav-item">
+                <a class="nav-link bar-letter active" href="index.html">Inicio</a>
               </li>
-              <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item dd-space" href="autoridades.html">Autoridades</a></li>
                   <li><a class="dropdown-item dd-space" href="docentes.html">Docentes</a></li>
@@ -43,36 +43,35 @@
                   <li><a class="dropdown-item dd-space" href="elecciones.html">Elecciones</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item dd-space" href="plan.html">Plan de Estudio</a></li>
                   <li><a class="dropdown-item dd-space" href="optativas.html">Materias Optativas</a></li>
                   <li><a class="dropdown-item dd-space" href="calendario.html">Calendario Académico</a></li>
                   <li><a class="dropdown-item dd-space" href="calendario.html">Alumnos Graduados</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown letter-size">
-                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item dd-space" href="noticias.html">Últimas Noticias</a></li>
-                  <li><a class="dropdown-item dd-space" href="bolsatrabajo.html">Bolsa de Trabajo</a></li>
                   <li><a class="dropdown-item dd-space" href="proyectosfinales.html">Proyectos Fianles</a></li>
                   <li><a class="dropdown-item dd-space" href="pps.html">PPS</a></li>
                 </ul>
               </li>
-              <li class="nav-item letter-size">
-                <a class="nav-link active" href="contacto.html">Contacto</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item dd-space" href="noticias.html">Últimas Noticias</a></li>
+                  <li><a class="dropdown-item dd-space" href="bolsatrabajo.html">Bolsa de Trabajo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bar-letter active" href="contacto.html">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">
               <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search-!-->
-              <button class="btn btn-outline-success btn-style-menu" type="submit">Ingresar</button>
+              <button class="btn btn-outline-success btn-navbar" type="submit">Ingresar</button>
             </form>
           </div>
         </div>
       </nav>
-      <!-- NAVBAR END -->
     </header>
 
     <main>
@@ -88,7 +87,7 @@
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1 class="title">Departamento de <br/> Ingeniería Informática</h1>
+                <h1 class="display-2">Departamento de <br/> Ingeniería Informática</h1>
                 <h3>Bienvenido al sitio oficial del departamento de Ingeniería Informática de la Universidad Nacional de Mar del Plata.<br/><br/><br/></h3>
               </div>
             </div>
@@ -97,9 +96,9 @@
             <img src="img\Leaves.jpg">
             <div class="container">
               <div class="carousel-caption mb-5">
-                <h1 class="title2">Novedades</h1>
+                <h1 class="display-2">Novedades</h1>
                 <h3 class="mb-4">Ver las últimas novedades disponibles del Departamento</h3>
-                <p><a class="btn btn-lg btn-primary btn-style1" href="#">Ver Novedades</a></p>
+                <p><a class="btn btn-lg btn-primary btn-carousel" href="#">Ver Novedades</a></p>
               </div>
             </div>
           </div>
@@ -107,9 +106,9 @@
             <img src="img\Leaves.jpg">
             <div class="container mb-5">
               <div class="carousel-caption text-end mb-5">
-                <h1 class="title2">Bolsa de Trabajo</h1>
+                <h1 class="display-2">Bolsa de Trabajo</h1>
                 <h3 class="mb-4">Oportunidades laborales del Departamento.</h3>
-                <p><a class="btn btn-lg btn-primary btn-style1" href="#">Me Interesa</a></p>
+                <p><a class="btn btn-carousel" href="#">Me Interesa</a></p>
               </div>
             </div>
           </div>
@@ -123,145 +122,172 @@
           <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
-      <!-- CAROUSEL END -->
 
       <!-- BOTONES -->
       <div class="container marketing" style="padding-bottom: 6%;">
         <div class="row">
           <div class="col-lg-4">
-            <img src="img\newspaper.svg" width="90" height="140">
-            <h2>Novedades</h2>
-            <p>Últimas noticias del departamento, propuestas laborales, trabajos finales y PPS.</p>
-            <p><a class="btn btn-lg btn-style2" id="btn-novedades">Ver más &raquo;</a></p>
-          </div>  
-          
-          <div class="col-lg-4">
-            <img src="img\hardware-chip.svg" width="90" height="140">
-            <h2>Carrera</h2>
-            <p>Todo lo que necesitas saber respecto a la carrera. Plan de estudio, asignatures optativas, etc.</p>
-            <p><a class="btn btn-lg btn-style2" id="btn-carrera">Ver más &raquo;</a></p>
+            <img src="img\business.svg" width="100" height="150">
+            <h2>Institucional</h2>
+            <p>Toda la informacón sobre la institución y sus principales dirigentes.</p>
+            <button class="btn-style btn-section-size rounded" id="btn-institucional">
+              <h5 class="pt-2">Ver más <img src="img/arrow-down.svg" height="20" width="20" class="white-filter"></h5> 
+            </button>
           </div>
 
           <div class="col-lg-4">
-            <img class="green" src="img\business.svg" width="90" height="140">
-            <h2>Institucional</h2>
-            <p>Toda la informacón sobre la institución y sus principales dirigentes.</p>
-            <p><a class="btn btn-lg btn-style2" id="btn-institucional">Ver más &raquo;</a></p>
+            <img src="img\hardware-chip.svg" width="100" height="150">
+            <h2>Carrera</h2>
+            <p>Todo lo que necesitas saber respecto a la carrera. Plan de estudio, asignatures optativas y más.</p>
+            <button class="btn-style btn-section-size rounded" id="btn-carrera">
+              <h5 class="pt-2">Ver más <img src="img/arrow-down.svg" height="20" width="20" class="white-filter"></h5> 
+            </button>
           </div>
+          
+          <div class="col-lg-4">
+            <img src="img\newspaper.svg" width="100" height="150">
+            <h2>Novedades</h2>
+            <p>Las últimas noticias del departamento y nuevas propuestas laborales.</p>
+            <button class="btn-style btn-section-size rounded" id="btn-novedades">
+              <h5 class="pt-2">Ver más <img src="img/arrow-down.svg" height="20" width="20" class="white-filter"></h5> 
+            </button>
+          </div>  
         </div>
       </div>
 
       <!-- BACK TO TOP -->
-
       <a class="btn btn-floating btn-lg" id="btn-back-to-top"> <img src="img\arrow-up.svg" height="40" width="26" class="white-filter"> </a>
 
       <!-- CARRERA -->
-      
       <div class="b-example-divider"></div>
 
       <div class="container marketing px-4 py-5 my-5">
         <div class="row featurette" data-aos="fade-right">
           <div class="col-8 d-inline-block section">
-            <h2 class="title modal-header pb-2">Nuestra Carrera</h2>
-            <h5>En este apartado padrás encotrar toda la información que necesitás sobre la carrera de Ingeniería en Informática.</h5>
+            <h2 class="section-title modal-header pb-2">Nuestra Carrera</h2>
+            <h5 class="pb-2">En este apartado padrás encotrar toda la información que necesitás sobre la carrera de Ingeniería Informática de la Universidad Nacional de Mar del Plata.</h5>
             <div class="text-center mb-5">
-              <button type="button" class="btn btn-mini btn-style2 rounded" href="plan.html">
+              <button type="button" class="btn btn-mini btn-style rounded" href="plan.html">
                 <img src="img\git-branch.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
-                <h3>Plan de Estudio</h3>
+                <h4>Plan de Estudio</h4>
               </button>
-              <button type="button" class="btn btn-mini btn-style2 rounded">
+              <button type="button" class="btn btn-mini btn-style rounded">
                 <img src="img\code-slash.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
-                <h3>Optativas<br></h3>
+                <h4>Optativas<br></h4>
               </button>
-              <button type="button" class="btn btn-mini btn-style2 rounded">
+              <button type="button" class="btn btn-mini btn-style rounded">
                 <img src="img\calendar.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
-                <h3>Calendario Académico</h3>
+                <h4>Calendario Académico</h4>
               </button>
-              <button type="button" class="btn btn-mini btn-style2 rounded">
+              <button type="button" class="btn btn-mini btn-style rounded">
                 <img src="img\school.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
-                <h3>Graduados<br></h3>
+                <h4>Graduados<br></h4>
               </button>
             </div>
           </div>
           <div class="col-4 section-img">
-            <img src="img/code-minimal.png" height="380" width="420" style="border-radius: 20px;">
+            <img src="img/code-minimal.png" height="420" width="420" class="rounded">
           </div>
         </div>
+
         <hr class="featurette-divider my-5">
+
         <div class="row featurette" data-aos="fade-down">
-          <div class="col-6 d-inline-block text-center">
-            <h2 class="title my-5">Proyectos Fianles y PPS</h2>
-            <h5 class="text-end">Si sos un alumno/a avanzado y estás interesado/a comenzar tus prácticas profesionales supervisadas o tu proyecto final de grado, ingresá aqui.</h5>
+          <div class="col-6 d-inline-block text-end">
+            <h2 class="section-sub-title">Proyectos Fianales <br> y PPS</h2>
+            <h5 class="mt-5">Si sos un alumn@ avanzado y estás interesad@ comenzar tus PPS <br> o tu proyecto final de grado, ingresá aqui.</h5>
           </div>
           <div class="col-6 d-inline-block text-center">
-            <button type="button" class="btn btn-section3 btn-style3 rounded">
+            <button type="button" class="btn btn-card-size btn-card rounded">
               <img src="img\medal.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>Proyectos Finales</h3>
-              <h6 class="px-2 text-center">Aquí podrás encontrar toda la información para comenzar tu proyecto final, además de poder visualizar los proyectos en curso y finalizados.</h6>
+              <h6 class="px-2 pt-2 text-center">Aquí podrás encontrar todos los proyectos finales que se encuentran disponibles, en curso y finalizados.</h6>
             </button>
-            <button type="button" class="btn btn-section3 btn-style3 rounded">
+            <button type="button" class="btn btn-card-size btn-card rounded">
               <img src="img\puzzle.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>PPS<br></h3>
-              <h6 class="px-2 text-center">Aquí podrás encontrar todas las PPS disponibles y en curso con su respectiva información para que puedas comenzar con la que más te interese.</h6>
+              <h6 class="px-2 pt-2 text-center">Aquí podrás encontrar todas las PPS disponibles y en curso, además de la infomación para comenzar las tuyas.</h6>
             </button> 
           </div>
         </div>
       </div>
 
-      <!-- INSTITUCIONAL -->
+      <!-- NOVEDADES -->
+      <div class="b-example-divider"></div>
 
+      <div class="container marketing py-4 px-0">
+        <h1 class="section-title mt-3 mb-5 text-center" data-aos="fade-right"> Novedades </h1>
+        <div class="row">
+          <div class="col-6 text-center mb-5" data-aos="fade-right" style="border-right: solid 1px #ccc;">
+            <h2 class="sub-title">Últimas Noticias</h2>
+            <img class="img-fluid img-novedades rounded mb-4" src="img/tecnonews.webp" width="550">
+            <button class="btn-style btn-section-long-size rounded" id="btn-institucional">
+              <h5 class="pt-1">Ver últimas Novedades <img src="img/arrow-up.svg" height="20" width="20" class="white-filter"></h5> 
+            </button>
+          </div>
+          <div class="col-6 text-center" data-aos="fade-left">
+            <h2 class="sub-title">Bolsa de Trabajo</h2>
+            <img class="img-fluid img-novedades rounded mb-4" src="img/home-office.png" width="550">
+            <button class="btn-style btn-section-long-size rounded" id="btn-institucional">
+              <h5 class="pt-1">Ver trabajos disponibles <img src="img/arrow-up.svg" height="20" width="20" class="white-filter"></h5> 
+            </button>
+          </div>
+        </div>  
+      </div>
+      
+      <!-- INSTITUCIONAL -->
       <div class="b-example-divider"></div>
 
       <div class="container marketing py-5 px-0">
-        <h1 class="title modal-header mt-3" data-aos="fade-right">
+        <h1 class="section-title modal-header mt-3" data-aos="fade-right">
           Sobre la Instritución
         <img src="img/logo-verde.svg" height="100" width="100"></img>
         </h1>
         <div class="row featurette pb-5 pt-3" data-aos="fade-down">
           <div class="text-center">
-            <button type="button" class="btn btn-style3 btn-section3 rounded px-3">
+            <button type="button" class="btn btn-card btn-card-size rounded px-3">
               <img src="img\briefcase.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>Autoridades</h3>
-              <h6><br>Principales autoridades del Departamento.<br><br><br></h6>
+              <h6 class="px-2 pt-4">Información sobre las principales autoridades del Depto. de Informática.</h6>
             </button>
-            <button type="button" class="btn btn-style3 rounded btn-section3">
+            <button type="button" class="btn btn-card rounded btn-card-size">
               <img src="img\book.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>Docentes</h3>
-              <h6><br>Docentes que componen el Departamento.<br><br><br></h6>
+              <h6 class="px-2 pt-4">Todos los docentes que componen el Depto. de Informática.</h6>
             </button>
-            <button type="button" class="btn btn-style3 rounded btn-section3">
+            <button type="button" class="btn btn-card rounded btn-card-size">
               <img src="img\search.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>Investigación</h3>
-              <h6><br>Grupo de investigación asociado a la rama de Informática.<br><br><br></h6>
+              <h6 class="px-2 pt-4">Grupos de investigación asociado a la rama de Informática.</h6>
             </button>
-            <button type="button" class="btn btn-style3 rounded btn-section3">
+            <button type="button" class="btn btn-card rounded btn-card-size">
               <img src="img\mail.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
               <h3>Elecciones</h3>
-              <h6><br>Resultados de las Elecciones Departamentales 2021.<br><br><br></h6>
+              <h6 class="px-2 pt-4">Aquí podrás encontrar los resultados de las Elecciones Departamentales 2021.<br></h6>
             </button>
           </div>
         </div>
       </div>
 
       <div class="b-example-divider"></div>
-
-      <!-- FOOTER -->
-      <footer class="container pt-4 pb-0">
-        <p class="btn float"><a href="https://www.mdp.edu.ar/"><img class="hovereable" src="img\logo-uni.svg" height="40" width="40"></a></p>
-        <p class="btn float"><a href="https://www.fi.mdp.edu.ar/"><img class="hovereable" src="img\logo-verde.svg" height="55" width="55"></a></p>
-        <p class="btn float"><a href="https://campus.fi.mdp.edu.ar/"><img class="hovereable" src="img\moodle.svg" height="50" width="55"></a></p>
-        <p class="btn float"><a href="https://www.instagram.com/cei_unmdp/"><img class="rounded-pill hovereable" src="img\cei.jpg" height="50" width="55"></a></p>
-        <p class="btn float"><a href="http://guaranifi.mdp.edu.ar/ingenieriaweb/acceso/login?ref=http://guaranifi.mdp.edu.ar/ingenieriaweb/inicial.php"><img class="hovereable" src="img\siu-guarani.png" height="55" width="180"></a></p>
-
-        <p class="btn float-end"><a href="https://www.instagram.com/ingenieria.unmdp/"><img class="grey-filter" src="img\logo-instagram.svg" height="35" width="35" alt=""></a></p>
-        <p class="btn float-end"><a href="https://twitter.com/fi_unmdp"><img class="grey-filter" src="img\logo-twitter.svg" height="35" width="35" alt=""></a></p>
-        <p class="btn float-end"><a href="https://www.facebook.com/ingenieria.unmdp/"><img class="grey-filter" src="img\logo-facebook.svg" height="35" width="35" alt=""></a></p>
-      </footer>
-
     </main>
+
+    <!-- FOOTER -->
+    <footer class="container pt-4 pb-0">
+      <p class="btn float"><a href="https://www.mdp.edu.ar/"><img class="hovereable" src="img\logo-uni.svg" height="40" width="40"></a></p>
+      <p class="btn float"><a href="https://www.fi.mdp.edu.ar/"><img class="hovereable" src="img\logo-verde.svg" height="55" width="55"></a></p>
+      <p class="btn float"><a href="https://campus.fi.mdp.edu.ar/"><img class="hovereable" src="img\moodle.svg" height="50" width="55"></a></p>
+      <p class="btn float"><a href="https://www.instagram.com/cei_unmdp/"><img class="rounded-pill hovereable" src="img\cei.jpg" height="50" width="55"></a></p>
+      <p class="btn float"><a href="http://guaranifi.mdp.edu.ar/ingenieriaweb/acceso/login?ref=http://guaranifi.mdp.edu.ar/ingenieriaweb/inicial.php"><img class="hovereable" src="img\siu-guarani.png" height="55" width="180"></a></p>
+
+      <p class="btn float-end"><a href="https://www.instagram.com/ingenieria.unmdp/"><img class="grey-filter hovereable" src="img\logo-instagram.svg" height="35" width="35" alt=""></a></p>
+      <p class="btn float-end"><a href="https://twitter.com/fi_unmdp"><img class="grey-filter hovereable" src="img\logo-twitter.svg" height="35" width="35" alt=""></a></p>
+      <p class="btn float-end"><a href="https://www.facebook.com/ingenieria.unmdp/"><img class="grey-filter hovereable" src="img\logo-facebook.svg" height="35" width="35" alt=""></a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js\bootstrap.bundle.min.js"></script>
-    <script src="js\scroll.js"></script>
-    <script src="js\main.js"></script>
+    <script src="js\responsive.js"></script>
   </body>
 </html>
