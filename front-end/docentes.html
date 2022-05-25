@@ -11,17 +11,18 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/"> 
     
     <!-- Bootstrap core CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="css\bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css\custom-style.css" rel="stylesheet">
+    <link href="css\list-groups.css" rel="stylesheet">
+    <link href="css\heroes.css" rel="stylesheet">
     <link href="css\carousel.rtl.css" rel="stylesheet">
+    <link href="css\custom-style.css" rel="stylesheet">
   </head>
 
   <body>
    
     <header>
-
-      <!-- NAV BAR -->>
+      <!-- NAV BAR -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top color-bar">
         <div class="container-fluid">
           <a class="navbar-brand mx-3" href="https://www.fi.mdp.edu.ar/">
@@ -73,46 +74,37 @@
         </div>
       </nav>
     </header>
-
-
     
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-1 text-center">Docentes</h1>
+      <div class="container marketing my-5">
+        <h1 class="section-title text-center">Docentes</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th><h1>Imagen</h1></th>
-                  <th><h1>Nombre</h1></th>
-                  <th><h1>Asignatura</h1></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Fernando Genin</td>
-                  <td>Taller de programación 2</td>
+          <div class="col-10 mb-5">
+            <table class="table table-striped align-middle text-center">
+              <tbody id="tbody-docentes">
+                <tr class="table-header">
+                  <td><h2 class="table-header-text">Imagen</h1></td>
+                  <td><h2 class="table-header-text">Nombre</h2></td>
+                  <td><h2 class="table-header-text">Asignatura</h2></td>
                 </tr>
                 <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Carlos Rico</td>
-                  <td>Organización de datos</td>
+                  <td><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></td>
+                  <td><h4 class="py-2">Fernando Genin</h4></td>
+                  <td><h4 class="py-2">Taller de Programación II</h4></td>
                 </tr>
                 <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Sandra Cirimelo</td>
-                  <td>Lenguajes Formales</td>
+                  <td><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></td>
+                  <td><h4 class="py-2">Carlos Rico</h4></td>
+                  <td><h4 class="py-2">Organización de Datos</h4></td>
+                </tr>
+                <tr>
+                  <td><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></td>
+                  <td><h4 class="py-2">Sandra Cirimelo</h4></td>
+                  <td><h4 class="py-2">Lenguajes Formales</h4></td>
                 </tr>
               </tbody>
             </table>
@@ -121,8 +113,8 @@
         </div>
       </div>
 
+      <div class="b-example-divider"></div>
       <!-- FOOTER -->
-      <hr class="featurette-divider mb-4">
       <footer class="container">
         <p class="btn float"><a href="https://www.mdp.edu.ar/"><img class="hovereable" src="img\logo-uni.svg" height="40" width="40"></a></p>
         <p class="btn float"><a href="https://www.fi.mdp.edu.ar/"><img class="hovereable" src="img\logo-verde.svg" height="55" width="55"></a></p>

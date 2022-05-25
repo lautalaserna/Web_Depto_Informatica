@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
     <title>Departamento de Informática</title>
   </head>
@@ -114,7 +113,7 @@
             <h5 class="pb-2">En este apartado padrás encotrar toda la información que necesitás sobre la carrera de Ingeniería Informática de la Universidad Nacional de Mar del Plata.</h5>
             <div class="text-center mb-5">
               <a th:href="@{plan}">
-                <button type="button" class="btn btn-mini btn-style rounded" href="plan.html">
+                <button type="button" class="btn btn-mini btn-style rounded">
                   <img src="img\git-branch.svg" class="white-filter pt-2" width="60" height="100" alt=""> 
                   <h4>Plan de Estudio</h4>
                 </button>
@@ -238,8 +237,6 @@
           </div>
         </div>
       </div>
-
-      <div class="b-example-divider"></div>
     </main>
 
     <!-- FOOTER -->

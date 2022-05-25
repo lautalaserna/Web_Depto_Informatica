@@ -1,89 +1,49 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
     <title>Docentes</title>
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
-    
+
+    <!-- MAIN -->
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-1 text-center">Docentes</h1>
+      <div class="container marketing my-5">
+        <h1 class="section-title text-center">Docentes</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th><h2>Imagen</h2></th>
-                  <th><h2>Nombre</h2></th>
-                  <th><h2>Asignatura</h2></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Fernando Genin</td>
-                  <td>Taller de programación 2</td>
-                </tr>
-                <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Carlos Rico</td>
-                  <td>Organización de datos</td>
-                </tr>
-                <tr>
-                  <th><img class="rounded-circle" src="img/Leaves.jpg" height="100px" width="100px"></th>
-                  <td>Sandra Cirimelo</td>
-                  <td>Lenguajes Formales</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col"></div>
-        </div>
-      </div>
-
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th><h2>Imagen</h2></th>
-                  <th><h2>Nombre</h2></th>
-                  <th><h2>Email</h2></th>
-                  <th><h2>Titulo</h2></th>
-                  <th><h2>Asignatura</h2></th>
-                </tr>
-              </thead>
+          <div class="col-10 mb-5">
+            <table class="table table-striped align-middle text-center">
               <tbody id="tbody-docentes">
+                <tr class="table-header">
+                  <td><h2 class="table-header-text">Imagen</h1></td>
+                  <td><h2 class="table-header-text">Nombre</h2></td>
+                  <td><h2 class="table-header-text">Título</h2></td>
+                  <td><h2 class="table-header-text">Email</h2></td>
+                  <td><h2 class="table-header-text">Asignatura</h2></td>
+                </tr>
               </tbody>
             </table>
           </div>
           <div class="col"></div>
         </div>
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+      
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="docentes.js"></script>
   </body>
