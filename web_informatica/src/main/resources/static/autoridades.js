@@ -1,4 +1,6 @@
-const URL = '/api/docentes'
+const autoridadesURL = '/api/autoridades';
+const consejoAlumnosURL = '/api/consejo_alumnos';
+const consejoDepartamentalURL = '/api/consejo_departamental';
 
 async function fetchDocentesJSON() {
     const response = await fetch(URL);
@@ -6,6 +8,9 @@ async function fetchDocentesJSON() {
     return docentes;
 }
 
+
+
+/*
 fetchDocentesJSON().then(docentes => {
     const tbody = document.getElementById("tbody-docentes");
     for(let i=0; i<docentes.length ; i++){
@@ -23,3 +28,4 @@ fetchDocentesJSON().then(docentes => {
         docentes[i].asignatura ? td_asignatura.innerHTML = `<h4 class="py-2">${docentes[i].asignatura}</h4>` : td_asignatura.innerHTML = '';
     }
 });
+*/
