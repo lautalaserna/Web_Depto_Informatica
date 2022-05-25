@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Elecciones</title>
+  </head>
+
+  <body>
+   
+    <header>
+      <!-- NAVBAR -->
+      <div th:replace="fragments/navbar"></div>
+    </header>
+    
+    <main>
+      
+      <!--========================================================== Table =======================================================================-->
+
+      <div class="container mt-5 mb-5">
+        <h1 class="display-3 text-center">Elecciones del departamento</h1>
+      </div>
+
+      <hr>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-10">
+            <table class="table table-striped align-middle">
+              <thead>
+                <tr>
+                  <th><h3>Postulante</h3></th>
+                  <th><h3>Documento</h3></th>
+                  <th><h3>Votos</h3></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Rico Carlos Alberto</th>
+                  <td>14.971.508</td>
+                  <td>27</td>
+                </tr>
+                <tr>
+                  <th>Guccione Leonel Domingo</th>
+                  <td>17.982.189</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <th>Hinojal Hernan</th>
+                  <td>26.056.421</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider mb-4">
+      <!-- FOOTER -->
+      <div th:replace="fragments/footer"></div>
+    </main>
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>

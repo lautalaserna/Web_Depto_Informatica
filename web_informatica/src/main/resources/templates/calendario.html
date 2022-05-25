@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Calendario</title>
+  </head>
+
+  <body>
+   
+    <header>
+      <!-- NAVBAR -->
+      <div th:replace="fragments/navbar"></div>
+    </header>
+    
+    <main>
+      
+      <!--========================================================== Table =======================================================================-->
+
+      <div class="container mt-5 mb-5">
+        <h1 class="display-4 text-center">Calendario académico</h1>
+      </div>
+
+      <hr>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-10">
+            <table class="table table-striped align-middle">
+              <thead>
+                <tr>
+                  <th class="col-2"><h4>Fecha inicio</h4></th>
+                  <th class="col-2"><h4>Fecha fin</h4></th>
+                  <th class="col-8 text-center"><h4>Motivo</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1/1/22</th>
+                  <td>1/1/22</td>
+                  <td>Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo</td>
+                </tr>
+                <tr>
+                  <th>1/1/22</th>
+                  <td>1/1/22</td>
+                  <td>Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo</td>
+                </tr>
+                <tr>
+                  <th>1/1/22</th>
+                  <td>1/1/22</td>
+                  <td>Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo</td>
+                </tr>
+                <tr>
+                  <th>1/1/22</th>
+                  <td>1/1/22</td>
+                  <td>Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo</td>
+                </tr>
+                <tr>
+                  <th>1/1/22</th>
+                  <td>1/1/22</td>
+                  <td>Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo Motivo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider mb-4">
+      <!-- FOOTER -->
+      <div th:replace="fragments/footer"></div>
+    </main>
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>

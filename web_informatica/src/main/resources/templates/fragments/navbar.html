@@ -1,0 +1,53 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top color-bar">
+    <div class="container-fluid">
+      <a class="navbar-brand hovereable mx-3" href="https://www.fi.mdp.edu.ar/">
+        <img src="img\logo-blanco.svg"width="50" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link bar-letter active" th:href="@{/}">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item dd-space" th:href="@{autoridades}">Autoridades</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{docentes}">Docentes</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{investigacion}">Investigación</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{elecciones}">Elecciones</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item dd-space" th:href="@{plan}">Plan de Estudio</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{optativas}">Materias Optativas</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{calendario}">Calendario Académico</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{graduados}">Alumnos Graduados</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{proyectosfinales}">Proyectos Fianles</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{pps}">PPS</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item dd-space" th:href="@{noticias}">Últimas Noticias</a></li>
+                <li><a class="dropdown-item dd-space" th:href="@{bolsatrabajo}">Bolsa de Trabajo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bar-letter active" th:href="@{contacto}">Contacto</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search-!-->
+          <button class="btn btn-outline-success btn-navbar" type="submit">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->

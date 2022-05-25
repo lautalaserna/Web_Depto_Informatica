@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Optativas</title>
+  </head>
+
+  <body>
+   
+    <header>
+      <!-- NAVBAR -->
+      <div th:replace="fragments/navbar"></div>
+    </header>
+
+
+    
+    <main>
+      
+      <!--========================================================== Table =======================================================================-->
+
+      <div class="container mt-5 mb-5">
+        <h1 class="display-4 text-center">Materias optativas</h1>
+      </div>
+
+      <hr>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-10">
+            <table class="table table-striped align-middle">
+              <thead>
+                <tr>
+                  <th><h4>Asignatura</h4></th>
+                  <th><h4>Código</h4></th>
+                  <th><h4>Correlativas</h4></th>
+                  <th><h4>Cuatrimestre</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Inteligencia Computacional</th>
+                  <td>4FI</td>
+                  <td>Inteligencia Artificial (6B5) - Base Datos (6B6)</td>
+                  <td>Primero</td>
+                </tr>
+                <tr>
+                  <th>Inteligencia Computacional</th>
+                  <td>4FI</td>
+                  <td>Inteligencia Artificial (6B5) - Base Datos (6B6)</td>
+                  <td>Segundo</td>
+                </tr>
+                <tr>
+                  <th>Inteligencia Computacional</th>
+                  <td>4FI</td>
+                  <td>Inteligencia Artificial (6B5) - Base Datos (6B6)</td>
+                  <td>Primero</td>
+                </tr>
+                <tr>
+                  <th>Inteligencia Computacional</th>
+                  <td>4FI</td>
+                  <td>Inteligencia Artificial (6B5) - Base Datos (6B6)</td>
+                  <td>Segundo</td>
+                </tr>
+                <tr>
+                  <th>Inteligencia Computacional</th>
+                  <td>4FI</td>
+                  <td>Inteligencia Artificial (6B5) - Base Datos (6B6)</td>
+                  <td>Primero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <hr class="featurette-divider mb-4">
+      <!-- FOOTER -->
+      <div th:replace="fragments/footer"></div>
+    </main>
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>

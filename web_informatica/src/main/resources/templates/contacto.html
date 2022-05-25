@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Contacto</title>
+  </head>
+
+  <body>
+   
+    <header>
+      <!-- NAVBAR -->
+      <div th:replace="fragments/navbar"></div>
+    </header>
+    
+    <main>
+      
+      <div class="container mt-5 mb-5">
+        <h1 class="display-4 text-center">Contacto</h1>
+      </div>
+      <hr>
+
+      <div class="container">
+        <h3>Complejo educativo</h3>
+        <img width="600" src="img/Leaves.jpg" alt="Sede central">
+        <span>Sede Central: Avenida Juan B. Justo 4302, Mar del Plata, Argentina.</span>
+        <span>Teléfono: (0223) 481-6600</span>
+        <span>Fax: (223) 481-0046</span>
+
+      </div>
+
+      <hr class="featurette-divider mb-4">
+      <!-- FOOTER -->
+      <div th:replace="fragments/footer"></div>
+    </main>
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>
