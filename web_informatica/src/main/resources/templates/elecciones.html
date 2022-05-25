@@ -35,33 +35,23 @@
                   <th><h3>Votos</h3></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th>Rico Carlos Alberto</th>
-                  <td>14.971.508</td>
-                  <td>27</td>
-                </tr>
-                <tr>
-                  <th>Guccione Leonel Domingo</th>
-                  <td>17.982.189</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <th>Hinojal Hernan</th>
-                  <td>26.056.421</td>
-                  <td>20</td>
-                </tr>
+              <tbody id="tbody-elecciones">
               </tbody>
             </table>
           </div>
           <div class="col"></div>
         </div>
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="elecciones.js"></script>
+
   </body>
 </html>

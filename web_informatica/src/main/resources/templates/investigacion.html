@@ -7,20 +7,20 @@
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
     
+    <!-- MAIN -->
     <main>
-      
       <div class="container mt-5 mb-5">
         <h1 class="display-3 text-center">Investigación</h1>
       </div>
       <hr>
 
-      <div class="container">
+      <div class="container" id="div-investigacion">
+        <!--
         <div class="bg-light p-5 rounded mt-3">
           <h3>Grupo de Ingenieria en Desarrollos Informáticos GIDI</h3>
           <div class="container">
@@ -29,14 +29,18 @@
           <div class="container">
             <p class="lead"><b>Objetivo:</b> Intervenir en la confección, actualización y dictado de curriculas de materias optativas y/u obligatorias para satisfacer la demanda creciente en el área de Informática de las actuales y futuras carreras de grado y posgrado de la Facultad.</p>
           </div>
-
         </div>
+        -->
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="investigacion.js"></script>
   </body>
 </html>

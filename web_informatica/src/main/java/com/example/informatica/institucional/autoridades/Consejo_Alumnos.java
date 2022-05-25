@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Consejo_Alumnos {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id_consejo_departamental;
+	private int id_consejo_alumnos;
 	private String nombre;
 	private String tipo;
 	private String url;
@@ -23,9 +23,8 @@ public class Consejo_Alumnos {
 	}
 
 	//constructor completo
-	public Consejo_Alumnos(int id_consejo_departamental, String nombre, String tipo, String url) {
-		super();
-		this.id_consejo_departamental = id_consejo_departamental;
+	public Consejo_Alumnos(int id_consejo_alumnos, String nombre, String tipo, String url) {
+		this.id_consejo_alumnos = id_consejo_alumnos;
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.url = url;
@@ -33,18 +32,17 @@ public class Consejo_Alumnos {
 
 	//constructor sin id
 	public Consejo_Alumnos(String nombre, String tipo, String url) {
-		super();
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.url = url;
 	}
 
-	public int getId_consejo_departamental() {
-		return id_consejo_departamental;
+	public int getId_consejo_alumnos() {
+		return id_consejo_alumnos;
 	}
 
-	public void setId_consejo_departamental(int id_consejo_departamental) {
-		this.id_consejo_departamental = id_consejo_departamental;
+	public void setId_consejo_alumnos(int id_consejo_alumnos) {
+		this.id_consejo_alumnos = id_consejo_alumnos;
 	}
 
 	public String getNombre() {

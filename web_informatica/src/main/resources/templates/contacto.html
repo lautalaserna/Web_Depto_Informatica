@@ -8,13 +8,13 @@
 
   <body>
    
-    <header>
-      <!-- NAVBAR -->
+     <!-- HEADER -->
+     <header>
       <div th:replace="fragments/navbar"></div>
     </header>
     
+    <!-- MAIN -->
     <main>
-      
       <div class="container mt-5 mb-5">
         <h1 class="display-4 text-center">Contacto</h1>
       </div>
@@ -22,17 +22,36 @@
 
       <div class="container">
         <h3>Complejo educativo</h3>
-        <img width="600" src="img/Leaves.jpg" alt="Sede central">
-        <span>Sede Central: Avenida Juan B. Justo 4302, Mar del Plata, Argentina.</span>
-        <span>Teléfono: (0223) 481-6600</span>
-        <span>Fax: (223) 481-0046</span>
 
+        <div class="row">
+          <div class="col-6">
+            <img width="600" src="img/Leaves.jpg" alt="Sede central">
+          </div>
+          <div class="col-6">
+            <div class="bg-light p-5 rounded mt-3">
+              <h3>Contacto</h3>
+              <div class="container">
+                <p class="lead"><b>Sede Central:</b> Avenida Juan B. Justo 4302, Mar del Plata, Argentina</p>
+              </div>
+              <div class="container">
+                <p class="lead"><b>Teléfono:</b> (0223) 481-6600</p>
+              </div>
+              <div class="container">
+                <p class="lead"><b>Fax:</b> (223) 481-0046</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+
+      <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
