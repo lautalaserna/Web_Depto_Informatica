@@ -43,6 +43,7 @@ async function main(){
         suplente == null? td_suplente.innerHTML = '': td_suplente.innerHTML = `<h4 class="py-2">${suplente}</h4>`;
     }
 
+    console.log(arraySuplentes)
     //preparo alumnos
     arrayTitulares = [];
     arraySuplentes = [];

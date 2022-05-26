@@ -1,41 +1,35 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
     <title>Elecciones</title>
   </head>
 
   <body>
-   
+
     <header>
       <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
     
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-3 text-center">Elecciones del departamento</h1>
+      <div class="container marketing my-5">
+        <h1 class="section-title text-center">Elecciones 2021</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th><h3>Postulante</h3></th>
-                  <th><h3>Documento</h3></th>
-                  <th><h3>Votos</h3></th>
+          <div class="col-10 mb-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h2 class="table-header-text">Postulante</h1></td>
+                  <td><h2 class="table-header-text">Documento</h2></td>
+                  <td><h2 class="table-header-text">Votos</h2></td>
                 </tr>
               </thead>
-              <tbody id="tbody-elecciones">
+              <tbody id="tbody-elecciones" class="table-borderless" style="border-top: none !important;">
               </tbody>
             </table>
           </div>

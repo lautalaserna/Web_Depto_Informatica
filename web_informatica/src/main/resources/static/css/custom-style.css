@@ -93,6 +93,22 @@ ul.dropdown-menu>li>a:hover{
     background-color: #008080;
 }
 
+/* #################### INVESTIGACIÓN #################### */
+
+.header-investigacion{
+    padding: 2%;
+    color: #fff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: linear-gradient(90deg,#008080,#006565)!important;
+}
+
+.body-investigacion{
+    background-color: #eee;
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
+}
+
 /* #################### BUTTONS #################### */
 
 .btn-carousel{
@@ -237,7 +253,7 @@ ul.dropdown-menu>li>a:hover{
 }
 
 .small-title {
-    font-size: 35px !important;
+    font-size: 30px !important;
     font-weight: 300 !important;
     margin-bottom: 2%;
 }

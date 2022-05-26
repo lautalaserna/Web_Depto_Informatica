@@ -294,3 +294,16 @@ h6{
     filter: invert(20%) brightness(100%) contrast(100%);
 }
 
+.header-investigacion{
+    padding: 2%;
+    color: #fff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: linear-gradient(90deg,#008080,#006565)!important;
+}
+
+.body-investigacion{
+    background-color: #eee;
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
+}
