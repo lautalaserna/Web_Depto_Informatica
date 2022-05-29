@@ -271,3 +271,26 @@ create table graduados(
 	url VARCHAR(255),
 	PRIMARY KEY (id_graduado)
 );
+
+-- DEFINICION DE VIEWS --
+
+-- web_informatica.vista_docentes source
+
+CREATE OR REPLACE
+ALGORITHM = UNDEFINED VIEW `vista_docentes` AS
+select
+    distinct `d`.`id_docente` AS `id_docente`,
+    `d`.`img_url` AS `img_url`,
+    `d`.`nombre_completo` AS `nombre_completo`,
+    `d`.`email` AS `email`,
+    `d`.`titulo` AS `titulo`,
+    case
+        when `c`.`id_tipo_cargo` = 1 then `a`.`titulo`
+        else NULL
+    end AS `asignatura`
+from
+    ((`docentes` `d`
+join `cargos` `c` on
+    (`c`.`id_docente` = `d`.`id_docente`))
+join `asignaturas` `a` on
+    (`c`.`id_asignatura` = `a`.`id_asignatura`));
