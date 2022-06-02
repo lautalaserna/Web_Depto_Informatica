@@ -1,3 +1,7 @@
+-- CALENDARIO ACADEMICO --
+insert into calendario_academico
+	(fechaInicio, fechaFin, concepto, url) values (STR_TO_DATE('1-01-2012', '%d-%m-%Y'),STR_TO_DATE('1-01-2012', '%d-%m-%Y'),'este es el concepto para las fechas indicadas','');
+
 -- GRADUADOS --
 insert into graduados
 	(nombre_completo, url) values ('graduado 10', '');
