@@ -7,7 +7,6 @@ async function fetchDocentesJSON() {
 }
 
 fetchDocentesJSON().then(docentes => {
-    console.log(docentes)
     const tbody = document.getElementById("tbody-docentes");
     for(let i=0; i<docentes.length ; i++){
         let tr = tbody.insertRow(i);

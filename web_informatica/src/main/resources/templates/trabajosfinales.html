@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Trabajos finales</title>
+  </head>
+
+  <body>
+   
+    <header>
+      <!-- NAVBAR -->
+      <div th:replace="fragments/navbar"></div>
+    </header>
+    
+    <main>
+      
+      <div class="container marketing my-5">
+        <h1 class="section-title text-center">Trabajos finales</h1>
+      </div>
+
+      <!-- Trabajos finales concluidos-->
+      <div class="h2 mb-4">Trabajos finales concluidos</div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h3 class="table-header-text">Título</h3></td>
+                  <td><h3 class="table-header-text">Estudiantes</h3></td>
+                  <td><h3 class="table-header-text">Demandante</h3></td>
+                  <td><h3 class="table-header-text">Directores</h3></td>
+                  <td><h3 class="table-header-text">Repositorio</h3></td>
+                </tr>
+              </thead>
+              <tbody id="tbody-trabajos-finales-concluidos" class="table-borderless" style="border-top: none !important;">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider-->
+      <div class="b-example-divider"></div>
+
+      <!-- Trabajos finales en curso-->
+      <div class="h2 mb-4">Trabajos finales en curso</div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h3 class="table-header-text">Título</h3></td>
+                  <td><h3 class="table-header-text">Estudiantes</h3></td>
+                  <td><h3 class="table-header-text">Demandante</h3></td>
+                  <td><h3 class="table-header-text">Directores</h3></td>
+                  <td><h3 class="table-header-text">Repositorio</h3></td>
+                </tr>
+              </thead>
+              <tbody id="tbody-trabajos-finales-no-concluidos" class="table-borderless" style="border-top: none !important;">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+      <hr class="featurette-divider mb-4">
+      <!-- FOOTER -->
+      <div th:replace="fragments/footer"></div>
+    </main>
+    <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="trabajosfinales.js"></script>
+  </body>
+</html>

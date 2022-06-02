@@ -16,6 +16,7 @@ public class TrabajoFInalService {
 	}
 	
 	public List<TrabajoFinal> getTrabajosFinales() {
+		
 		return trabajoFinalRepository.findAll();
 	}
 }

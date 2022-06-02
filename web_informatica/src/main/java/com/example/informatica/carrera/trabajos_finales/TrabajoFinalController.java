@@ -18,7 +18,7 @@ public class TrabajoFinalController {
 		this.trabajoFinalService = trabajoFinalService;
 	}
 	
-	@GetMapping(path = "/trabajos_finales")
+	@GetMapping(path = "/trabajosfinales")
 	public List<TrabajoFinal> getTrabajosFinales() {
 		return trabajoFinalService.getTrabajosFinales();
 	}

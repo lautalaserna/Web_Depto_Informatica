@@ -35,9 +35,9 @@ public class RouteController {
 		return "graduados";
 	}
 	
-	@GetMapping("/proyectosfinales")
+	@GetMapping("/trabajosfinales")
 	public String proyectosfinales() {
-		return "proyectosfinales";
+		return "trabajosfinales";
 	}
 	
 	@GetMapping("/pps")
