@@ -1,12 +1,14 @@
 package com.example.informatica.carrera.calendario;
 
-import java.time.LocalDateTime;
-
+import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name="calendario_academico")
@@ -14,8 +16,14 @@ public class Calendario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_calendario_academico;
-	private LocalDateTime fechaInicio;
-	private LocalDateTime fechaFin;
+	//@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
+	@JsonFormat(pattern="dd-MM-yyyy")
+	@Column(name = "fechaInicio")
+	private Date fecha_inicio;
+	//@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
+	@JsonFormat(pattern="dd-MM-yyyy")
+	@Column(name = "fechaFin")
+	private Date fecha_fin;
 	private String concepto;
 	private String url;
 	
@@ -23,22 +31,19 @@ public class Calendario {
 	public Calendario() {
 	}
 
-	//constructor completo
-	public Calendario(int id_calendario_academico, LocalDateTime fechaInicio, LocalDateTime fechaFin, String concepto,
-			String url) {
+	public Calendario(int id_calendario_academico, Date fecha_inicio, Date fecha_fin, String concepto, String url) {
 		super();
 		this.id_calendario_academico = id_calendario_academico;
-		this.fechaInicio = fechaInicio;
-		this.fechaFin = fechaFin;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
 		this.concepto = concepto;
 		this.url = url;
 	}
 
-	//constructor SIN id
-	public Calendario(LocalDateTime fechaInicio, LocalDateTime fechaFin, String concepto, String url) {
+	public Calendario(Date fecha_inicio, Date fecha_fin, String concepto, String url) {
 		super();
-		this.fechaInicio = fechaInicio;
-		this.fechaFin = fechaFin;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
 		this.concepto = concepto;
 		this.url = url;
 	}
@@ -51,20 +56,20 @@ public class Calendario {
 		this.id_calendario_academico = id_calendario_academico;
 	}
 
-	public LocalDateTime getFechaInicio() {
-		return fechaInicio;
+	public Date getFecha_inicio() {
+		return fecha_inicio;
 	}
 
-	public void setFechaInicio(LocalDateTime fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setFecha_inicio(Date fecha_inicio) {
+		this.fecha_inicio = fecha_inicio;
 	}
 
-	public LocalDateTime getFechaFin() {
-		return fechaFin;
+	public Date getFecha_fin() {
+		return fecha_fin;
 	}
 
-	public void setFechaFin(LocalDateTime fechaFin) {
-		this.fechaFin = fechaFin;
+	public void setFecha_fin(Date fecha_fin) {
+		this.fecha_fin = fecha_fin;
 	}
 
 	public String getConcepto() {
@@ -83,9 +88,6 @@ public class Calendario {
 		this.url = url;
 	}
 
-	@Override
-	public String toString() {
-		return super.toString();
-	}
+	
 	
 }

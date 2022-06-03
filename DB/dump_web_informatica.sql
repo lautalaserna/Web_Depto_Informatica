@@ -161,8 +161,8 @@ CREATE TABLE consejo_alumnos
 CREATE TABLE calendario_academico
 (
     id_calendario_academico INT(6) NOT NULL AUTO_INCREMENT,
-    fechaInicio DATE,
-    fechaFin DATE,
+    fecha_inicio DATE,
+    fecha_fin DATE,
 	concepto VARCHAR(255),
 	url VARCHAR(255),
 
