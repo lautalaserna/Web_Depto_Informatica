@@ -16,10 +16,6 @@ public class OptativasService {
 	}
 	
 	public List<Optativas> getOptativas() {
-		List<Optativas> optativas = optativasRepository.findAll();
-		//logica para agregar correlativas a cada optativa en forma de lista internas
-		//debe pedir al correlativasService que le pase la lista
-		
-		return optativas;
+		return optativasRepository.findAll();
 	}
 }
