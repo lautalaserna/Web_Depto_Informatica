@@ -11,6 +11,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="vista_optativas")
 public class Optativas {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id_optativa;
 	private String asignatura;
 	private String codigo;
 	private String creditos_grado;
@@ -19,6 +22,17 @@ public class Optativas {
 	
 	//constructor vacio
 	public Optativas() {
+	}
+	
+	public Optativas(int id_optativa, String asignatura, String codigo, String creditos_grado, String cuatrimestre,
+			String correlativas) {
+		super();
+		this.id_optativa = id_optativa;
+		this.asignatura = asignatura;
+		this.codigo = codigo;
+		this.creditos_grado = creditos_grado;
+		this.cuatrimestre = cuatrimestre;
+		this.correlativas = correlativas;
 	}
 
 	public Optativas(String asignatura, String codigo, String creditos_grado, String cuatrimestre,
@@ -29,6 +43,14 @@ public class Optativas {
 		this.creditos_grado = creditos_grado;
 		this.cuatrimestre = cuatrimestre;
 		this.correlativas = correlativas;
+	}
+	
+	public int getId_optativa() {
+		return id_optativa;
+	}
+	
+	public void setId_optativa(int id_optativa) {
+		this.id_optativa = id_optativa;
 	}
 
 	public String getAsignatura() {
