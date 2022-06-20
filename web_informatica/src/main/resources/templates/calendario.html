@@ -1,52 +1,47 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
-    <title>Calendario</title>
+    <title>Calendario Académico</title>
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
     
+    <!-- MAIN -->
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-4 text-center">Calendario académico</h1>
+      <div class="container mt-5 pb-2">
+        <h1 class="title modal-header">Calendario Académico</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container">
         <div class="row">
-          <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th class="col-2"><h3>Fecha inicio</h3></th>
-                  <th class="col-2"><h3>Fecha fin</h3></th>
-                  <th class="col-8 text-center"><h3>Motivo</h3></th>
+          <div class="col-12 px-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <th class="table-header-text table-date"><h3>Desde</h3></th>
+                  <th class="table-header-text table-date"><h3>Hasta</h3></th>
+                  <th class="table-header-text"><h3>Motivo</h3></th>
                 </tr>
               </thead>
-              <tbody id="tbody-calendario">
+              <tbody id="tbody-calendario" style="border-top: none !important;">
               </tbody>
             </table>
           </div>
-          <div class="col"></div>
         </div>
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+    
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="calendario.js"></script>
   </body>

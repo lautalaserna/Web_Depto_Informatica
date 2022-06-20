@@ -14,8 +14,8 @@ fetchDocentesJSON().then(calendario => {
         let td_fecha_fin = tr.insertCell(1);
         let td_motivo = tr.insertCell(2);
         
-        td_fecha_inicio.innerHTML = `<h4 class="py-2">${calendario[i].fecha_inicio}</h4>`;
-        td_fecha_fin.innerHTML = `<h4 class="py-2">${calendario[i].fecha_fin}</h4>`;
-        td_motivo.innerHTML = `<h4 class="py-2">${calendario[i].concepto}</h4>`;
+        td_fecha_inicio.innerHTML = `<h5 class="py-2">${calendario[i].fecha_inicio}</h5>`;
+        td_fecha_fin.innerHTML = `<h5 class="py-2">${calendario[i].fecha_fin}</h5>`;
+        td_motivo.innerHTML = `<h5 class="py-2 text-start">${calendario[i].concepto}</h5>`;
     }
 });

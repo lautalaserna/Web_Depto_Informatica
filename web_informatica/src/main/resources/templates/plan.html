@@ -1,50 +1,58 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
-    <title>Plan de estudios</title>
+    <title>Plan de Estudio</title>
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
-
-
     
+    <!-- MAIN -->
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-3 text-center">Plan de estudios</h1>
+      <div class="container mt-5 pb-2">
+        <h1 class="title modal-header">Plan de Estudio</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container mb-5">
         <div class="row">
-          <div class="col"></div>
-          <div class="col-10">
+          <div class="col-12 px-5 mb-5">
             <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th colspan="4" class="color-bar"><h4>Primer año</h4></th>
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td colspan="4" class="table-header-text text-center"><h4>Primer Año</h4></td>
                 </tr>
               </thead>
-              <thead>
+              <tbody class="table-sub-header" style="border-top: none !important;">
                 <tr>
-                  <th class="table-info"><h5>Asignatura</h5></th>
-                  <th class="table-info"><h5>Cod.</h5></th>
-                  <th class="table-info"><h5>CG</h5></th>
-                  <th class="table-info"><h5>Correlativas</h5></th>
+                  <td class="table-header-text"><h5>Asignatura</h5></td>
+                  <td class="table-header-text"><h5>Cod.</h5></td>
+                  <td class="table-header-text"><h5>CG</h5></td>
+                  <td class="table-header-text"><h5>Correlativas</h5></td>
                 </tr>
-              </thead>
-              <tbody id="anio1">
               </tbody>
+              <tbody class="table-borderless" style="border-top: none !important;" id="anio1">
+              </tbody>
+
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td colspan="4" class="table-header-text text-center"><h4>Segundo Año</h4></td>
+                </tr>
+              </thead>
+              <tbody class="table-sub-header" style="border-top: none !important;">
+                <tr>
+                  <td class="table-header-text"><h5>Asignatura</h5></td>
+                  <td class="table-header-text"><h5>Cod.</h5></td>
+                  <td class="table-header-text"><h5>CG</h5></td>
+                  <td class="table-header-text"><h5>Correlativas</h5></td>
+                </tr>
+              </tbody>
+              <tbody class="table-borderless" style="border-top: none !important;" id="anio2">
+              </tbody>
+
               <thead>
                 <tr>
                   <th colspan="4" class="color-bar"><h4>Segundo año</h4></th>
@@ -107,7 +115,6 @@
               </tbody>
             </table>
           </div>
-          <div class="col"></div>
         </div>
       </div>
 

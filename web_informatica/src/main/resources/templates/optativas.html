@@ -1,55 +1,49 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
-    <title>Optativas</title>
+    <title>Materias Optativas</title>
   </head>
-
+ 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
-    </header>
-
-
-    
+    </header>   
+   
+    <!-- MAIN -->
     <main>
-      
-      <!--========================================================== Table =======================================================================-->
-
-      <div class="container mt-5 mb-5">
-        <h1 class="display-4 text-center">Materias optativas</h1>
+      <div class="container mt-5 pb-2">
+        <h1 class="title modal-header">Materias Optativas</h1>
       </div>
 
-      <hr>
-
-      <div class="container mt-5">
+      <div class="container">
         <div class="row">
-          <div class="col"></div>
-          <div class="col-10">
-            <table class="table table-striped align-middle">
-              <thead>
-                <tr>
-                  <th><h4>Asignatura</h4></th>
-                  <th><h4>Código</h4></th>
-                  <th><h4>Correlativas</h4></th>
-                  <th><h4>Cuatrimestre</h4></th>
+          <div class="col-12 mb-5 px-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h2 class="table-header-text">Asignatura</h2></td>
+                  <td><h2 class="table-header-text">Código</h2></td>
+                  <td><h2 class="table-header-text">Cuatr.</h2></td>
+                  <td><h2 class="table-header-text">CG</h2></td>
+                  <td><h2 class="table-header-text">Correlativas</h2></td>
                 </tr>
               </thead>
-              <tbody id="tbody-optativas">
+              <tbody id="tbody-optativas" class="table-borderless" style="border-top: none !important;">
               </tbody>
             </table>
           </div>
-          <div class="col"></div>
         </div>
       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+    
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="optativas.js"></script>
   </body>

@@ -1,32 +1,32 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
-    <title>Departamento de Informática</title>
+    <title>Alumnos Graduados</title>
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
-    
+
+    <!-- MAIN -->
     <main>
-      <div class="container marketing my-5">
-        <h1 class="section-title text-center">Alumnos graduados</h1>
+      <div class="container mt-5 pb-2">
+        <h1 class="title modal-header">Alumnos Graduados</h1>
       </div>
 
       <div class="container">
         <div class="row">
-          <div class="col-3"></div>
+          <div class="col-2"></div>
 
-          <div class="col-6 mb-5">
+          <div class="col-8 mb-5">
             <table class="table table-striped align-middle text-center">
               <thead class="table-borderless">
                 <tr class="table-header">
-                  <td><h2 class="table-header-text">Nombre completo</h2></td>
+                  <td><h2 class="table-header-text">Alumno</h2></td>
+                  <td><h2 class="table-header-text">Año de Egreso</h2></td>
                 </tr>
               </thead>
               <tbody id="tbody-graduados" class="table-borderless" style="border-top: none !important;">
@@ -34,15 +34,17 @@
             </table>
           </div>
 
-          <div class="col-3"></div>
+          <div class="col-2"></div>
         </div>
       </div>
-      
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
     </main>
+      
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="graduados.js"></script>
   </body>
