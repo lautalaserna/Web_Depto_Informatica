@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-06-2022 a las 21:44:59
+-- Tiempo de generación: 22-06-2022 a las 01:08:54
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -335,24 +335,25 @@ INSERT INTO `elecciones` (`id_eleccion`, `postulante`, `dni`, `votos`, `url`) VA
 CREATE TABLE `graduados` (
   `id_graduado` int(6) NOT NULL,
   `nombre_completo` varchar(255) DEFAULT NULL,
-  `fecha` date DEFAULT NULL
+  `fecha` date DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `graduados`
 --
 
-INSERT INTO `graduados` (`id_graduado`, `nombre_completo`, `fecha`) VALUES
-(1, 'graduado 1', '2017-06-05'),
-(2, 'graduado 2', '2017-07-07'),
-(3, 'graduado 3', '2018-08-09'),
-(4, 'graduado 4', '2018-04-01'),
-(5, 'graduado 5', '2018-08-19'),
-(6, 'graduado 6', '2019-09-23'),
-(7, 'graduado 7', '2020-04-27'),
-(8, 'graduado 8', '2021-05-12'),
-(9, 'graduado 9', '2022-05-18'),
-(10, 'graduado 10', '2022-05-25');
+INSERT INTO `graduados` (`id_graduado`, `nombre_completo`, `fecha`, `url`) VALUES
+(1, 'graduado 1', '2017-06-05', NULL),
+(2, 'graduado 2', '2017-07-07', NULL),
+(3, 'graduado 3', '2018-08-09', NULL),
+(4, 'graduado 4', '2018-04-01', NULL),
+(5, 'graduado 5', '2018-08-19', NULL),
+(6, 'graduado 6', '2019-09-23', NULL),
+(7, 'graduado 7', '2020-04-27', NULL),
+(8, 'graduado 8', '2021-05-12', NULL),
+(9, 'graduado 9', '2022-05-18', NULL),
+(10, 'graduado 10', '2022-05-25', NULL);
 
 -- --------------------------------------------------------
 
@@ -472,8 +473,8 @@ CREATE TABLE `pps` (
   `id_pps` int(6) NOT NULL,
   `entidad` varchar(255) DEFAULT NULL,
   `objetivo` varchar(4096) DEFAULT NULL,
-  `fechaInicio` date DEFAULT NULL,
-  `fechaFin` date DEFAULT NULL,
+  `fecha_inicio` date DEFAULT NULL,
+  `fecha_fin` date DEFAULT NULL,
   `presupuesto` float DEFAULT NULL,
   `is_contratacion` char(1) DEFAULT NULL,
   `estado` char(1) DEFAULT NULL,
@@ -490,13 +491,13 @@ CREATE TABLE `pps` (
 -- Volcado de datos para la tabla `pps`
 --
 
-INSERT INTO `pps` (`id_pps`, `entidad`, `objetivo`, `fechaInicio`, `fechaFin`, `presupuesto`, `is_contratacion`, `estado`, `url`, `estudiantes`, `tutores`, `lugar`, `is_pdts`, `is_pps`, `is_psc`) VALUES
-(1, 'entidad', 'objetivo de la practica profesional', '2022-06-20', '2022-11-23', 300000, 'N', 'D', '', '', '', '', 'N', 'N', 'N'),
-(2, 'otra entidad', 'otro objetivo de la practica profesional', '2022-05-19', '2022-10-24', 350000, 'Y', 'D', '', '', '', '', 'N', 'N', 'N'),
-(3, 'otra entidad mas', 'otro objetivo mas de la practica profesional', '2022-05-19', '2022-10-24', 360000, 'Y', 'C', '', 'Estudiante 1', 'Tutor 1', 'Lugar 1', 'N', 'N', 'N'),
-(4, 'otra entidad', 'otro objetivo de la practica profesional', '2022-03-01', '2022-09-11', 450000, 'N', 'C', '', 'Estudiante 1, Estudiante 2, Estudiante 3', 'Tutor 1, Tutor 2', 'Lugar 2', 'N', 'N', 'N'),
-(5, 'entidad pps', 'objetivo de la practica profesional', '2022-01-01', '2022-05-13', 125000, 'N', 'F', '', 'Estudiante 4, Estudiante 5, Estudiante 6', 'Tutor 3, Tutor 4', 'Lugar 3', 'N', 'N', 'N'),
-(6, 'entidad pps 2', 'objetivo 2 de la practica profesional', '2022-02-02', '2022-05-14', 126000, 'N', 'F', '', 'Estudiante 7, Estudiante 8', 'Tutor 5, Tutor 6', 'Lugar 4', 'N', 'N', 'N');
+INSERT INTO `pps` (`id_pps`, `entidad`, `objetivo`, `fecha_inicio`, `fecha_fin`, `presupuesto`, `is_contratacion`, `estado`, `url`, `estudiantes`, `tutores`, `lugar`, `is_pdts`, `is_pps`, `is_psc`) VALUES
+(1, 'primera entidad', 'objetivo de la practica profesional', '2022-06-20', '2022-11-23', 300000, 'N', 'D', '', '', '', '', 'N', 'N', 'N'),
+(2, 'segunda entidad', 'otro objetivo de la practica profesional', '2022-05-19', '2022-10-24', 350000, 'Y', 'D', '', '', '', '', 'N', 'N', 'N'),
+(3, 'tercera entidad', 'otro objetivo mas de la practica profesional', '2022-05-19', '2022-10-24', 360000, 'Y', 'C', '', 'Estudiante 1', 'Tutor 1', 'Lugar 1', 'N', 'N', 'N'),
+(4, 'cuarta entidad', 'otro objetivo de la practica profesional', '2022-03-01', '2022-09-11', 450000, 'N', 'C', '', 'Estudiante 1, Estudiante 2, Estudiante 3', 'Tutor 1, Tutor 2', 'Lugar 2', 'N', 'N', 'N'),
+(5, 'quinta entidad', 'objetivo de la practica profesional', '2022-01-01', '2022-05-13', 125000, 'N', 'F', '', 'Estudiante 4, Estudiante 5, Estudiante 6', 'Tutor 3, Tutor 4', 'Lugar 3', 'N', 'N', 'N'),
+(6, 'sexta entidad', 'objetivo 2 de la practica profesional', '2022-02-02', '2022-05-14', 126000, 'N', 'F', '', 'Estudiante 7, Estudiante 8', 'Tutor 5, Tutor 6', 'Lugar 4', 'N', 'N', 'N');
 
 -- --------------------------------------------------------
 
