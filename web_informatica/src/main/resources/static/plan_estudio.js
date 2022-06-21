@@ -27,10 +27,10 @@ function insertAsignatura(anio, asignatura, flag) {
     let td_creditos = tr.insertCell(2);
     let td_correlativas = tr.insertCell(3);
     
-    td_asignatura.innerHTML = asignatura.asignatura;
-    td_codigo.innerHTML = asignatura.codigo;
-    td_creditos.innerHTML = asignatura.creditos_grado;
-    td_correlativas.innerHTML = asignatura.correlativas;
+    td_asignatura.innerHTML = `<h5 class="py-1 ps-2 text-start">${asignatura.asignatura}</h5>`
+    td_codigo.innerHTML = `<h5 class="py-1">${asignatura.codigo}</h5>`//;
+    td_creditos.innerHTML = `<h5 class="py-1">${asignatura.creditos_grado}</h5>`
+    td_correlativas.innerHTML = `<h5 class="py-1">${asignatura.correlativas}</h5>`
 
     if(flag){
         let tr = tbody.insertRow();

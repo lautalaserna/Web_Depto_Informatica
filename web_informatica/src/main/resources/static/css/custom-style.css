@@ -47,8 +47,9 @@ ul.dropdown-menu>li>a{
 
 ul.dropdown-menu>li>a:hover{
     color: #fff !important; 
-    background: linear-gradient(90deg,#008080,#006565)!important;
-    font-size: 17px;
+    background: #007070 !important;
+    /*background: linear-gradient(90deg,#008080,#006565)!important;*/
+    padding-left: 25px;
 } 
 
 .dropdown:hover .dropdown-menu {
@@ -214,15 +215,15 @@ ul.dropdown-menu>li>a:hover{
 .table-header{
     padding-top: 3%;
     padding-bottom: 3%;
-    background-color: #006060;
-    border: none;
+    background-color: #006060 !important;
+    border: none !important;
 }
 
 .table-sub-header{
     padding-top: 2%;
     padding-bottom: 2%;
     background-color: #006060;
-    opacity: 80%;
+    opacity: 90%;
     border: none;
 }
 
@@ -230,6 +231,7 @@ ul.dropdown-menu>li>a:hover{
     color: #fff !important;
     font-size: 30px !important;
     font-weight: 300 !important;
+    border: none !important;
 }
 
 .table-date{
