@@ -2,6 +2,7 @@ package com.example.informatica.novedades;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -44,10 +45,32 @@ public class NovedadesController {
 		return "noticias";
 	}
 	
-	/*
-	@GetMapping(path = "/bolsa_trabajo")
-	public List<Novedades> getTrabajos() {
-		return novedadesService.getTrabajos();
-	}*/
+	@GetMapping(value="/novedad")
+	public String novedad(@RequestParam Map<String, Object> params, Model model) {
+		Optional<Novedades> novedad = novedadesService.getNovedad(Integer.valueOf(params.get("id").toString()));
+		model.addAttribute("novedad", novedad.get());
+		return "novedad";
+	}
+	
+	
+	@GetMapping(value="/bolsatrabajo")
+	public String bolsatrabajo(@RequestParam Map<String, Object> params, Model model) {
+		int page = params.get("page") != null ? (Integer.valueOf(params.get("page").toString())-1):0;
+		PageRequest pageRequest = PageRequest.of(page, 2);
+		Page<Novedades> pageTrabajos = novedadesService.getPageTrabajos(pageRequest);
+		
+		int totalpages = pageTrabajos.getTotalPages();
+		if(totalpages > 0) {
+			List<Integer> pages = IntStream.rangeClosed(1, totalpages).boxed().collect(Collectors.toList());
+			model.addAttribute("pages", pages);
+		}
+		model.addAttribute("list", pageTrabajos.getContent());
+		model.addAttribute("current", page+1);
+		model.addAttribute("prev", page);
+		model.addAttribute("next", page+2);
+		model.addAttribute("last", totalpages);
+		
+		return "bolsatrabajo";
+	}
 	
 }

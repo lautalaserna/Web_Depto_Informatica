@@ -23,9 +23,18 @@
           <div class="container">
               <p th:text="${noticia.info}" class="lead"></p>
           </div>
+
           <div class="text-end">
-              <button href="#" class="btn-section-size btn-style rounded"><h5 class="pt-2">Ver</h5></button>
+            <a th:href="@{|/novedad?id=${noticia.id_novedad}|}" type="button" class="btn btn-section-size btn-style rounded text-center">
+              <h4 class="pt-1">Ver</h4>
+            </a>
           </div>
+
+
+
+
+
+
       </div>
     </div>
 

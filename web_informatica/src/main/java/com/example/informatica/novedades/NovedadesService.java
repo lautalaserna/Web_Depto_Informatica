@@ -1,6 +1,6 @@
 package com.example.informatica.novedades;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,12 +18,16 @@ public class NovedadesService {
 	}
 	
 	public Page<Novedades> getPageNoticias(Pageable pageable) {
-		return novedadesRepository.findAll(pageable);
+		return novedadesRepository.findAll('N',pageable);
 	}
 	
-	/*
-	public List<Novedades> getTrabajos() {
-		return novedadesRepository.findAll('Y');
-	}*/
+	public Optional<Novedades> getNovedad(int id) {
+		return novedadesRepository.findById(id);
+	}
+	
+	
+	public Page<Novedades> getPageTrabajos(Pageable pageable) {
+		return novedadesRepository.findAll('Y',pageable);
+	}
 	
 }

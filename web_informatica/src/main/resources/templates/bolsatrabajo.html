@@ -13,6 +13,44 @@
     
     <!-- MAIN -->
     <main>
+
+      <div th:if="${!list.isEmpty()}" th:each="trabajo : ${list}" class="container my-5">
+        <div class="header-investigacion">
+            <h4 th:text="| ${trabajo.fecha} ${trabajo.titulo}"></h4>
+        </div>
+        <div class="p-4 body-investigacion">
+            <div class="container">
+                <p th:text="${trabajo.info}" class="lead"></p>
+            </div>
+
+            <div class="text-end">
+              <a th:href="@{|/novedad?id=${trabajo.id_novedad}|}" type="button" class="btn btn-section-size btn-style rounded text-center">
+                <h4 class="pt-1">Ver</h4>
+              </a>
+            </div>
+
+        </div>
+      </div>
+  
+  
+      <!--Pagination-->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" th:classappend="${prev == 0? 'disabled':''}">
+            <a class="page-link" th:href="@{|/bolsatrabajo?page=${prev}|}">Anterior</a>
+          </li>
+          
+          <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
+            <a class="page-link" th:href="@{|/bolsatrabajo?page=${page}|}" th:text="${page}"></a>
+          </li>
+          
+          <li class="page-item" th:classappend="${current == last? 'disabled':''}">
+            <a class="page-link" th:href="@{|/bolsatrabajo?page=${next}|}">Siguiente</a>
+          </li>
+        </ul>
+      </nav>
+
+
     </main>
 
     <!-- FOOTER -->

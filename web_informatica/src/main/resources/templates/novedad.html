@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Contenido del head-->
+    <div th:replace="fragments/inner-head"></div>
+    <title>Novedad</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div th:replace="fragments/navbar"></div>
+    </header>
+    
+    <!-- MAIN -->
+    <main>
+
+    <div class="container my-5">
+      <div class="header-investigacion">
+          <h4 th:text="| ${novedad.fecha} ${novedad.titulo}"></h4>
+      </div>
+      <div class="p-4 body-investigacion">
+          <div class="container">
+              <p th:text="${novedad.info}" class="lead"></p>
+          </div>
+          <div class="b-example-divider"></div>
+          <div class="container">
+            <p th:text="${novedad.contenido}" class="lead"></p>
+        </div>
+      </div>
+    </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>
