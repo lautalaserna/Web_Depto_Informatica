@@ -73,6 +73,7 @@ public class RouteController {
 	 * ####### NOVEDADES ####### 
 	 */
 	
+	/*
 	@GetMapping("/bolsatrabajo")
 	public String bolsaTrabajo() {
 		return "bolsatrabajo";
@@ -82,7 +83,7 @@ public class RouteController {
 	public String noticias() {
 		return "noticias";
 	}
-	
+	*/
 	/*
 	 * ####### CONTACTO ####### 
 	 */

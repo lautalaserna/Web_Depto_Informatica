@@ -8,14 +8,6 @@ async function fetchPPSJSON(url) {
     return pps;
 }
 
-/*
-async function process(){
-    await fetchPPSJSON(URL_disponibles).then(pps => {generateTable(pps, "tbody-disponibles", false)})
-    await fetchPPSJSON(URL_curso).then(pps => {generateTable(pps, "tbody-curso", true)})
-    await fetchPPSJSON(URL_finalizadas).then(pps => {generateTable(pps, "tbody-finalizadas", true)})
-}
-*/
-
 fetchPPSJSON(URL_disponibles).then(pps => {generateTable(pps, "tbody-disponibles", false)})
 fetchPPSJSON(URL_curso).then(pps => {generateTable(pps, "tbody-curso", true)})
 fetchPPSJSON(URL_finalizadas).then(pps => {generateTable(pps, "tbody-finalizadas", true)})
@@ -64,5 +56,3 @@ async function generateTable(pps, tbody_name, asignada){
             td_is_contratacion.innerHTML = `<h5 class="py-2">No</h5>`
     }
 }
-
-//process();

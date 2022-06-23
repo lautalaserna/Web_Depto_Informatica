@@ -14,6 +14,40 @@
     
     <!-- MAIN -->
     <main>
+
+    <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container my-5">
+      <div class="header-investigacion">
+          <h4 th:text="| ${noticia.fecha} ${noticia.titulo}"></h4>
+      </div>
+      <div class="p-4 body-investigacion">
+          <div class="container">
+              <p th:text="${noticia.info}" class="lead"></p>
+          </div>
+          <div class="text-end">
+              <button href="#" class="btn-section-size btn-style rounded"><h5 class="pt-2">Ver</h5></button>
+          </div>
+      </div>
+    </div>
+
+
+    <!--Pagination-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" th:classappend="${prev == 0? 'disabled':''}">
+          <a class="page-link" th:href="@{|/noticias?page=${prev}|}">Anterior</a>
+        </li>
+        
+        <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
+          <a class="page-link" th:href="@{|/noticias?page=${page}|}" th:text="${page}"></a>
+        </li>
+        
+        <li class="page-item" th:classappend="${current == last? 'disabled':''}">
+          <a class="page-link" th:href="@{|/noticias?page=${next}|}">Siguiente</a>
+        </li>
+      </ul>
+    </nav>
+
+
     </main>
 
     <!-- FOOTER -->
