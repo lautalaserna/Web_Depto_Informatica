@@ -1,4 +1,3 @@
-/*
 package com.example.informatica.user;
 
 import java.util.Collection;
@@ -19,9 +18,6 @@ import lombok.Setter;
 
 import javax.persistence.JoinColumn;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User{
@@ -29,26 +25,53 @@ public class User{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
-	
-	@Column(name = "username")
-    private String userName;
-	
+    private int id_usuario;
+    private String username;
 	@Column(name = "password")
     private String password;
-
-    @ManyToMany 
-    @JoinTable( 
-        name = "roles_usuario",
-        joinColumns = @JoinColumn(
-          name = "id_usuario", referencedColumnName = "id_usuario"), 
-        inverseJoinColumns = @JoinColumn(
-          name = "id_rol", referencedColumnName = "id_rol")) 
-    private Collection<UserRole> roles;
-    
-    
+	private String roles;
+	public User(int id_usuario, String username, String password, String roles) {
+		super();
+		this.id_usuario = id_usuario;
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+	}
+	public User(String username, String password, String roles) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+	}
+	public User() {
+		super();
+	}
+	public int getId_usuario() {
+		return id_usuario;
+	}
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRoles() {
+		return roles;
+	}
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+	
 }
-*/
 
 
 

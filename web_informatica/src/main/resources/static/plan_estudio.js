@@ -9,6 +9,7 @@ async function fetchPlanJSON() {
 fetchPlanJSON().then(plan => {
     // {"id_plan_estudio":5,"anio":1,"cuatrimestre":1,"asignatura":"Algebra A","codigo":2,"creditos_grado":"8","correlativas":""}
     
+    console.log(plan);
     for(let i=0; i<plan.length ; i++){
         console.log(plan[i]);
         if(i+1 <= plan.length && plan[i].cuatrimestre == 1 && plan[i+1].cuatrimestre == 2){

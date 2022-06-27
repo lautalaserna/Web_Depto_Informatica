@@ -20,6 +20,7 @@ public class PlanController {
 	
 	@GetMapping(path = "/plan_estudio")
 	public List<Plan> getPlan() {
+		System.out.println("Controller llamando a service getPlan");
 		return planService.getPlan();
 	}
 }

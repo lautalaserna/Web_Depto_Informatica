@@ -16,6 +16,8 @@ public class PlanService {
 	}
 	
 	public List<Plan> getPlan() {
+		
+		System.out.println("service llamando a findAll");
 		return planRepository.findAll();
 	}
 }

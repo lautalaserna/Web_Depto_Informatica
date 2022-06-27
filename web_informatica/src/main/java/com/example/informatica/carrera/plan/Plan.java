@@ -17,11 +17,11 @@ public class Plan {
 	private int anio;
 	private int cuatrimestre;
 	private String asignatura;
-	private int codigo;
-	private String creditos_grado;
+	private String codigo;
+	private int creditos_grado;
 	private String correlativas;
 	
-	public Plan(int id_plan_estudio, int anio, int cuatrimestre, String asignatura, int codigo, String creditos_grado,
+	public Plan(int id_plan_estudio, int anio, int cuatrimestre, String asignatura, String codigo, int creditos_grado,
 			String correlativas) {
 		super();
 		this.id_plan_estudio = id_plan_estudio;
@@ -33,7 +33,7 @@ public class Plan {
 		this.correlativas = correlativas;
 	}
 
-	public Plan(int anio, int cuatrimestre, String asignatura, int codigo, String creditos_grado, String correlativas) {
+	public Plan(int anio, int cuatrimestre, String asignatura, String codigo, int creditos_grado, String correlativas) {
 		super();
 		this.anio = anio;
 		this.cuatrimestre = cuatrimestre;
@@ -79,19 +79,19 @@ public class Plan {
 		this.asignatura = asignatura;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
-	public String getCreditos_grado() {
+	public int getCreditos_grado() {
 		return creditos_grado;
 	}
 
-	public void setCreditos_grado(String creditos_grado) {
+	public void setCreditos_grado(int creditos_grado) {
 		this.creditos_grado = creditos_grado;
 	}
 

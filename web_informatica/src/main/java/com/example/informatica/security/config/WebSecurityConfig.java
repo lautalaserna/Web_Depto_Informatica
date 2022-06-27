@@ -33,8 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	public DaoAuthenticatorProvider daoAuthenticatorProvider() {
 		DaoAuthenticatorProvider provider = new DaoAuthenticatorProvider();
 		
-	}
-	*/
-
+	}*/
 	
 }
