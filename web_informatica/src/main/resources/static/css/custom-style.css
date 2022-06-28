@@ -20,6 +20,17 @@ body{
     }
 }
 
+main{
+    z-index: 10;
+}
+
+.index-header {
+    height: 50vh;
+    padding-top: 5%;
+    padding-left: 12%;
+    color: #fff;
+}
+
 /* #################### NAVBAR #################### */
 
 .color-bar{
@@ -79,7 +90,7 @@ ul.dropdown-menu>li>a:hover{
     transition: 250ms ease-in-out !important;
     opacity: 1;
     transform: translateY(0);
-
+    z-index: 20 !important;
 }
 
 @keyframes fade {
@@ -205,10 +216,36 @@ ul.dropdown-menu>li>a:hover{
 
 .btn-mini{
     margin: 1%;
-    max-width: 170px;
-    min-width: 170px;
-    max-height: 200px;
-    min-height: 200px;
+    margin-right: 1.5%;
+    width: 180px;
+    height: 200px;
+}
+
+.btn-mid{
+    margin: 2%;
+    width: 250px;
+    height: 200px;
+}
+
+.btn-noticias{
+    width: 400px;
+    height: 600px;
+    color: #fff;
+    background-image: url('img/Leaver.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+
+.btn-bolsa{
+    width: 400px;
+    height: 300px;
+    color: #fff;
+    background-image: url('img/home-office.png');   
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 /* #################### TABLE #################### */
