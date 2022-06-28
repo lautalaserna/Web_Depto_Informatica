@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar Sesión</title>
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+    <!--inner-head fragment-->
+    <div th:replace="fragments/inner-head"></div>
+  </head>
+
+  <body class="text-center">
+    
+    <main class="form-signin w-100 m-auto">
+
+
+      <div th:if="${param.error}" style="color: red;" class="pb-2">Nombre de usuario o contraseña incorrectos.</div>
+      
+      <!--Formulario-->
+      <form th:action="@{/login}" method="post">
+        <img class="mb-4" src="../img/logo-verde.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
+
+       <div class="form-floating">
+        <input type="text" class="form-control" name="username" id="username" placeholder="usuario">
+          <label for="username">Nombre de usuario</label>
+        </div>
+       <div class="form-floating">
+         <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+          <label for="password">Contraseña</label>
+        </div>
+
+       
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Iniciar sesión</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Departamento de Informática - 2022</p>
+      </form>
+    </main>
+    
+  </body>
+</html>
+
+<!--
+<div class="checkbox mb-3">
+  <label>
+    <input type="checkbox" value="remember-me"> Recordarme
+  </label>
+</div>
+-->

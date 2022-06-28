@@ -92,4 +92,17 @@ public class RouteController {
 	public String contacto() {
 		return "contacto";
 	}
+	
+	/*
+	 * SECURITY
+	 * */
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/admin")
+	public String admin() {
+		return "admin";
+	}
 }

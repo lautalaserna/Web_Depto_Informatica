@@ -1,28 +1,16 @@
 package com.example.informatica.user;
 
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.JoinColumn;
-
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
-public class User{
-
-	
+public class Usuario{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
@@ -30,20 +18,20 @@ public class User{
 	@Column(name = "password")
     private String password;
 	private String roles;
-	public User(int id_usuario, String username, String password, String roles) {
+	public Usuario(int id_usuario, String username, String password, String roles) {
 		super();
 		this.id_usuario = id_usuario;
 		this.username = username;
 		this.password = password;
 		this.roles = roles;
 	}
-	public User(String username, String password, String roles) {
+	public Usuario(String username, String password, String roles) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.roles = roles;
 	}
-	public User() {
+	public Usuario() {
 		super();
 	}
 	public int getId_usuario() {
