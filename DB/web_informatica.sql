@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-06-2022 a las 01:08:54
+-- Tiempo de generación: 29-06-2022 a las 00:21:16
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -603,8 +603,16 @@ INSERT INTO `trabajos_finales` (`id_trabajo_final`, `titulo`, `estudiantes`, `de
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  `roles` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `username`, `password`, `roles`) VALUES
+(1, 'admin', '$2a$10$ccoaJ4m65gLiIdGM5Cxt8OOXw2m3zv.RYh8yAeerh6vLBMTWRCWey', 'admin');
 
 -- --------------------------------------------------------
 
@@ -851,7 +859,8 @@ ALTER TABLE `trabajos_finales`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `UKm2dvbwfge291euvmk6vkkocao` (`username`);
 
 --
 -- Indices de la tabla `vista_correlativas`
@@ -1005,7 +1014,7 @@ ALTER TABLE `trabajos_finales`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `vista_correlativas`
