@@ -15,7 +15,54 @@
     <!-- MAIN -->
     <main>
 
-    <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container my-5">
+      <div class="container mt-4 pb-2">
+        <h1 class="title modal-header mb-3">Novedades</h1>
+      </div>
+
+      <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container">
+        
+        <div class="row">
+          <div class="col-4 text-center">
+            <img src="img/Leaves.jpg" class="rounded" height="240" width="340">
+          </div>
+          <div class="col-8 text-start">
+            <h3 th:text="| ${noticia.fecha} ${noticia.titulo}"></h3>
+            <p th:text="${noticia.info}" class="lead"></p>
+          </div>
+        </div>
+        <hr class="featurette-divider my-4">
+      </div>
+
+      <!--Pagination-->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" th:classappend="${prev == 0? 'disabled':''}">
+            <a class="page-link" th:href="@{|/noticias?page=${prev}|}">Anterior</a>
+          </li>
+          
+          <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
+            <a class="page-link" th:href="@{|/noticias?page=${page}|}" th:text="${page}"></a>
+          </li>
+          
+          <li class="page-item" th:classappend="${current == last? 'disabled':''}">
+            <a class="page-link" th:href="@{|/noticias?page=${next}|}">Siguiente</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js\bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+
+    <!-- <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container my-5">
       <div class="header-investigacion">
           <h4 th:text="| ${noticia.fecha} ${noticia.titulo}"></h4>
       </div>
@@ -29,42 +76,5 @@
               <h4 class="pt-1">Ver</h4>
             </a>
           </div>
-
-
-
-
-
-
       </div>
-    </div>
-
-
-    <!--Pagination-->
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item" th:classappend="${prev == 0? 'disabled':''}">
-          <a class="page-link" th:href="@{|/noticias?page=${prev}|}">Anterior</a>
-        </li>
-        
-        <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
-          <a class="page-link" th:href="@{|/noticias?page=${page}|}" th:text="${page}"></a>
-        </li>
-        
-        <li class="page-item" th:classappend="${current == last? 'disabled':''}">
-          <a class="page-link" th:href="@{|/noticias?page=${next}|}">Siguiente</a>
-        </li>
-      </ul>
-    </nav>
-
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <div th:replace="fragments/footer"></div>
-    </footer>
-
-    <!-- SCRIPTS -->
-    <script src="js\bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    </div> -->

@@ -1,108 +1,110 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <!--Contenido del head-->
     <div th:replace="fragments/inner-head"></div>
     <title>PPS</title>
   </head>
 
   <body>
-   
+    <!-- HEADER -->
     <header>
-      <!-- NAVBAR -->
       <div th:replace="fragments/navbar"></div>
     </header>
-    
+
+    <!-- MAIN -->
     <main>
-      
-       <!-- PPS disponibles-->
-       <div class="h2 mb-4">PPS disponibles</div>
-      
-       <div class="container">
-         <div class="row">
-           <div class="col-12 mb-5">
-             <table class="table table-striped align-middle text-center">
-               <thead class="table-borderless">
-                 <tr class="table-header">
-                   <td><h5 class="table-header-text">Entidad</h5></td>
-                   <td><h5 class="table-header-text">Objetivo</h5></td>
-                   <td><h5 class="table-header-text">Fecha Inicio</h5></td>
-                   <td><h5 class="table-header-text">Fecha Fin</h5></td>
-                   <td><h5 class="table-header-text">Presupuesto</h5></td>
-                   <td><h3 class="table-header-text">Posibilidad de contratación?</h3></td>
-                 </tr>
-               </thead>
-               <tbody id="tbody-disponibles" class="table-borderless" style="border-top: none !important;">
-               </tbody>
-             </table>
-           </div>
-         </div>
+      <div class="container mt-5 pb-2">
+        <h1 class="title text-center">Prácticas Profesionales Supervisadas</h1>
+      </div>
+      <div class="container mt-2 pb-2">
+        <h1 class="sub-title modal-header">Disponibles</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 px-5 mb-2">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h5 class="table-header-text">Entidad</h5></td>
+                  <td><h5 class="table-header-text">Objetivo</h5></td>
+                  <td><h5 class="table-header-text">Desde</h5></td>
+                  <td><h5 class="table-header-text">Hasta</h5></td>
+                  <td><h5 class="table-header-text">Presup.</h5></td>
+                  <td><h3 class="table-header-text">Contrat.</h3></td>
+                </tr>
+              </thead>
+              <tbody id="tbody-disponibles" class="table-borderless" style="border-top: none !important;">
+              </tbody>
+            </table>
+          </div>
+        </div>
        </div>
 
-       <!-- PPS en curso-->
-       <div class="h2 mb-4">PPS en curso</div>
-      
-       <div class="container">
-         <div class="row">
-           <div class="col-12 mb-5">
-             <table class="table table-striped align-middle text-center">
-               <thead class="table-borderless">
-                 <tr class="table-header">
-                   <td><h3 class="table-header-text">Entidad</h3></td>
-                   <td><h3 class="table-header-text">Objetivo</h3></td>
-                   <td><h3 class="table-header-text">Fecha Inicio</h3></td>
-                   <td><h3 class="table-header-text">Fecha Fin</h3></td>
-                   <td><h3 class="table-header-text">Presupuesto</h3></td>
-                   <td><h3 class="table-header-text">Posibilidad de contratación?</h3></td>
-                   <td><h3 class="table-header-text">Estudiantes</h3></td>
-                   <td><h3 class="table-header-text">Tutores</h3></td>
-                   <td><h3 class="table-header-text">Lugar</h3></td>
-                   <td><h3 class="table-header-text">pdts</h3></td>
-                   <td><h3 class="table-header-text">pps</h3></td>
-                   <td><h3 class="table-header-text">psc</h3></td>
-                 </tr>
-               </thead>
-               <tbody id="tbody-curso" class="table-borderless" style="border-top: none !important;">
-               </tbody>
-             </table>
-           </div>
-         </div>
+      <div class="container mt-2 pb-2">
+        <h1 class="sub-title modal-header">En Curso</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 px-5 mt-2">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h3 class="table-header-text-mini">Entidad</h3></td>
+                  <td><h3 class="table-header-text-mini">Objetivo</h3></td>
+                  <td><h3 class="table-header-text-mini">Desde</h3></td>
+                  <td><h3 class="table-header-text-mini">Hasta</h3></td>
+                  <td><h3 class="table-header-text-mini">Presup.</h3></td>
+                  <td><h3 class="table-header-text-mini">Contrat.</h3></td>
+                  <td><h3 class="table-header-text-mini">Estudiantes</h3></td>
+                  <td><h3 class="table-header-text-mini">Tutores</h3></td>
+                  <td><h3 class="table-header-text-mini">Lugar</h3></td>
+                  <td><h3 class="table-header-text-mini">PDTS</h3></td>
+                  <td><h3 class="table-header-text-mini">PPS</h3></td>
+                  <td><h3 class="table-header-text-mini">PSC</h3></td>
+                </tr>
+              </thead>
+              <tbody id="tbody-curso" class="table-borderless" style="border-top: none !important;">
+              </tbody>
+            </table>
+          </div>
+        </div>
        </div>
 
-       <!-- PPS finalizadas-->
-       <div class="h2 mb-4">PPS en curso</div>
-      
-       <div class="container">
-         <div class="row">
-           <div class="col-12 mb-5">
-             <table class="table table-striped align-middle text-center">
-               <thead class="table-borderless">
-                 <tr class="table-header">
-                   <td><h3 class="table-header-text">Entidad</h3></td>
-                   <td><h3 class="table-header-text">Objetivo</h3></td>
-                   <td><h3 class="table-header-text">Fecha Inicio</h3></td>
-                   <td><h3 class="table-header-text">Fecha Fin</h3></td>
-                   <td><h3 class="table-header-text">Presupuesto</h3></td>
-                   <td><h3 class="table-header-text">Posibilidad de contratación?</h3></td>
-                   <td><h3 class="table-header-text">Estudiantes</h3></td>
-                   <td><h3 class="table-header-text">Tutores</h3></td>
-                   <td><h3 class="table-header-text">Lugar</h3></td>
-                   <td><h3 class="table-header-text">pdts</h3></td>
-                   <td><h3 class="table-header-text">pps</h3></td>
-                   <td><h3 class="table-header-text">psc</h3></td>
-                 </tr>
-               </thead>
-               <tbody id="tbody-finalizadas" class="table-borderless" style="border-top: none !important;">
-               </tbody>
-             </table>
-           </div>
-         </div>
-       </div>
-
-      <hr class="featurette-divider mb-4">
-      <!-- FOOTER -->
-      <div th:replace="fragments/footer"></div>
+       <div class="container mt-2 pb-2">
+        <h1 class="sub-title modal-header">Finalizadas</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 px-5 mb-5">
+            <table class="table table-striped align-middle text-center">
+              <thead class="table-borderless">
+                <tr class="table-header">
+                  <td><h3 class="table-header-text-mini">Entidad</h3></td>
+                  <td><h3 class="table-header-text-mini">Objetivo</h3></td>
+                  <td><h3 class="table-header-text-mini">Desde</h3></td>
+                  <td><h3 class="table-header-text-mini">Hasta</h3></td>
+                  <td><h3 class="table-header-text-mini">Presup.</h3></td>
+                  <td><h3 class="table-header-text-mini">Contrat.</h3></td>
+                  <td><h3 class="table-header-text-mini">Estudiantes</h3></td>
+                  <td><h3 class="table-header-text-mini">Tutores</h3></td>
+                  <td><h3 class="table-header-text-mini">Lugar</h3></td>
+                  <td><h3 class="table-header-text-mini">PDTS</h3></td>
+                  <td><h3 class="table-header-text-mini">PPS</h3></td>
+                  <td><h3 class="table-header-text-mini">PSC</h3></td>
+                </tr>
+              </thead>
+              <tbody id="tbody-finalizadas" class="table-borderless" style="border-top: none !important;">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </main>
+      <!-- FOOTER -->
+    <footer>
+      <div th:replace="fragments/footer"></div>
+    </footer>
+      <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="pps.js"></script>
   </body>

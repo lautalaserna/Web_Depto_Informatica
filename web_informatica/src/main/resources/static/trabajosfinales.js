@@ -30,9 +30,9 @@ function fillRow(tbody, obj, i){
     let td_demandante = tr.insertCell(2)
     let td_directores = tr.insertCell(3)
     let td_url = tr.insertCell(4)
-    td_titulo.innerHTML = obj.titulo
-    td_estudiantes.innerHTML = obj.estudiantes
-    td_demandante.innerHTML = obj.demandante
-    td_directores.innerHTML = obj.directores
-    td_url.innerHTML = `<a href=${obj.url}>ver trabajo</a>`
+    td_titulo.innerHTML = `<h5 class="py-2">${obj.titulo}</h5>`
+    td_estudiantes.innerHTML = `<h5 class="py-2">${obj.estudiantes}</h5>`
+    td_demandante.innerHTML = `<h5 class="py-2">${obj.demandante}</h5>`
+    td_directores.innerHTML = `<h5 class="py-2">${obj.directores}</h5>`
+    td_url.innerHTML = `<a href=${obj.url}><h5 class="py-2">Ver Trabajo</h5></a>`
 }
