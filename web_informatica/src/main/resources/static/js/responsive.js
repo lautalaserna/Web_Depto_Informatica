@@ -27,23 +27,23 @@ function scrollFunction() {
 }
 
 btnTop.addEventListener("click", () => {
-    document.body.scrollTop = 400;
-    document.documentElement.scrollTop = 400;
+    document.body.scrollTop = 380;
+    document.documentElement.scrollTop = 380;
 });
 
 btnInstitucional.addEventListener("click",()=>{
-    document.body.scrollTop = 2950;
-    document.documentElement.scrollTop = 2950;
+    document.body.scrollTop = 2800;
+    document.documentElement.scrollTop = 2800;
 });
 
 btnCarrera.addEventListener("click",()=>{
-    document.body.scrollTop = 1080;
-    document.documentElement.scrollTop = 1080;
+    document.body.scrollTop = 800;
+    document.documentElement.scrollTop = 800;
 })
 
 btnNovedades.addEventListener("click",()=>{
-    document.body.scrollTop = 2190;
-    document.documentElement.scrollTop = 2190;
+    document.body.scrollTop = 2000;
+    document.documentElement.scrollTop = 2000;
 })
 
 function responsiveSection(){

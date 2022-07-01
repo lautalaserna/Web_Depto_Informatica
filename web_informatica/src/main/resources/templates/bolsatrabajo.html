@@ -14,25 +14,30 @@
     <!-- MAIN -->
     <main>
 
-      <div th:if="${!list.isEmpty()}" th:each="trabajo : ${list}" class="container my-5">
-        <div class="header-investigacion">
-            <h4 th:text="| ${trabajo.fecha} ${trabajo.titulo}"></h4>
-        </div>
-        <div class="p-4 body-investigacion">
-            <div class="container">
-                <p th:text="${trabajo.info}" class="lead"></p>
-            </div>
-
-            <div class="text-end">
-              <a th:href="@{|/novedad?id=${trabajo.id_novedad}|}" type="button" class="btn btn-section-size btn-style rounded text-center">
-                <h4 class="pt-1">Ver</h4>
-              </a>
-            </div>
-
-        </div>
+      <div class="container mt-4 pb-2">
+        <h1 class="title modal-header mb-3">Bosla de Trabajo</h1>
       </div>
   
-  
+      <div th:if="${!list.isEmpty()}" th:each="trabajo : ${list}" class="container">
+        
+        <div class="row">
+          <div class="col-4 text-center">
+            <img src="img/Leaves.jpg" class="rounded" height="240" width="340">
+          </div>
+          <div class="col-8 text-start">
+            <h3 th:text="| ${trabajo.fecha} ${trabajo.titulo}"></h3>
+            <p th:text="${trabajo.info}" class="lead"></p>
+            <div class="text-end" style="margin-top: 10%; margin-right: 5%;">
+              <a th:href="@{|/novedad?id=${trabajo.id_novedad}|}" type="button" class="btn btn-style rounded text-center">
+                <h5 class="pt-2">Ver más <img src="img/chevron-forward.svg" height="20" width="20" class="white-filter"></h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="featurette-divider my-4">
+      </div>
+
+
       <!--Pagination-->
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">

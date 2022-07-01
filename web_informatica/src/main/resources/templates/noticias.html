@@ -28,6 +28,11 @@
           <div class="col-8 text-start">
             <h3 th:text="| ${noticia.fecha} ${noticia.titulo}"></h3>
             <p th:text="${noticia.info}" class="lead"></p>
+            <div class="text-end" style="margin-top: 10%; margin-right: 5%;">
+              <a th:href="@{|/novedad?id=${noticia.id_novedad}|}" type="button" class="btn btn-style rounded text-center">
+                <h5 class="pt-2">Ver más <img src="img/chevron-forward.svg" height="20" width="20" class="white-filter"></h5>
+              </a>
+            </div>
           </div>
         </div>
         <hr class="featurette-divider my-4">

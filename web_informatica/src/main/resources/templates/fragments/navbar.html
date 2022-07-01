@@ -25,11 +25,11 @@
           <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
           <ul class="dropdown-menu">
               <li><a class="dropdown-item dd-space" th:href="@{plan}">Plan de Estudios</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{optativas}">Materias Optativas</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{calendario}">Calendario Académico</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{graduados}">Alumnos Graduados</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{trabajosfinales}">Trabajos Fianles</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{optativas}">Optativas</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{calendario}">Calendario</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{graduados}">Graduados</a></li>
               <li><a class="dropdown-item dd-space" th:href="@{pps}">PPS</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{trabajosfinales}">Trabajos Fianles</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -43,10 +43,36 @@
           <a class="nav-link bar-letter active" th:href="@{contacto}">Contacto</a>
         </li>
       </ul>
-      <form class="d-flex">
+      <!-- <button class="btn btn-outline-success btn-navbar" type="submit">Ingresar</button> -->
+      <div sec:authorize="isAnonymous()">
+        <a th:href="@{login}" type="button" class="btn btn-navbar me-4 px-4"><h5 class="dd-space" style="padding-top: 2px;">Ingresar <img src="img/enter.svg" height="20" width="20" class="white-filter"></h5></a>
+      </div>
+
+      <div sec:authorize="isAuthenticated()">
+        <!-- <a th:href="@{login}" type="button" class="btn btn-navbar">
+          <h5 th:text="|${#authentication.getPrincipal().getUsername()}|"></h5>
+        </a> -->
+        <div class="btn-group me-4">
+          <a class="btn btn-navbar dd-space d-flex px-4" style="justify-content: center;">
+            <img src="img/person.svg" height="20" width="20" class="white-filter mt-1 me-2">
+            <h5 class="dd-space" style="padding-top: 2px;" th:text="|${#authentication.getPrincipal().getUsername()}|"></h5>
+          </a>
+          <a type="button" class="btn dropdown-toggle-split btn-dd" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/arrow-down.svg" height="20" width="20" class="white-filter">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-start">
+            <li><a class="dropdown-item dd-space" th:href="@{admin}">Panel de Control</a></li>
+            <li>
+              <form th:action="@{/logout}" method="post">
+                <button class="dropdown-item dd-space" type="submit">Cerrar sesión</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- <form class="d-flex" th:action="@{/hot-deal-step-1}"> -->
         <!--input class="form-control me-2" type="search" placeholder="Search" aria-label="Search-!-->
-        <button class="btn btn-outline-success btn-navbar" type="submit">Ingresar</button>
-      </form>
+      <!-- </form> -->
     </div>
   </div>
 </nav>

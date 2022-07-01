@@ -39,14 +39,16 @@ main{
 }
 
 .bar-letter{
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 300;
     margin-left: 6px;
     margin-right: 2px;
     color: #fff;
 }
 
 .dd-space{
+    font-size: 18px;
+    font-weight: 300;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -71,7 +73,7 @@ ul.dropdown-menu>li>a:hover{
 
 .dropdown-menu{
     background-color: #eee;
-    width: 200px;
+    width: 170px;
     border: none;
     border-radius: 2px 2px 8px 8px;
 }
@@ -146,19 +148,37 @@ ul.dropdown-menu>li>a:hover{
 }
 
 .btn-navbar{
+    height: 44px;
     color: #fff;
     border: none;
     border-radius: 20px;
     padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
     background-color: #006060;
     transition: 250ms ease-in-out;
-    transition: 250ms;
 }
 
 .btn-navbar:hover{
+    color: #fff;
+    border: none;
+    background-color: #007070;
+    transform: scale(1.05);
+}
+
+.btn-dd{
+    height: 44px;
+    width: 44px;
+    color: #fff;
+    padding-top: 8px;
+    padding-left: 8px;
+    border: none;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    background-color: #006060;
+    transition: 250ms ease-in-out;
+}
+
+.btn-dd:hover{
     color: #fff;
     border: none;
     background-color: #007070;
