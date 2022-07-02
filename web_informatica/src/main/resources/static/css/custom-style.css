@@ -73,11 +73,42 @@ ul.dropdown-menu>li>a:hover{
 
 .dropdown-menu{
     background-color: #eee;
+    width: 200px;
+    border: none;
+    border-radius: 2px 2px 8px 8px;
+}
+
+.dropdown-menu-user{
+    background-color: #eee;
     width: 170px;
     border: none;
     border-radius: 2px 2px 8px 8px;
 }
 
+.btn-user{
+    height: 44px;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-left: 14px;
+    background-color: #006060;
+    transition: 250ms ease-in-out;
+}
+
+.btn-user:hover{
+    color: #fff;
+}
+
+.btn-cerrar-sesion{
+    transition: 250ms ease-in-out;
+}
+
+.btn-cerrar-sesion:hover{
+    background-color: indianred;
+    color:#fff;
+    padding-left: 25px;
+}
 
 /* #################### BACK-TO-TOP #################### */
 
@@ -106,6 +137,40 @@ ul.dropdown-menu>li>a:hover{
 #btn-back-to-top:hover {
     transform: scale(1.1) !important;
     background-color: #008080;
+}
+
+/* #################### PAGINACIÓN #################### */
+
+.pagination > li {
+    min-width: 40px;
+}
+
+.pagination > li > a {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    background-color: white;
+    color: #333;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a {
+    color: white;
+    background-color: #006060 !important;
+    border: solid 1px #006060 !important;
+}
+
+.pagination > .active > a:hover {
+    background-color: #008080 !important;
+    border: solid 1px #008080 !important;
 }
 
 /* #################### INVESTIGACIÓN #################### */
