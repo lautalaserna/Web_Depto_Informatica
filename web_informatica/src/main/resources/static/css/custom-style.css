@@ -430,11 +430,6 @@ h6{
     max-width: 100%;
 }
 
-.thumbnail{
-    width: 300px; 
-    height: 300px; 
-}
-
 /* #################### UTILITY #################### */
 
 .hovereable{
@@ -459,4 +454,12 @@ h6{
 
 .grey-filter:hover{
     filter: invert(20%) brightness(100%) contrast(100%);
+}
+
+.news{
+    transition: 250ms;
+}
+
+.news:hover{
+    transform: scale(1.02);
 }

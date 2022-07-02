@@ -18,25 +18,23 @@
         <h1 class="title modal-header mb-3">Bosla de Trabajo</h1>
       </div>
   
-      <div th:if="${!list.isEmpty()}" th:each="trabajo : ${list}" class="container">
-        
+      <div th:if="${!list.isEmpty()}" th:each="trabajo : ${list}" class="container">        
         <div class="row">
           <div class="col-4 text-center">
-            <img src="img/Leaves.jpg" class="rounded" height="240" width="340">
+            <a th:href="@{|/novedad?id=${trabajo.id_novedad}|}" type="button" class="btn">
+              <img th:src="${trabajo.imgurl}" class="rounded img-fluid news">
+            </a>
           </div>
-          <div class="col-8 text-start">
-            <h3 th:text="| ${trabajo.fecha} ${trabajo.titulo}"></h3>
-            <p th:text="${trabajo.info}" class="lead"></p>
-            <div class="text-end" style="margin-top: 10%; margin-right: 5%;">
-              <a th:href="@{|/novedad?id=${trabajo.id_novedad}|}" type="button" class="btn btn-style rounded text-center">
-                <h5 class="pt-2">Ver más <img src="img/chevron-forward.svg" height="20" width="20" class="white-filter"></h5>
-              </a>
+          <div class="col-8 text-start" style="position:relative;">
+            <h2 th:text="${trabajo.titulo}" style="font-weight: 400;"></h2>
+            <h4 th:text="${trabajo.info}" class="lead"></h4>
+            <div class="" style="position:absolute; bottom:0px; right: 20px;">
+              <h4 th:text="${trabajo.fecha}" class="lead" style="font-style: italic;"></h4>
             </div>
           </div>
         </div>
         <hr class="featurette-divider my-4">
       </div>
-
 
       <!--Pagination-->
       <nav aria-label="Page navigation example">
