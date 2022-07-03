@@ -66,8 +66,23 @@ ul.dropdown-menu>li>a:hover{
     padding-left: 25px;
 } 
 
+.dropdown .dropdown-menu {
+    display: none;
+    margin-top: 0;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
+    margin-top: 0;
+}
+
+.dropdown .dropdown-menu .dropdown-menu-tablas{
+    display: none;
+    margin-top: 0;
+}
+
+.dropdown:hover .dropdown-menu .dropdown-menu-tablas{
+    display: none;
     margin-top: 0;
 }
 
@@ -81,6 +96,13 @@ ul.dropdown-menu>li>a:hover{
 .dropdown-menu-user{
     background-color: #eee;
     width: 170px;
+    border: none;
+    border-radius: 2px 2px 8px 8px;
+}
+
+.dropdown-menu-tablas{
+    background-color: #eee;
+    width: 230px;
     border: none;
     border-radius: 2px 2px 8px 8px;
 }
@@ -459,4 +481,33 @@ h6{
     padding-bottom: 6%;
     border: none;
     border-radius: 20px;
+}
+
+.admin{
+    background-color: #000;
+}
+
+.btn-add{
+    background-color: #5dac4f;
+    padding: 8px;
+    padding-top: 10px;
+    border-radius: 20px;
+    transition: 250ms;
+}
+
+.btn-delete{
+    background-color: indianred;
+    padding: 10px;
+    padding-top: 8px;
+    border-radius: 20px;
+    transition: 250ms;
+}
+
+
+.btn-edit{
+    background-color: #f3c300;
+    padding: 10px;
+    padding-top: 8px;
+    border-radius: 20px;
+    transition: 250ms;
 }

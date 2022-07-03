@@ -18,28 +18,23 @@
             <div th:replace="fragments/navbar"></div>
         </header>
 
-        <div class="container">
-            <h1>Panel de administración</h1>
-        </div>
-
-        <div th:text="|Bienvenido ${#authentication.getPrincipal().getUsername()} !|" class="h5"></div>
-
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" th:href="@{|/admin/graduados|}">Editar Graduados</a>
-            </li>
-            
-            <!--
-            <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
-              <a class="page-link" th:href="@{|/noticias?page=${page}|}" th:text="${page}"></a>
-            </li>
-            
-            <li class="page-item" th:classappend="${current == last? 'disabled':''}">
-              <a class="page-link" th:href="@{|/noticias?page=${next}|}">Siguiente</a>
-            </li>-->
-          </ul>
-
-
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header ps-0">Panel de Control
+              <div class="text-end">
+                <a type="button" class="btn btn-style rounded px-4" data-bs-toggle="dropdown" aria-expanded="false">
+                  <h5 class="pt-2">Tablas Disponibles <img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter"></h5>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-tablas">
+                  <li><a class="dropdown-item dd-space" th:href="@{|/admin/graduados|}">Graduados</a></li>
+                  <li><a class="dropdown-item dd-space">Calendario Académico</a></li>
+                  <li><a class="dropdown-item dd-space">Elecciones</a></li>
+                </ul>
+              </div>
+            </h1>
+          </div>
+        </main>
+        
         <!-- SCRIPTS -->
         <script src="js\bootstrap.bundle.min.js"></script>
     </body>
