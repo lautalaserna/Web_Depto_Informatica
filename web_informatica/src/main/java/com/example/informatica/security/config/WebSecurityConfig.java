@@ -24,10 +24,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			.cors().and().csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/js/**", "/css/**").permitAll()
 			.antMatchers("/login*").permitAll()
-			.antMatchers("/admin").authenticated()
+			.antMatchers("/api/**").permitAll()
+			.antMatchers("/admin/**").authenticated()
+			//graduados
+			.antMatchers("/admin_graduados**").authenticated() //has role graduados
 			.and()
 			.formLogin()
 			.loginPage("/login")
@@ -37,7 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.logout()
 			.logoutSuccessUrl("/")
 			.permitAll();
-			
 	}
 	
 	@Override

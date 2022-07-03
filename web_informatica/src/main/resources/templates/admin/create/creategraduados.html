@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <div class="container">
+            <h1>Crear graduado</h1>
+        </div>
+
+
+        <!--Formulario-->
+      <form th:action="@{/admin_graduados_nuevo}" th:object="${graduado}" method="post">
+
+        <h1 class="h3 mb-3 fw-normal">Nuevo graduado</h1>
+
+       <div class="form-floating">
+        <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
+          <label for="username">Nombre completo</label>
+        </div>
+       <div class="form-floating">
+         <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
+          <label for="fecha">Fecha (dd-MM-yyyy)</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Crear</button>
+      </form>
+
+
+        <!-- SCRIPTS -->
+        <script src="js\bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+<!--
+<div class="container" style="width: 300px;">
+    <form th:action="@{/logout}" method="post">
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Cerrar sesión</button>
+    </form>
+</div>
+-->

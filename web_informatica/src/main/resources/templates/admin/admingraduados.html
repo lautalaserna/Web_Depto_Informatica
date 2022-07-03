@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <div class="container">
+            <h1>Administración de graduados</h1>
+        </div>
+
+        <a class="page-link" th:href="@{|/admin_graduados_nuevo|}">Nuevo</a>
+
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 mb-5">
+              <table class="table table-striped align-middle text-center">
+                <thead class="table-borderless">
+                  <tr class="table-header">
+                    <td><h2 class="table-header-text">Alumno</h2></td>
+                    <td><h2 class="table-header-text">Año de Egreso</h2></td>
+                    <td><h2 class="table-header-text">Acciones</h2></td>
+                  </tr>
+                </thead>
+
+                <tbody class="table-borderless" style="border-top: none !important;">
+                  <tr th:each="graduado :${graduados}">
+                    <td><h4 class="py-2" th:text="${graduado.nombre_completo}"></h4></td>
+                    <td><h4 class="py-2" th:text="${graduado.fecha}"></h4></td>
+                    <!--td><h2 class="table-header-text" th:text="${}"></h2></td>-->
+                  </tr>
+                </tbody>
+              
+              </table>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js\bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
+<!--
+<div class="container" style="width: 300px;">
+    <form th:action="@{/logout}" method="post">
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Cerrar sesión</button>
+    </form>
+</div>
+-->

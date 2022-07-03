@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <div class="container">
+            <h1>Panel de administración</h1>
+        </div>
+
+        <div th:text="|Bienvenido ${#authentication.getPrincipal().getUsername()} !|" class="h5"></div>
+
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" th:href="@{|/admin_graduados|}">Editar Graduados</a>
+            </li>
+            
+            <!--
+            <li class="page-item" th:each="page : ${pages}" th:classappend="${current == page? 'active':''}">
+              <a class="page-link" th:href="@{|/noticias?page=${page}|}" th:text="${page}"></a>
+            </li>
+            
+            <li class="page-item" th:classappend="${current == last? 'disabled':''}">
+              <a class="page-link" th:href="@{|/noticias?page=${next}|}">Siguiente</a>
+            </li>-->
+          </ul>
+
+
+        <!-- SCRIPTS -->
+        <script src="js\bootstrap.bundle.min.js"></script>
+    </body>
+</html>

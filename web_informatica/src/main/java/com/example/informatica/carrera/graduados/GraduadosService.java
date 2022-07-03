@@ -18,4 +18,8 @@ public class GraduadosService {
 	public List<Graduados> getGraduados() {
 		return graduadosRepository.findAll();
 	}
+	
+	public void addGraduado(Graduados graduado) {
+		graduadosRepository.save(graduado);
+	}
 }

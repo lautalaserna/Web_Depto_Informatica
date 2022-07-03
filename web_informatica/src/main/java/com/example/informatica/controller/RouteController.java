@@ -103,6 +103,6 @@ public class RouteController {
 	
 	@GetMapping("/admin")
 	public String admin() {
-		return "admin";
+		return "admin/admin";
 	}
 }
