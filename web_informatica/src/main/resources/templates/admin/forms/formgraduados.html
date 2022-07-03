@@ -19,14 +19,14 @@
         </header>
 
         <div class="container">
-            <h1>Crear graduado</h1>
+            <h1>Editar graduado</h1>
         </div>
 
-
+      
         <!--Formulario-->
-      <form th:action="@{/admin_graduados_nuevo}" th:object="${graduado}" method="post">
+      <form th:action="@{/admin/graduados/{id}(id=${graduado.id_graduado})}" th:object="${graduado}" method="post">
 
-        <h1 class="h3 mb-3 fw-normal">Nuevo graduado</h1>
+        <h1 class="h3 mb-3 fw-normal">Editar graduado</h1>
 
        <div class="form-floating">
         <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
@@ -37,12 +37,11 @@
           <label for="fecha">Fecha (dd-MM-yyyy)</label>
         </div>
 
-        <button class="w-100 btn btn-lg btn-navbar" type="submit">Crear</button>
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
       </form>
 
-
         <!-- SCRIPTS -->
-        <script src="js\bootstrap.bundle.min.js"></script>
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
     </body>
 </html>
 

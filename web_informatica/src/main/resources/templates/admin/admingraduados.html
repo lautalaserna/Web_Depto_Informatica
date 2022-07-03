@@ -22,8 +22,7 @@
             <h1>Administración de graduados</h1>
         </div>
 
-        <a class="page-link" th:href="@{|/admin_graduados_nuevo|}">Nuevo</a>
-
+        <a class="page-link" th:href="@{|/admin/graduados/editar/0|}">Nuevo</a>
         
         <div class="container">
           <div class="row">
@@ -42,7 +41,10 @@
                   <tr th:each="graduado :${graduados}">
                     <td><h4 class="py-2" th:text="${graduado.nombre_completo}"></h4></td>
                     <td><h4 class="py-2" th:text="${graduado.fecha}"></h4></td>
-                    <!--td><h2 class="table-header-text" th:text="${}"></h2></td>-->
+                    <td>
+                      <a type="button" th:href="@{/admin/graduados/editar/{id}(id=${graduado.id_graduado})}" class="btn btn-info">Editar</a>
+                      <a type="button" onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/graduados/delete/{id}(id=${graduado.id_graduado})}" class="btn btn-danger">Eliminar</a>
+                    </td>
                   </tr>
                 </tbody>
               
@@ -56,11 +58,3 @@
         <script src="js\bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
-<!--
-<div class="container" style="width: 300px;">
-    <form th:action="@{/logout}" method="post">
-        <button class="w-100 btn btn-lg btn-navbar" type="submit">Cerrar sesión</button>
-    </form>
-</div>
--->
