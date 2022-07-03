@@ -24,9 +24,6 @@ public class AdminGraduadosController {
 	//ADMIN
 	@GetMapping("/admin/graduados")
 	public String getAdminGraduados(Model model) {
-		
-		model.addAttribute("headers", List.of("nombre completo","fecha"));
-		model.addAttribute("entidad", "graduados");
 		List<Graduados> graduados = graduadosService.getGraduados();
 		model.addAttribute("graduados", graduados);
 		return "admin/admingraduados";

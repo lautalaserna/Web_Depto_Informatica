@@ -49,6 +49,11 @@ public class NovedadesController {
 	public String novedad(@RequestParam Map<String, Object> params, Model model) {
 		Optional<Novedades> novedad = novedadesService.getNovedad(Integer.valueOf(params.get("id").toString()));
 		model.addAttribute("novedad", novedad.get());
+		if(novedad.get().getIs_bolsa_trabajo() == 'Y'){
+			model.addAttribute("entidad","bolsatrabajo");
+		}else {
+			model.addAttribute("entidad","noticias");
+		}
 		return "novedad";
 	}
 	

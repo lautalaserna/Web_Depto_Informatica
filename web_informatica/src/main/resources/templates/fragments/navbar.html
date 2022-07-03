@@ -15,32 +15,32 @@
         <li class="nav-item dropdown">
           <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Institucional</a>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item dd-space" th:href="@{autoridades}">Autoridades</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{docentes}">Docentes</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{investigacion}">Investigación</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{elecciones}">Elecciones</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/autoridades}">Autoridades</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/docentes}">Docentes</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/investigacion}">Investigación</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/elecciones}">Elecciones</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Carerra</a>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item dd-space" th:href="@{plan}">Plan de Estudios</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{optativas}">Optativas</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{calendario}">Calendario</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{graduados}">Graduados</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{pps}">PPS</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{trabajosfinales}">Trabajos Fianles</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/plan}">Plan de Estudios</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/optativas}">Optativas</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/calendario}">Calendario</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/graduados}">Graduados</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/pps}">PPS</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/trabajosfinales}">Trabajos Fianles</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link bar-letter dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Novedades</a>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item dd-space" th:href="@{noticias}">Últimas Noticias</a></li>
-              <li><a class="dropdown-item dd-space" th:href="@{bolsatrabajo}">Bolsa de Trabajo</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/noticias}">Últimas Noticias</a></li>
+              <li><a class="dropdown-item dd-space" th:href="@{/bolsatrabajo}">Bolsa de Trabajo</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link bar-letter active" th:href="@{contacto}">Contacto</a>
+          <a class="nav-link bar-letter active" th:href="@{/contacto}">Contacto</a>
         </li>
       </ul>
       <!-- <button class="btn btn-outline-success btn-navbar" type="submit">Ingresar</button> -->
@@ -51,14 +51,14 @@
       <div sec:authorize="isAuthenticated()">
         <div class="btn-group me-4">
           <a class="btn btn-user dd-space d-flex px-4" style="justify-content: center;">
-            <img src="img/person.svg" height="20" width="20" class="white-filter mt-1 me-2">
+            <img th:src="@{/img/person.svg}" height="20" width="20" class="white-filter mt-1 me-2">
             <h5 class="dd-space" style="padding-top: 2px;" th:text="|${#authentication.getPrincipal().getUsername()}|"></h5>
           </a>
           <a type="button" class="btn dropdown-toggle-split btn-dd" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="img/arrow-down.svg" height="20" width="20" class="white-filter">
+            <img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter">
           </a>
           <ul class="dropdown-menu dropdown-menu-user dropdown-menu-start">
-            <li><a class="dropdown-item dd-space" th:href="@{admin}">Panel de Control</a></li>
+            <li><a class="dropdown-item dd-space" th:href="@{/admin}">Panel de Control</a></li>
             <li>
               <form th:action="@{/logout}" method="post">
                 <button class="dropdown-item dd-space btn-cerrar-sesion" type="submit">Cerrar sesión</button>
