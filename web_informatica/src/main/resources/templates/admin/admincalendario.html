@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="container">
-            <title>Admin panel</title>
+            <title>Admin Panel</title>
         </div>
 
     </head>
@@ -19,29 +19,15 @@
         </header>
         
         <main>
-          <!-- ################################################################# -->
-          <div class="container mt-5 pb-2">
-            <h1 class="title modal-header ps-0">Panel de Control
-              <div class="text-end">
-                <a type="button" class="btn btn-style rounded px-4" data-bs-toggle="dropdown" aria-expanded="false">
-                  <h5 class="pt-2">Tablas Disponibles <img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter"></h5>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-tablas">
-                  <li><a class="dropdown-item dd-space" th:href="@{|/admin/graduados|}">Graduados</a></li>
-                  <li><a class="dropdown-item dd-space" th:href="@{|/admin/calendario|}">Calendario Académico</a></li>
-                  <li><a class="dropdown-item dd-space">Elecciones</a></li>
-                </ul>
-              </div>
-            </h1>
-          </div>
-          <!-- ################################################################# -->
+          <!-- ADMIN HEADER -->
+          <div th:replace="@{/fragments/admin-header}"></div>
   
           <div class="container mt-3 pb-2">
             <h1 class="sub-title modal-header ps-0">
-              Calendario Academico
+              Calendario Académico
               <div class="text-end">
                 <a th:href="@{|/admin/calendario/editar/0|}" type="button" class="btn btn-add hovereable">
-                  <img th:src="@{/img/add.svg}" height="40" width="40" class="white-filter">
+                  <h5 class="mb-0 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
                 </a>
               </div>
             </h1>
@@ -49,27 +35,25 @@
         
           <div class="container">
             <div class="row">
-              <div class="col-2"></div>
-              <div class="col-8 mb-5">
+              <div class="col-1"></div>
+              <div class="col-10 mb-5">
                 <table class="table table-striped align-middle text-center">
                   <thead class="table-borderless">
                     <tr class="table-header">
-                      <td><h2 class="table-header-text">id</h2></td>
-                      <td><h2 class="table-header-text">Fecha inicio</h2></td>
-                      <td><h2 class="table-header-text">Fecha fin</h2></td>
-                      <td><h2 class="table-header-text">Motivo</h2></td>
-                      <td><h2 class="table-header-text">url</h2></td>
-                      <td><h2 class="table-header-text">Acciones</h2></td>
+                      <td><h2 class="table-header-text-mini">Fecha inicio</h2></td>
+                      <td><h2 class="table-header-text-mini">Fecha fin</h2></td>
+                      <td><h2 class="table-header-text-mini">Motivo</h2></td>
+                      <td><h2 class="table-header-text-mini">URL</h2></td>
+                      <td><h2 class="table-header-text-mini">Acciones</h2></td>
                     </tr>
                   </thead>
   
                   <tbody class="table-borderless" style="border-top: none !important;">
                     <tr th:each="item :${calendario}">
-                      <td><h4 class="py-2" th:text="${item.id_calendario_academico}"></h4></td>
-                      <td><h4 class="py-2" th:text="${item.fecha_inicio}"></h4></td>
-                      <td><h4 class="py-2" th:text="${item.fecha_fin}"></h4></td>
-                      <td><h4 class="py-2" th:text="${item.concepto}"></h4></td>
-                      <td><h4 class="py-2" th:text="${item.url}"></h4></td>
+                      <td><h5 class="py-2" th:text="${item.fecha_inicio}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.fecha_fin}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.concepto}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.url}"></h5></td>
                       <td>
                         <a th:href="@{/admin/calendario/editar/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-edit hovereable me-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
@@ -83,7 +67,7 @@
                 
                 </table>
               </div>
-              <div class="col-2"></div>
+              <div class="col-1"></div>
             </div>
           </div>
         </main>

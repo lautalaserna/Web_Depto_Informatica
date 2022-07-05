@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="container">
-            <title>Admin panel</title>
+            <title>Admin Panel</title>
         </div>
 
     </head>
@@ -18,27 +18,31 @@
             <div th:replace="fragments/navbar"></div>
         </header>
 
-        <div class="container">
-            <h1>Editar graduado</h1>
-        </div>
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Alumno Graduado</h1>
+          </div>
 
-      
-        <!--Formulario-->
-      <form th:action="@{/admin/graduados/{id}(id=${graduado.id_graduado})}" th:object="${graduado}" method="post">
-
-        <h1 class="h3 mb-3 fw-normal">Editar graduado</h1>
-
-       <div class="form-floating">
-        <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
-          <label for="username">Nombre completo</label>
-        </div>
-       <div class="form-floating">
-         <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
-          <label for="fecha">Fecha (dd-MM-yyyy)</label>
-        </div>
-
-        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
-      </form>
+          <div class="container">
+            <form th:action="@{/admin/graduados/{id}(id=${graduado.id_graduado})}" th:object="${graduado}" method="post">      
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
+                    <label for="username" class="text-muted">Nombre Completo</label>
+                  </div>
+                  <div class="form-floating mb-2">
+                    <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
+                    <label for="fecha" class="text-muted">Fecha (dd-mm-aaaa)</label>
+                  </div>
+                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
+                </div>
+                <div class="col-2"></div>
+              </div>
+            </form>
+          </div>
+        </main>
 
         <!-- SCRIPTS -->
         <script th:src="@{\js\bootstrap.bundle.min.js}"></script>

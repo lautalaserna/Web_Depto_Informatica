@@ -489,25 +489,28 @@ h6{
 
 .btn-add{
     background-color: #5dac4f;
-    padding: 8px;
-    padding-top: 10px;
+    color: #fff;
+    padding: 10px;
     border-radius: 20px;
     transition: 250ms;
+}
+
+.btn-add:hover{
+    color: #fff;
 }
 
 .btn-delete{
     background-color: indianred;
     padding: 10px;
-    padding-top: 8px;
+    padding-top: 7px;
     border-radius: 20px;
     transition: 250ms;
 }
 
-
 .btn-edit{
     background-color: #f3c300;
     padding: 10px;
-    padding-top: 8px;
+    padding-top: 7px;
     border-radius: 20px;
     transition: 250ms;
 }

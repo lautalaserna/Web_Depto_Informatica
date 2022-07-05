@@ -1,0 +1,19 @@
+<div class="container mt-5 pb-2">
+    <h1 class="title modal-header ps-0">Panel de Control
+      <div class="text-end">
+        <a type="button" class="btn btn-style rounded px-4" data-bs-toggle="dropdown" aria-expanded="false">
+          <h5 class="pt-2">Tablas Disponibles <img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter"></h5>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-tablas">
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/graduados|}">Graduados</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/calendario|}">Calendario Académico</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/elecciones|}">Elecciones</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/pps|}">PPS</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/trabajosfinales|}">Trabajos Finales</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/investigacion|}">Investigación</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/autoridades|}">Autoridades</a></li>
+          <li><a class="dropdown-item dd-space" th:href="@{|/admin/novedades|}">Novedades</a></li>
+        </ul>
+      </div>
+    </h1>
+</div>
