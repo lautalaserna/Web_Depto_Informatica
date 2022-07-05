@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <div class="container">
+            <h1>Editar calendario</h1>
+        </div>
+
+      
+        <!--Formulario-->
+      <form th:action="@{/admin/calendario/{id}(id=${calendario.id_calendario_academico})}" th:object="${calendario}" method="post">
+
+        <h1 class="h3 mb-3 fw-normal">Editar Calendario</h1>
+
+        <!--id_calendario_academico-->
+        <fieldset disabled>
+          <label for="id" class="form-label" th:value="*{id_calendario_academico}"></label>
+          <input type="text" id="id" class="form-control" placeholder="id">
+        </fieldset>
+        
+        <!--Fecha de Inicio-->
+        <div class="form-floating">
+          <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio" required>
+          <label for="fecha_inicio">Fecha inicio</label>
+        </div>
+
+        <!--Fecha de fin-->
+        <div class="form-floating">
+          <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin" required>
+          <label for="fecha">Fecha fin</label>
+        </div>
+        
+        <!--Motivo-->
+        <div class="form-floating">
+          <input type="text" class="form-control" th:value="*{concepto}" name="concepto" id="concepto" placeholder="motivo" required>
+            <label for="concepto">Motivo</label>
+        </div>
+
+        <!--url-->
+        <div class="form-floating">
+          <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+            <label for="username">url</label>
+        </div>
+
+       
+
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
+      </form>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

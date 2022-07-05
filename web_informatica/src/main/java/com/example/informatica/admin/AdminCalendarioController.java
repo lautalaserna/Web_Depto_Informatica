@@ -54,6 +54,7 @@ public class AdminCalendarioController {
 			calendarioExistente.setFecha_inicio(calendario.getFecha_inicio());
 			calendarioExistente.setFecha_fin(calendario.getFecha_fin());
 			calendarioExistente.setConcepto(calendario.getConcepto());
+			calendarioExistente.setUrl(calendario.getUrl());
 			calendarioService.updateCalendario(calendarioExistente);
 		}
 		return "redirect:/admin/calendario";

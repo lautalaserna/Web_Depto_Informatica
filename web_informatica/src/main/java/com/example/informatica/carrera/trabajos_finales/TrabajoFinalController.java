@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path="/api")
 public class TrabajoFinalController {
 	
-	private TrabajoFInalService trabajoFinalService;
+	private TrabajoFinalService trabajoFinalService;
 	
 	@Autowired
-	public TrabajoFinalController(TrabajoFInalService trabajoFinalService) {
+	public TrabajoFinalController(TrabajoFinalService trabajoFinalService) {
 		this.trabajoFinalService = trabajoFinalService;
 	}
 	
