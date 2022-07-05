@@ -1,6 +1,7 @@
 package com.example.informatica.institucional.autoridades;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,21 @@ public class ConsejoDepartamentalService {
 	
 	public List<Consejo_Departamental> getConsejoDepartamental() {
 		return consejoDepartamentalRepository.findAll();
+	}
+	
+	public void addConsejoDepartamental(Consejo_Departamental consejodepartamental) {
+		consejoDepartamentalRepository.save(consejodepartamental);
+	}
+	
+	public Optional<Consejo_Departamental> getConsejoDepartamental(int id){
+		return consejoDepartamentalRepository.findById(id);
+	}
+	
+	public void updateConsejoDepartamental(Consejo_Departamental consejodepartamental) {
+		consejoDepartamentalRepository.save(consejodepartamental);
+	}
+	
+	public void deleteConsejoDepartamental(int id) {
+		consejoDepartamentalRepository.deleteById(id);
 	}
 }
