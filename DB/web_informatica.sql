@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-06-2022 a las 00:21:16
+-- Tiempo de generación: 07-07-2022 a las 00:41:19
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -319,7 +319,7 @@ CREATE TABLE `elecciones` (
 
 INSERT INTO `elecciones` (`id_eleccion`, `postulante`, `dni`, `votos`, `url`) VALUES
 (1, 'postulante 1', '12312312', 10, NULL),
-(2, 'postulante 2', '32312312', 21, NULL),
+(2, 'postulante 2', '32312312', 22, ''),
 (3, 'postulante 3', '45612312', 6, NULL),
 (4, 'postulante 4', '22612312', 15, NULL),
 (5, 'postulante 5', '11612312', 17, NULL),
@@ -353,7 +353,8 @@ INSERT INTO `graduados` (`id_graduado`, `nombre_completo`, `fecha`, `url`) VALUE
 (7, 'graduado 7', '2020-04-27', NULL),
 (8, 'graduado 8', '2021-05-12', NULL),
 (9, 'graduado 9', '2022-05-18', NULL),
-(10, 'graduado 10', '2022-05-25', NULL);
+(10, 'graduado 10', '2022-05-25', NULL),
+(13, 'admin', '2022-01-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -506,21 +507,19 @@ INSERT INTO `pps` (`id_pps`, `entidad`, `objetivo`, `fecha_inicio`, `fecha_fin`,
 --
 
 CREATE TABLE `roles` (
-  `id_rol` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL
+  `id_rol` int(6) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
+  `rol` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `rol_usuario`
+-- Volcado de datos para la tabla `roles`
 --
 
-CREATE TABLE `rol_usuario` (
-  `id_rol_usuario` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `id_rol` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `roles` (`id_rol`, `id_usuario`, `rol`) VALUES
+(1, 2, 'graduados'),
+(2, 2, 'elecciones'),
+(3, 1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -612,7 +611,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `username`, `password`, `roles`) VALUES
-(1, 'admin', '$2a$10$ccoaJ4m65gLiIdGM5Cxt8OOXw2m3zv.RYh8yAeerh6vLBMTWRCWey', 'admin');
+(1, 'admin', '$2a$10$ccoaJ4m65gLiIdGM5Cxt8OOXw2m3zv.RYh8yAeerh6vLBMTWRCWey', 'admin'),
+(2, 'test', '$2a$10$BQGZIvFxGWzei6DEGhJhEuF9d/4cQBGLph13Q8KcTh1Vn/kOdTEU.', '');
 
 -- --------------------------------------------------------
 
@@ -827,15 +827,8 @@ ALTER TABLE `pps`
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id_rol`);
-
---
--- Indices de la tabla `rol_usuario`
---
-ALTER TABLE `rol_usuario`
-  ADD PRIMARY KEY (`id_rol_usuario`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_rol` (`id_rol`);
+  ADD PRIMARY KEY (`id_rol`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `tipo_cargo`
@@ -942,13 +935,13 @@ ALTER TABLE `docentes`
 -- AUTO_INCREMENT de la tabla `elecciones`
 --
 ALTER TABLE `elecciones`
-  MODIFY `id_eleccion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_eleccion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `graduados`
 --
 ALTER TABLE `graduados`
-  MODIFY `id_graduado` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_graduado` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `investigacion`
@@ -984,13 +977,7 @@ ALTER TABLE `pps`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `rol_usuario`
---
-ALTER TABLE `rol_usuario`
-  MODIFY `id_rol_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rol` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_cargo`
@@ -1014,7 +1001,7 @@ ALTER TABLE `trabajos_finales`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `vista_correlativas`
@@ -1069,11 +1056,10 @@ ALTER TABLE `plan_estudio`
   ADD CONSTRAINT `plan_estudio_ibfk_2` FOREIGN KEY (`id_asignatura`) REFERENCES `asignaturas` (`id_asignatura`);
 
 --
--- Filtros para la tabla `rol_usuario`
+-- Filtros para la tabla `roles`
 --
-ALTER TABLE `rol_usuario`
-  ADD CONSTRAINT `rol_usuario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
-  ADD CONSTRAINT `rol_usuario_ibfk_2` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`);
+ALTER TABLE `roles`
+  ADD CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

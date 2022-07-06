@@ -29,9 +29,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/js/**", "/css/**").permitAll()
 			.antMatchers("/login*").permitAll()
 			.antMatchers("/api/**").permitAll()
-			.antMatchers("/admin/**").authenticated()
-			//graduados
-			.antMatchers("/admin_graduados**").authenticated() //has role graduados
+			.antMatchers("/admin","/admin/").authenticated()
+			
+			//Roles (Authorities)
+			.antMatchers("/admin/graduados/**").hasAnyAuthority("admin","graduados")
+			.antMatchers("/admin/elecciones/**").hasAnyAuthority("admin","elecciones")
+			.antMatchers("/admin/pps/**").hasAnyAuthority("admin","pps")
+			.antMatchers("/admin/autoridades/**").hasAnyAuthority("admin","autoridades")
+			.antMatchers("/admin/calendario/**").hasAnyAuthority("admin","calendario")
+			.antMatchers("/admin/investigacion/**").hasAnyAuthority("admin","investigacion")
+			.antMatchers("/admin/novedades/**").hasAnyAuthority("admin","novedades")
+			.antMatchers("/admin/trabajosfinales/**").hasAnyAuthority("admin","trabajosfinales")
+			
 			.and()
 			.formLogin()
 			.loginPage("/login")

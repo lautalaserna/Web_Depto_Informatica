@@ -1,6 +1,7 @@
 package com.example.informatica.user;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,12 @@ import org.springframework.stereotype.Service;
 public class UsuarioDetailsService implements UserDetailsService {
 
 	private IUsuarioRepository usuarioRepository;
+	private RolService rolService;
 	
 	@Autowired
-	public UsuarioDetailsService(IUsuarioRepository usuarioRepository) {
+	public UsuarioDetailsService(IUsuarioRepository usuarioRepository, RolService rolService) {
 		this.usuarioRepository = usuarioRepository;
+		this.rolService = rolService;
 	}
 
 	
@@ -27,7 +30,12 @@ public class UsuarioDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Usuario user = usuarioRepository.findByUsername(username);
 		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(user.getRoles()));
+		
+		List<Rol> roles = rolService.getRoles(user.getId_usuario());
+		for (Rol rol : roles) {
+			authorities.add(new SimpleGrantedAuthority(rol.getRol()));
+		}
+		
 		return new User(username, user.getPassword(), authorities);
 	}
 	

@@ -10,7 +10,18 @@ class passwordGen {
 	@Test
 	public void generatePassword() {
 		BCryptPasswordEncoder passGen = new BCryptPasswordEncoder();
-		System.out.println(passGen.encode("admin"));
+		System.out.println(passGen.encode("test"));
+	}
+	
+	@Test
+	public void generateRoles() {
+		String roles = "uno, dos, tres, cuatro, cinco";
+		String[] lista = roles.split(", ");
+		
+		for(int i=0; i<lista.length; i++) {			
+			System.out.println(lista[i]);
+		}
+		
 	}
 
 }
