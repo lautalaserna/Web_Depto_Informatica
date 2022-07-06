@@ -18,58 +18,112 @@
             <div th:replace="fragments/navbar"></div>
         </header>
       
+      <main>
+
         <!--Formulario-->
-      <form th:action="@{/admin/pps/{id}(id=${pps.id_pps})}" th:object="${pps}" method="post">
+        <form th:action="@{/admin/pps/{id}(id=${pps.id_pps})}" th:object="${pps}" method="post">
 
-        <h1 class="h3 mb-3 fw-normal">Editar PPS</h1>
-        
-        
-        <!--??-->
-        <div class="form-floating">
-          <input type="text" class="form-control" th:value="*{concepto}" name="concepto" id="concepto" placeholder="motivo" required>
-            <label for="concepto">Motivo</label>
-        </div>
+          <h1 class="h3 mb-3 fw-normal">Editar PPS</h1>
+          
+          <!--entidad-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{entidad}" name="entidad" id="entidad" placeholder="entidad" required>
+              <label for="entidad">Entidad</label>
+          </div>
 
-        <!--entidad-->
-        <!--objetivo-->
+          <!--objetivo-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{objetivo}" name="objetivo" id="objetivo" placeholder="objetivo" required>
+              <label for="objetivo">Objetivo</label>
+          </div>
 
+          <!-- fecha_inicio-->
+          <div class="form-floating">
+            <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio">
+            <label for="fecha_inicio">Fecha inicio</label>
+          </div>
 
-        <!-- fecha_inicio-->
-        <div class="form-floating">
-          <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio" required>
-          <label for="fecha_inicio">Fecha inicio</label>
-        </div>
+          <!-- fecha_fin-->
+          <div class="form-floating">
+            <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin">
+            <label for="fecha">Fecha fin</label>
+          </div>
 
-        <!-- fecha_fin-->
-        <div class="form-floating">
-          <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin" required>
-          <label for="fecha">Fecha fin</label>
-        </div>
+          <!-- presupuesto-->
+          <div class="form-floating">
+            <input type="number" class="form-control" th:value="*{presupuesto}" name="presupuesto" id="presupuesto" placeholder="presupuesto" required>
+              <label for="presupuesto">Presupuesto</label>
+          </div>
 
-        <!-- presupuesto-->
-        <!-- is_contratacion-->
-        <!-- estado-->
-        <!-- estudiantes-->
-        <!-- tutores-->
-        <!-- lugar-->
-        <!-- is_pdts-->
-        <!-- is_pps-->
-        <!-- is_psc-->
+          <!-- is_contratacion-->
+          <label>Posibilidad de contratación?</label>
+          <select class="form-select" th:field="*{is_contratacion}" id="is_contratacion" name="is_contratacion">
+            <option th:value="'Y'" th:text="|(Y) Si|"></option>
+            <option th:value="'N'" th:text="|(N) No|"></option>
+          </select>
 
+          <!-- estado-->
+          <label>Estado de PPS</label>
+          <select class="form-select" th:field="*{estado}" id="estado" name="estado">
+            <option th:value="'D'" th:text="|(D) Disponible|"></option>
+            <option th:value="'C'" th:text="|(C) En curso|"></option>
+            <option th:value="'F'" th:text="|(F) Finalizada|"></option>
+          </select>
 
-        <!--url-->
-        <div class="form-floating">
-          <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-            <label for="username">url</label>
-        </div>
+          <!-- estudiantes-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{estudiantes}" name="estudiantes" id="estudiantes" placeholder="Estudiantes">
+              <label for="estudiantes">Estudiantes</label>
+          </div>
 
-       
+          <!-- tutores-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{tutores}" name="tutores" id="tutores" placeholder="Tutores">
+              <label for="tutores">Tutores</label>
+          </div>
+          
+          <!-- lugar-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{lugar}" name="lugar" id="lugar" placeholder="Lugar">
+              <label for="lugar">Lugar</label>
+          </div>
+          
+          <!-- is_pdts-->
+          <label>pdts?</label>
+          <select class="form-select" th:field="*{is_pdts}" id="is_pdts" name="is_pdts">
+            <label>pdts?</label>
+            <option th:value="'Y'" th:text="|(Y) Si|"></option>
+            <option th:value="'N'" th:text="|(N) No|"></option>
+          </select>
 
-        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
-      </form>
+          <!-- is_pps-->
+          <label>pps?</label>
+          <select class="form-select" th:field="*{is_pps}" id="is_pps" name="is_pps">
+            <label>pps?</label>
+            <option th:value="'Y'" th:text="|(Y) Si|"></option>
+            <option th:value="'N'" th:text="|(N) No|"></option>
+          </select>
 
-        <!-- SCRIPTS -->
-        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+          <!-- is_psc-->
+          <label>psc?</label>
+          <select class="form-select" th:field="*{is_psc}" id="is_psc" name="is_psc">
+            <option th:value="'Y'" th:text="|(Y) Si|"></option>
+            <option th:value="'N'" th:text="|(N) No|"></option>
+          </select>
+
+          <!--url-->
+          <div class="form-floating">
+            <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+              <label for="username">url</label>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
+        </form>
+
+      </main>
+
+      <!-- SCRIPTS -->
+      <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
     </body>
 </html>
 
