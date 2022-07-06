@@ -69,6 +69,8 @@ public class AdminAutoridadesController {
 			autoridadExistente.setDirector(autoridad.getDirector());
 			autoridadExistente.setVicedirector(autoridad.getVicedirector());
 			autoridadExistente.setUrl(autoridad.getUrl());
+			autoridadExistente.setImg_url_dir(autoridad.getImg_url_dir());
+			autoridadExistente.setImg_url_vice(autoridad.getImg_url_vice());
 			autoridadesService.updateAutoridad(autoridadExistente);
 		}
 		return "redirect:/admin/autoridades";

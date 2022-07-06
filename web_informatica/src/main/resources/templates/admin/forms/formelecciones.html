@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Elecciones</h1>
+          </div>
+
+          <div class="container">
+            <form th:action="@{/admin/elecciones/{id}(id=${eleccion.id_eleccion})}" th:object="${eleccion}" method="post">      
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                  <!--postulante-->
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control" th:value="*{postulante}" name="postulante" id="postulante" placeholder="postulante" required>
+                    <label for="postulante" class="text-muted">Postulante</label>
+                  </div>
+                  <!--dni-->
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control" th:value="*{dni}" name="dni" id="dni" placeholder="dni" required>
+                    <label for="dni" class="text-muted">DNI</label>
+                  </div>
+                  <!--votos-->
+                  <div class="form-floating mb-2">
+                    <input type="number" class="form-control" th:value="*{votos}" name="votos" id="votos" placeholder="votos" required>
+                    <label for="votos" class="text-muted">Votos</label>
+                  </div>
+                  <!--url-->
+                  <div class="form-floating">
+                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                      <label for="username">url</label>
+                  </div>
+
+                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
+                </div>
+                <div class="col-2"></div>
+              </div>
+            </form>
+          </div>
+        </main>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

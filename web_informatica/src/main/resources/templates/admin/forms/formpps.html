@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+      
+        <!--Formulario-->
+      <form th:action="@{/admin/pps/{id}(id=${pps.id_pps})}" th:object="${pps}" method="post">
+
+        <h1 class="h3 mb-3 fw-normal">Editar PPS</h1>
+        
+        
+        <!--??-->
+        <div class="form-floating">
+          <input type="text" class="form-control" th:value="*{concepto}" name="concepto" id="concepto" placeholder="motivo" required>
+            <label for="concepto">Motivo</label>
+        </div>
+
+        <!--entidad-->
+        <!--objetivo-->
+
+
+        <!-- fecha_inicio-->
+        <div class="form-floating">
+          <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio" required>
+          <label for="fecha_inicio">Fecha inicio</label>
+        </div>
+
+        <!-- fecha_fin-->
+        <div class="form-floating">
+          <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin" required>
+          <label for="fecha">Fecha fin</label>
+        </div>
+
+        <!-- presupuesto-->
+        <!-- is_contratacion-->
+        <!-- estado-->
+        <!-- estudiantes-->
+        <!-- tutores-->
+        <!-- lugar-->
+        <!-- is_pdts-->
+        <!-- is_pps-->
+        <!-- is_psc-->
+
+
+        <!--url-->
+        <div class="form-floating">
+          <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+            <label for="username">url</label>
+        </div>
+
+       
+
+        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
+      </form>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>
+
+
+ 
