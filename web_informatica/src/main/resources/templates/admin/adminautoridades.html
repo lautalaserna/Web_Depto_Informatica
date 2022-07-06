@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<!--Contenido del head-->
+		<div th:replace="fragments/inner-head"></div>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<div class="container">
+				<title>Admin Panel</title>
+		</div>
+
+	</head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<div th:replace="fragments/navbar"></div>
+		</header>
+		
+		<main>
+			<!-- ADMIN HEADER -->
+			<div th:replace="@{/fragments/admin-header}"></div>
+
+			<div class="container mt-3 pb-2">
+				<h1 class="sub-title modal-header ps-0">
+					Autoridades
+					<div class="text-end">
+						<a th:href="@{|/admin/autoridades/editar/0|}" type="button" class="btn btn-add hovereable">
+							<h5 class="mb-0 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
+						</a>
+					</div>
+				</h1>
+			</div>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10 mb-5">
+						<table class="table table-striped align-middle text-center">
+							<thead class="table-borderless">
+								<tr class="table-header">
+									<td><h2 class="table-header-text-mini">Director</h2></td>
+									<td><h2 class="table-header-text-mini">Vicedirector</h2></td>
+									<td><h2 class="table-header-text-mini">URL</h2></td>
+									<td><h2 class="table-header-text-mini">Img Dire</h2></td>
+									<td><h2 class="table-header-text-mini">Img Vice</h2></td>
+									<td><h2 class="table-header-text-mini">Acciones</h2></td>
+								</tr>
+							</thead>
+
+							<tbody class="table-borderless" style="border-top:none !important;">
+								<tr th:each="item :${autoridades}">
+									<td><h5 class="py-2" th:text="${item.director}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.vicedirector}"></h5></td>
+									<td><h5 ass="py-2" th:text="${item.url}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.img_url_dir}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.img_url_vice}"></h5></td>
+									<td>
+										<a th:href="@{/admin/autoridades/editar/{id}(id=${item.id_autoridad})}" type="button" class="btn btn-edit hovereable mx-1">
+											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
+										</a>
+										<a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/autoridades/delete/{id}(id=${item.id_autoridad})}" type="button" class="btn btn-delete hovereable mx-1">
+											<img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+					<div class="col-1"></div>
+				</div>
+			</div>
+
+			<div class="container mt-3 pb-2">
+				<h1 class="sub-title modal-header ps-0">
+					Consejo Departamental
+					<div class="text-end">
+						<a th:href="@{|/admin/consejodepartamental/editar/0|}" type="button" class="btn btn-add hovereable">
+							<h5 class="mb-0 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
+						</a>
+					</div>
+				</h1>
+			</div>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10 mb-5">
+						<table class="table table-striped align-middle text-center">
+							<thead class="table-borderless">
+								<tr class="table-header">
+									<td><h2 class="table-header-text-mini">Nombre Completo</h2></td>
+									<td><h2 class="table-header-text-mini">Tipo</h2></td>
+									<td><h2 class="table-header-text-mini">URL</h2></td>
+									<td><h2 class="table-header-text-mini">Acciones</h2></td>
+								</tr>
+							</thead>
+
+							<tbody class="table-borderless" style="border-top: none !important;">
+								<tr th:each="item :${consejodepartamental}">
+									<td><h5 class="py-2" th:text="${item.nombre}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.tipo}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.url}"></h5></td>
+									<td>
+										<a th:href="@{/admin/consejodepartamental/editar/{id}(id=${item.id_consejo_departamental})}" type="button" class="btn btn-edit hovereable me-1">
+											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
+										</a>
+										<a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/consejo_departamental/delete/{id}(id=${item.id_consejo_departamental})}" type="button" class="btn btn-delete hovereable ms-1">
+											<img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+					<div class="col-1"></div>
+				</div>
+			</div>
+
+			<div class="container mt-3 pb-2">
+				<h1 class="sub-title modal-header ps-0">
+					Consejo Alumnos
+					<div class="text-end">
+						<a th:href="@{|/admin/consejoalumnos/editar/0|}" type="button" class="btn btn-add hovereable">
+							<h5 class="mb-0 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
+						</a>
+					</div>
+				</h1>
+			</div>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10 mb-5">
+						<table class="table table-striped align-middle text-center">
+							<thead class="table-borderless">
+								<tr class="table-header">
+									<td><h2 class="table-header-text-mini">Nombre Completo</h2></td>
+									<td><h2 class="table-header-text-mini">Tipo</h2></td>
+									<td><h2 class="table-header-text-mini">URL</h2></td>
+									<td><h2 class="table-header-text-mini">Acciones</h2></td>
+								</tr>
+							</thead>
+
+							<tbody class="table-borderless" style="border-top: none !important;">
+								<tr th:each="item :${consejoalumnos}">
+									<td><h5 class="py-2" th:text="${item.nombre}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.tipo}"></h5></td>
+									<td><h5 class="py-2" th:text="${item.url}"></h5></td>
+									<td>
+										<a th:href="@{/admin/consejodepartamental/editar/{id}(id=${item.id_consejo_alumnos})}" type="button" class="btn btn-edit hovereable me-1">
+											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
+										</a>
+										<a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/consejo_alumnos/delete/{id}(id=${item.id_consejo_alumnos})}" type="button" class="btn btn-delete hovereable ms-1">
+											<img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+					<div class="col-1"></div>
+				</div>
+			</div>
+
+		</main>
+		<!-- SCRIPTS -->
+		<script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

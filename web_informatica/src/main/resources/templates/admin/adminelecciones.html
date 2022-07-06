@@ -55,10 +55,10 @@
                       <td><h5 class="py-2" th:text="${eleccion.votos}"></h5></td>
                       <td><h5 class="py-2" th:text="${eleccion.url}"></h5></td>
                       <td>
-                        <a th:href="@{/admin/elecciones/editar/{id}(id=${eleccion.id_eleccion})}" type="button" class="btn btn-edit hovereable me-1">
+                        <a th:href="@{/admin/elecciones/editar/{id}(id=${eleccion.id_eleccion})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
                         </a>
-                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/elecciones/delete/{id}(id=${eleccion.id_eleccion})}" type="button" class="btn btn-delete hovereable ms-1">
+                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/elecciones/delete/{id}(id=${eleccion.id_eleccion})}" type="button" class="btn btn-delete hovereable mx-1">
                           <img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
                         </a>
                       </td>

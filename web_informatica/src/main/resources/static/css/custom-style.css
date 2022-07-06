@@ -501,6 +501,8 @@ h6{
 
 .btn-delete{
     background-color: indianred;
+    margin-top: 2px;
+    margin-bottom: 2px;
     padding: 10px;
     padding-top: 7px;
     border-radius: 20px;
@@ -509,6 +511,8 @@ h6{
 
 .btn-edit{
     background-color: #f3c300;
+    margin-top: 2px;
+    margin-bottom: 2px;
     padding: 10px;
     padding-top: 7px;
     border-radius: 20px;

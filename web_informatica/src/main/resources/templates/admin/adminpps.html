@@ -55,10 +55,10 @@
                       <td><h5 class="py-2" th:text="${item.concepto}"></h5></td>
                       <td><h5 class="py-2" th:text="${item.url}"></h5></td>
                       <td>
-                        <a th:href="@{/admin/calendario/editar/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-edit hovereable me-1">
+                        <a th:href="@{/admin/calendario/editar/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
                         </a>
-                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/calendario/delete/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-delete hovereable ms-1">
+                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/calendario/delete/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-delete hovereable mx-1">
                           <img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
                         </a>
                       </td>
