@@ -13,113 +13,89 @@
 
     </head>
     <body>
-        <!-- HEADER -->
-        <header>
-            <div th:replace="fragments/navbar"></div>
-        </header>
+      <!-- HEADER -->
+      <header>
+          <div th:replace="fragments/navbar"></div>
+      </header>
       
       <main>
-
-        <!--Formulario-->
-        <form th:action="@{/admin/pps/{id}(id=${pps.id_pps})}" th:object="${pps}" method="post">
-
-          <h1 class="h3 mb-3 fw-normal">Editar PPS</h1>
-          
-          <!--entidad-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{entidad}" name="entidad" id="entidad" placeholder="entidad" required>
-              <label for="entidad">Entidad</label>
+        <div class="container mt-5 pb-2">
+          <h1 class="title modal-header">PPS</h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <form th:action="@{/admin/pps/{id}(id=${pps.id_pps})}" th:object="${pps}" method="post">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{entidad}" name="entidad" id="entidad" placeholder="entidad" required>
+                  <label for="entidad" class="text-muted">Entidad</label>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="objetivo"><h5 class="mb-1">Objetivo</h5></label>
+                  <textarea class="form-control" th:text="*{objetivo}" name="objetivo" id="objetivo" rows="5" required></textarea>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio">
+                  <label for="fecha_inicio" class="text-muted">Fecha inicio</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin">
+                  <label for="fecha" class="text-muted">Fecha fin</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" th:value="*{presupuesto}" name="presupuesto" id="presupuesto" placeholder="presupuesto" required>
+                  <label for="presupuesto" class="text-muted">Presupuesto</label>
+                </div>
+                <h5 class="mb-2">Posibilidad de contratación?</h5>
+                <select class="form-select mb-3" th:field="*{is_contratacion}" id="is_contratacion" name="is_contratacion">
+                  <option th:value="'Y'" th:text="|Si|"></option>
+                  <option th:value="'N'" th:text="|No|"></option>
+                </select>
+                <h5 class="mb-2">Estado de PPS</h5>
+                <select class="form-select mb-3" th:field="*{estado}" id="estado" name="estado">
+                  <option th:value="'D'" th:text="|Disponible|"></option>
+                  <option th:value="'C'" th:text="|En curso|"></option>
+                  <option th:value="'F'" th:text="|Finalizada|"></option>
+                </select>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{estudiantes}" name="estudiantes" id="estudiantes" placeholder="Estudiantes">
+                  <label for="estudiantes" class="text-muted">Estudiantes</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{tutores}" name="tutores" id="tutores" placeholder="Tutores">
+                  <label for="tutores" class="text-muted">Tutores</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{lugar}" name="lugar" id="lugar" placeholder="Lugar">
+                  <label for="lugar" class="text-muted">Lugar</label>
+                </div>
+                <h5 class="mb-2">PDTS?</h5>
+                <select class="form-select mb-3" th:field="*{is_pdts}" id="is_pdts" name="is_pdts">
+                  <option th:value="'Y'" th:text="|Si|"></option>
+                  <option th:value="'N'" th:text="|No|"></option>
+                </select>
+                <h5 class="mb-2">PPS?</h5>
+                <select class="form-select mb-3" th:field="*{is_pps}" id="is_pps" name="is_pps">
+                  <label>pps?</label>
+                  <option th:value="'Y'" th:text="|Si|"></option>
+                  <option th:value="'N'" th:text="|No|"></option>
+                </select>
+                <h5 class="mb-2">PSC?</h5>
+                <select class="form-select mb-3" th:field="*{is_psc}" id="is_psc" name="is_psc">
+                  <option th:value="'Y'" th:text="|Si|"></option>
+                  <option th:value="'N'" th:text="|No|"></option>
+                </select>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                  <label for="username" class="text-muted">url</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>
+              </form>
+            </div>
+            <div class="col-2"></div>
           </div>
-
-          <!--objetivo-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{objetivo}" name="objetivo" id="objetivo" placeholder="objetivo" required>
-              <label for="objetivo">Objetivo</label>
-          </div>
-
-          <!-- fecha_inicio-->
-          <div class="form-floating">
-            <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio">
-            <label for="fecha_inicio">Fecha inicio</label>
-          </div>
-
-          <!-- fecha_fin-->
-          <div class="form-floating">
-            <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin">
-            <label for="fecha">Fecha fin</label>
-          </div>
-
-          <!-- presupuesto-->
-          <div class="form-floating">
-            <input type="number" class="form-control" th:value="*{presupuesto}" name="presupuesto" id="presupuesto" placeholder="presupuesto" required>
-              <label for="presupuesto">Presupuesto</label>
-          </div>
-
-          <!-- is_contratacion-->
-          <label>Posibilidad de contratación?</label>
-          <select class="form-select" th:field="*{is_contratacion}" id="is_contratacion" name="is_contratacion">
-            <option th:value="'Y'" th:text="|(Y) Si|"></option>
-            <option th:value="'N'" th:text="|(N) No|"></option>
-          </select>
-
-          <!-- estado-->
-          <label>Estado de PPS</label>
-          <select class="form-select" th:field="*{estado}" id="estado" name="estado">
-            <option th:value="'D'" th:text="|(D) Disponible|"></option>
-            <option th:value="'C'" th:text="|(C) En curso|"></option>
-            <option th:value="'F'" th:text="|(F) Finalizada|"></option>
-          </select>
-
-          <!-- estudiantes-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{estudiantes}" name="estudiantes" id="estudiantes" placeholder="Estudiantes">
-              <label for="estudiantes">Estudiantes</label>
-          </div>
-
-          <!-- tutores-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{tutores}" name="tutores" id="tutores" placeholder="Tutores">
-              <label for="tutores">Tutores</label>
-          </div>
-          
-          <!-- lugar-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{lugar}" name="lugar" id="lugar" placeholder="Lugar">
-              <label for="lugar">Lugar</label>
-          </div>
-          
-          <!-- is_pdts-->
-          <label>pdts?</label>
-          <select class="form-select" th:field="*{is_pdts}" id="is_pdts" name="is_pdts">
-            <label>pdts?</label>
-            <option th:value="'Y'" th:text="|(Y) Si|"></option>
-            <option th:value="'N'" th:text="|(N) No|"></option>
-          </select>
-
-          <!-- is_pps-->
-          <label>pps?</label>
-          <select class="form-select" th:field="*{is_pps}" id="is_pps" name="is_pps">
-            <label>pps?</label>
-            <option th:value="'Y'" th:text="|(Y) Si|"></option>
-            <option th:value="'N'" th:text="|(N) No|"></option>
-          </select>
-
-          <!-- is_psc-->
-          <label>psc?</label>
-          <select class="form-select" th:field="*{is_psc}" id="is_psc" name="is_psc">
-            <option th:value="'Y'" th:text="|(Y) Si|"></option>
-            <option th:value="'N'" th:text="|(N) No|"></option>
-          </select>
-
-          <!--url-->
-          <div class="form-floating">
-            <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-              <label for="username">url</label>
-          </div>
-
-          <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
-        </form>
-
+        </div>
       </main>
 
       <!-- SCRIPTS -->

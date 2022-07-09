@@ -28,27 +28,22 @@
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
-                  <!--postulante-->
-                  <div class="form-floating mb-2">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{postulante}" name="postulante" id="postulante" placeholder="postulante" required>
                     <label for="postulante" class="text-muted">Postulante</label>
                   </div>
-                  <!--dni-->
-                  <div class="form-floating mb-2">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{dni}" name="dni" id="dni" placeholder="dni" required>
                     <label for="dni" class="text-muted">DNI</label>
                   </div>
-                  <!--votos-->
-                  <div class="form-floating mb-2">
+                  <div class="form-floating mb-3">
                     <input type="number" class="form-control" th:value="*{votos}" name="votos" id="votos" placeholder="votos" required>
                     <label for="votos" class="text-muted">Votos</label>
                   </div>
-                  <!--url-->
-                  <div class="form-floating">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-                      <label for="username">url</label>
+                      <label for="username" class="text-muted">url</label>
                   </div>
-
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
                 <div class="col-2"></div>

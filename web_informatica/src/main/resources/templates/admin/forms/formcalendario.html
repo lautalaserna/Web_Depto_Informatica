@@ -17,51 +17,39 @@
         <header>
             <div th:replace="fragments/navbar"></div>
         </header>
-
-        <div class="container">
-            <h1>Editar calendario</h1>
-        </div>
-
-      
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Calendario Académico</h1>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-2"></div>
+              <div class="col-8">
+                <form th:action="@{/admin/calendario/{id}(id=${calendario.id_calendario_academico})}" th:object="${calendario}" method="post">
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio" required>
+                    <label for="fecha_inicio" class="text-muted">Fecha inicio</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin" required>
+                    <label for="fecha" class="text-muted">Fecha fin</label>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="concepto"><h5 class="mb-1">Motivo</h5></label>
+                    <textarea class="form-control" th:text="*{concepto}" name="concepto" id="concepto" rows="5" required></textarea>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                    <label for="url" class="text-muted">url</label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>
+                </form>
+              </div>
+              <div class="col-2"></div>
+            </div>
+          </div>
+        </main>
         <!--Formulario-->
-      <form th:action="@{/admin/calendario/{id}(id=${calendario.id_calendario_academico})}" th:object="${calendario}" method="post">
-
-        <h1 class="h3 mb-3 fw-normal">Editar Calendario</h1>
-
-        <!--id_calendario_academico-->
-        <fieldset disabled>
-          <label for="id" class="form-label" th:value="*{id_calendario_academico}"></label>
-          <input type="text" id="id" class="form-control" placeholder="id">
-        </fieldset>
-        
-        <!--Fecha de Inicio-->
-        <div class="form-floating">
-          <input type="date" class="form-control" th:value="*{fecha_inicio}" name="fecha_inicio" id="fecha_inicio" placeholder="fecha inicio" required>
-          <label for="fecha_inicio">Fecha inicio</label>
-        </div>
-
-        <!--Fecha de fin-->
-        <div class="form-floating">
-          <input type="date" class="form-control" th:value="*{fecha_fin}" name="fecha_fin" id="fecha_fin" placeholder="fecha fin" required>
-          <label for="fecha">Fecha fin</label>
-        </div>
-        
-        <!--Motivo-->
-        <div class="form-floating">
-          <input type="text" class="form-control" th:value="*{concepto}" name="concepto" id="concepto" placeholder="motivo" required>
-            <label for="concepto">Motivo</label>
-        </div>
-
-        <!--url-->
-        <div class="form-floating">
-          <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-            <label for="username">url</label>
-        </div>
-
-       
-
-        <button class="w-100 btn btn-lg btn-navbar" type="submit">Guardar</button>
-      </form>
 
         <!-- SCRIPTS -->
         <script th:src="@{\js\bootstrap.bundle.min.js}"></script>

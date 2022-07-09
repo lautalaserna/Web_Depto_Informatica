@@ -24,7 +24,7 @@
   
           <div class="container mt-3 pb-2">
             <h1 class="sub-title modal-header ps-0">
-              PPS
+              Trabajos Finales
               <div class="text-end">
                 <a th:href="@{|/admin/pps/editar/0|}" type="button" class="btn btn-add hovereable">
                   <h5 class="mb-0 pt-1 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
@@ -40,36 +40,16 @@
                 <table class="table table-striped align-middle text-center">
                   <thead class="table-borderless">
                     <tr class="table-header">
-                      <td><h3 class="table-header-text-mini">Entidad</h3></td>
-                      <td><h3 class="table-header-text-mini">Objetivo</h3></td>
-                      <td><h3 class="table-header-text-mini">Desde</h3></td>
-                      <td><h3 class="table-header-text-mini">Hasta</h3></td>
-                      <!-- <td><h3 class="table-header-text-mini">Presup.</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">Contrat.</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">Estudiantes</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">Tutores</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">Lugar</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">PDTS</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">PPS</h3></td> -->
-                      <!-- <td><h3 class="table-header-text-mini">PSC</h3></td> -->
+                      <td><h3 class="table-header-text-mini">Titulo</h3></td>
+                      <td><h3 class="table-header-text-mini">Estudiantes</h3></td>
                       <td><h3 class="table-header-text-mini">Acciones</h3></td>
                     </tr>
                   </thead>
   
                   <tbody class="table-borderless" style="border-top: none !important;">
                     <tr th:each="item :${pps}">
-                      <td><h5 class="py-2" th:text="${item.entidad}"></h5></td>
-                      <td><h5 class="py-2" th:text="${item.objetivo}"></h5></td>
-                      <td><h5 class="py-2" th:text="${item.fecha_inicio}"></h5></td>
-                      <td><h5 class="py-2" th:text="${item.fecha_fin}"></h5></td>
-                      <!-- <td><h5 class="py-2" th:text="${item.presupuesto}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.is_contratacion}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.estudiantes}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.tutores}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.lugar}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.is_pdts}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.is_pps}"></h5></td> -->
-                      <!-- <td><h5 class="py-2" th:text="${item.is_psc}"></h5></td> -->
+                      <td><h5 class="py-2" th:text="${item.titulo}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.estudiantes}"></h5></td>
                       <td>
                         <a th:href="@{/admin/pps/editar/{id}(id=${item.id_pps})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">

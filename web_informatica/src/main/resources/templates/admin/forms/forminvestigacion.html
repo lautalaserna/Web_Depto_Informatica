@@ -17,34 +17,36 @@
         <header>
             <div th:replace="fragments/navbar"></div>
         </header>
-
         <main>
           <div class="container mt-5 pb-2">
-            <h1 class="title modal-header">Alumno Graduado</h1>
+            <h1 class="title modal-header">Grupo Investigación</h1>
           </div>
-
           <div class="container">
-            <form th:action="@{/admin/graduados/{id}(id=${graduado.id_graduado})}" th:object="${graduado}" method="post">      
-              <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+            <div class="row">
+              <div class="col-2"></div>
+              <div class="col-8">
+                <form th:action="@{/admin/investigacion/{id}(id=${investigacion.id_investigacion})}" th:object="${investigacion}" method="post">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
-                    <label for="username" class="text-muted">Nombre Completo</label>
+                    <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
+                    <label for="username" class="text-muted">Título</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
-                    <label for="fecha" class="text-muted">Fecha (dd-mm-aaaa)</label>
+                    <input type="text" class="form-control" th:value="*{integrantes}" name="integrantes" id="integrantes" placeholder="integrantes" required>
+                    <label for="username" class="text-muted">Integrantes</label>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="objetivo"><h5 class="mb-1">Objetivo</h5></label>
+                    <textarea class="form-control" th:text="*{objetivo}" name="objetivo" id="objetivo" rows="5" required></textarea>
                   </div>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
                     <label for="url" class="text-muted">url</label>
                   </div>
-                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
-                </div>
-                <div class="col-2"></div>
+                  <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>
+                </form>
               </div>
-            </form>
+              <div class="col-2"></div>
+            </div>
           </div>
         </main>
 

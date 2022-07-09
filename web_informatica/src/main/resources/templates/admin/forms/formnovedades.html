@@ -28,17 +28,34 @@
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
-                  <div class="form-floating mb-2">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
                     <label for="username" class="text-muted">Título</label>
                   </div>
-                  <div class="form-floating mb-2">
+                  <div class="form-floating mb-3">
                     <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
                     <label for="fecha" class="text-muted">Fecha (dd-mm-aaaa)</label>
                   </div>
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control" th:value="*{info}" name="info" id="info" placeholder="info" required>
-                    <label for="username" class="text-muted">Contenido...</label>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{imgurl}" name="imgurl" id="imgurl" placeholder="imgurl">
+                    <label for="imgurl" class="text-muted">Dirección de la Imagen</label>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="info"><h5 class="mb-1">Información</h5></label>
+                    <textarea class="form-control" th:text="*{info}" name="info" id="info" rows="3" required></textarea>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="contenido"><h5 class="mb-1">Contenido</h5></label>
+                    <textarea class="form-control" th:text="*{contenido}" name="contenido" id="contenido" rows="10" required></textarea>
+                  </div>
+                  <h5 class="mb-2">Es Bolsa de Trabajo?</h5>
+                  <select class="form-select mb-3" th:field="*{is_bolsa_trabajo}" id="is_bolsa_trabajo" name="is_bolsa_trabajo">
+                    <option th:value="'N'" th:text="|No|"></option>
+                    <option th:value="'Y'" th:text="|Si|"></option>
+                  </select>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                    <label for="username" class="text-muted">url</label>
                   </div>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
