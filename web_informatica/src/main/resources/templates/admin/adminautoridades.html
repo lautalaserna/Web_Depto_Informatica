@@ -42,9 +42,9 @@
 								<tr class="table-header">
 									<td><h2 class="table-header-text-mini">Director</h2></td>
 									<td><h2 class="table-header-text-mini">Vicedirector</h2></td>
-									<td><h2 class="table-header-text-mini">URL</h2></td>
-									<td><h2 class="table-header-text-mini">Img Dire</h2></td>
-									<td><h2 class="table-header-text-mini">Img Vice</h2></td>
+									<!-- <td><h2 class="table-header-text-mini">URL</h2></td> -->
+									<!-- <td><h2 class="table-header-text-mini">Img Dire</h2></td> -->
+									<!-- <td><h2 class="table-header-text-mini">Img Vice</h2></td> -->
 									<td><h2 class="table-header-text-mini">Acciones</h2></td>
 								</tr>
 							</thead>
@@ -53,9 +53,9 @@
 								<tr th:each="item :${autoridades}">
 									<td><h5 class="py-2" th:text="${item.director}"></h5></td>
 									<td><h5 class="py-2" th:text="${item.vicedirector}"></h5></td>
-									<td><h5 ass="py-2" th:text="${item.url}"></h5></td>
-									<td><h5 class="py-2" th:text="${item.img_url_dir}"></h5></td>
-									<td><h5 class="py-2" th:text="${item.img_url_vice}"></h5></td>
+									<!-- <td><h5 ass="py-2" th:text="${item.url}"></h5></td> -->
+									<!-- <td><h5 class="py-2" th:text="${item.img_url_dir}"></h5></td> -->
+									<!-- <td><h5 class="py-2" th:text="${item.img_url_vice}"></h5></td> -->
 									<td>
 										<a th:href="@{/admin/autoridades/editar/{id}(id=${item.id_autoridad})}" type="button" class="btn btn-edit hovereable mx-1">
 											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
@@ -93,7 +93,7 @@
 								<tr class="table-header">
 									<td><h2 class="table-header-text-mini">Nombre Completo</h2></td>
 									<td><h2 class="table-header-text-mini">Tipo</h2></td>
-									<td><h2 class="table-header-text-mini">URL</h2></td>
+									<!-- <td><h2 class="table-header-text-mini">URL</h2></td> -->
 									<td><h2 class="table-header-text-mini">Acciones</h2></td>
 								</tr>
 							</thead>
@@ -102,7 +102,7 @@
 								<tr th:each="item :${consejodepartamental}">
 									<td><h5 class="py-2" th:text="${item.nombre}"></h5></td>
 									<td><h5 class="py-2" th:text="${item.tipo}"></h5></td>
-									<td><h5 class="py-2" th:text="${item.url}"></h5></td>
+									<!-- <td><h5 class="py-2" th:text="${item.url}"></h5></td> -->
 									<td>
 										<a th:href="@{/admin/consejodepartamental/editar/{id}(id=${item.id_consejo_departamental})}" type="button" class="btn btn-edit hovereable me-1">
 											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
@@ -140,7 +140,7 @@
 								<tr class="table-header">
 									<td><h2 class="table-header-text-mini">Nombre Completo</h2></td>
 									<td><h2 class="table-header-text-mini">Tipo</h2></td>
-									<td><h2 class="table-header-text-mini">URL</h2></td>
+									<!-- <td><h2 class="table-header-text-mini">URL</h2></td> -->
 									<td><h2 class="table-header-text-mini">Acciones</h2></td>
 								</tr>
 							</thead>
@@ -149,7 +149,7 @@
 								<tr th:each="item :${consejoalumnos}">
 									<td><h5 class="py-2" th:text="${item.nombre}"></h5></td>
 									<td><h5 class="py-2" th:text="${item.tipo}"></h5></td>
-									<td><h5 class="py-2" th:text="${item.url}"></h5></td>
+									<!-- <td><h5 class="py-2" th:text="${item.url}"></h5></td> -->
 									<td>
 										<a th:href="@{/admin/consejodepartamental/editar/{id}(id=${item.id_consejo_alumnos})}" type="button" class="btn btn-edit hovereable me-1">
 											<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
