@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CorrelativasService {
+public class VCorrelativasService {
 
-	private ICorrelativasRepository correlativasRepository;
+	private IVCorrelativasRepository correlativasRepository;
 	
 	@Autowired
-	public CorrelativasService(ICorrelativasRepository correlativasRepository) {
+	public VCorrelativasService(IVCorrelativasRepository correlativasRepository) {
 		this.correlativasRepository = correlativasRepository;
 	}
 	
-	public List<Correlativas> getCorrelativas() {
+	public List<VCorrelativas> getCorrelativas() {
 		return correlativasRepository.findAll();
 	}
 }

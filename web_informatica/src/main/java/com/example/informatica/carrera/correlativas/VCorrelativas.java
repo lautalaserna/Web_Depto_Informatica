@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="vista_correlativas")
-public class Correlativas {
+public class VCorrelativas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_docente;
@@ -18,7 +18,7 @@ public class Correlativas {
 	private String asignatura; //correlativa de la asignatura a la que corresponde el id_asignatura
 	
 	//constructor vacio
-	public Correlativas() {
+	public VCorrelativas() {
 	}
 	
 	

@@ -26,7 +26,7 @@ public class AdminTrabajosFinalesController {
 	public String getAdminGraduados(Model model) {
 		List<TrabajoFinal> trabajoFinal = trabajoFinalService.getTrabajosFinales();
 		model.addAttribute("trabajosFinales", trabajoFinal);
-		return "admin/admingraduados";
+		return "admin/admintrabajosfinales";
 	}
 	
 	//CREATE or EDIT

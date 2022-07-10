@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OptativasService {
+public class VOptativasService {
 
-	private IOptativasRepository optativasRepository;
+	private IVOptativasRepository optativasRepository;
 	
 	@Autowired
-	public OptativasService(IOptativasRepository optativasRepository) {
+	public VOptativasService(IVOptativasRepository optativasRepository) {
 		this.optativasRepository = optativasRepository;
 	}
 	
-	public List<Optativas> getOptativas() {
+	public List<VOptativas> getOptativas() {
 		return optativasRepository.findAll();
 	}
 }

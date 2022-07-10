@@ -20,28 +20,112 @@
 
         <main>
           <div class="container mt-5 pb-2">
-            <h1 class="title modal-header">Alumno Graduado</h1>
+            <h1 class="title modal-header">Usuario</h1>
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/graduados/{id}(id=${graduado.id_graduado})}" th:object="${graduado}" method="post">      
+            <form th:action="@{/admin/usuarios/{id}(id=${usuario.id_usuario})}" th:object="${usuario}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
-                  <div class="form-floating mb-2">
-                    <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre completo" required>
-                    <label for="username" class="text-muted">Nombre Completo</label>
+
+
+                  <!--USERNAME-->
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">Nombre de usuario</label>
+                    <div class="col-8">
+                        <input type="text" th:field="*{username}" class="form-control"
+                                required minlength="2" maxlength="20" />
+                    </div>
                   </div>
-                  <div class="form-floating mb-2">
-                    <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
-                    <label for="fecha" class="text-muted">Fecha (dd-mm-aaaa)</label>
+
+                  <!--ROLES
+                  <div class="form-group row">
+                    <label class="col-4 col-form-label">Roles</label>
+                    <div class="col-8">
+                        <th:block th:each="rol: ${usuario.map.entrySet()}">
+                        <input type="checkbox" th:field="*{map}"
+                            th:text="${rol.key}" th:value="${rol.value}" class="m-2" />
+                        </th:block>
+                    </div> 
+                </div>-->
+
+                <div class="form-group row">
+                  <label class="col-4 col-form-label">Roles</label>
+                  <div class="col-8">
+                      <th:block th:each="rol: ${usuario.roles}">
+                      <input type="checkbox" th:field="*{roles}"
+                          th:text="${rol.rol}" th:value="${rol.value}" class="m-2" />
+                      </th:block>
+                  </div> 
+              </div>
+
+                <!--ROLES NEW
+                <div th:each="rol : ${usuario.roles}">
+                  <span th:text="${rol.rol}"></span> = <span th:text="${rol.value}"></span>
+                </div>-->
+
+                <!--
+
+                <div th:each="rol : ${usuario.roles}">
+                  <div class="form-group">
+                      <label th:for="*{roles}" th:text="${rol.rol}"></label>
+                      <input type="text" class="form-control" th:field="*{map['__${property.key}__']}" />
                   </div>
+              </div>
+                
+                
+                <div class="form-group">
+                    <label th:for="*{properties['__${property.key}__']}" th:text="${property.key}">Property</label>
+                    <input type="text" class="form-control" th:field="*{properties['__${property.key}__']}" />
+                </div>
+                  -->
+                  
+                  
+                  
+                  
+                  <!--
+
+                  <div class="form-floating mb-2">
+                    <input type="text" class="form-control" th:value="*{usuario.username}" name="username" id="username" placeholder="Nombre de usuario" required>
+                    <label for="username" class="text-muted">Nombre de usuario</label>
+                  </div>
+
+                  <div class="form-floating mb-2">
+                    <input type="password" class="form-control" th:value="*{usuario.password}" name="password" id="password" placeholder="Contraseña">
+                    <label for="password" class="text-muted">Contraseña</label>
+                  </div>
+
+                  <h3>Roles</h3>
+                  <div th:each="mapEntry : ${roles.map}" class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" th:id="${mapEntry.key}" th:checked="${mapEntry.value}">
+                    <label class="form-check-label" th:for="${mapEntry.key}" th:text="${mapEntry.key}"></label>
+                  </div>
+                  -->
+
+                  <!--TEST
+                  <div th:each="mapEntry : ${usuariodto.map}" class="form-group mt-3">
+                    <span class="ml-2" th:text="${mapEntry.key}"><input type="checkbox" th:field="*{mapEntry.value}" data-toggle="switch"/></span>
+                  </div>
+                  
+                  
+                  <div th:each="mapEntry : ${usuariodto.map}" class="form-check">
+                    <input class="form-check-input" type="checkbox" th:value="${mapEntry.value}" th:id="${mapEntry.key}">
+                    <label class="form-check-label" th:for="${mapEntry.key}" th:text="${mapEntry.key}">
+                      
+                    </label>
+                  </div>
+                  -->
+
+        
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
                 <div class="col-2"></div>
               </div>
             </form>
           </div>
+
+
         </main>
 
         <!-- SCRIPTS -->

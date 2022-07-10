@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="vista_optativas")
-public class Optativas {
+public class VOptativas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_optativa;
@@ -21,10 +21,10 @@ public class Optativas {
 	private String correlativas;
 	
 	//constructor vacio
-	public Optativas() {
+	public VOptativas() {
 	}
 	
-	public Optativas(int id_optativa, String asignatura, String codigo, String creditos_grado, String cuatrimestre,
+	public VOptativas(int id_optativa, String asignatura, String codigo, String creditos_grado, String cuatrimestre,
 			String correlativas) {
 		super();
 		this.id_optativa = id_optativa;
@@ -35,7 +35,7 @@ public class Optativas {
 		this.correlativas = correlativas;
 	}
 
-	public Optativas(String asignatura, String codigo, String creditos_grado, String cuatrimestre,
+	public VOptativas(String asignatura, String codigo, String creditos_grado, String cuatrimestre,
 			String correlativas) {
 		super();
 		this.asignatura = asignatura;

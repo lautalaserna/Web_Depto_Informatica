@@ -1,4 +1,4 @@
-package com.example.informatica.carrera.correlativas;
+package com.example.informatica.internas.correlativas;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

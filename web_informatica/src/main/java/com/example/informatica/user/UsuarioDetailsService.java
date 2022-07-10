@@ -2,6 +2,7 @@ package com.example.informatica.user;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,26 @@ public class UsuarioDetailsService implements UserDetailsService {
 		return new User(username, user.getPassword(), authorities);
 	}
 	
+	public List<Usuario> getUsuarios(){
+		return usuarioRepository.findAll();
+	}
 	
+	public Optional<Usuario> getUsuario(int id) {
+		return usuarioRepository.findById(id);
+	}
+	
+	public void addUsuario(Usuario usuario) {
+		usuarioRepository.save(usuario);
+	}
+	
+	public void updateUsuario(Usuario usuario) {
+		usuarioRepository.save(usuario);
+	}
+	
+	public void deleteUsuario(int id) {
+		
+		usuarioRepository.deleteById(id);
+	}
 
 }
 	

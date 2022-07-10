@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path="/api")
-public class OptativasController {
+public class VOptativasController {
 	
-	private OptativasService optativasService;
+	private VOptativasService optativasService;
 	
 	@Autowired
-	public OptativasController(OptativasService optativasService) {
+	public VOptativasController(VOptativasService optativasService) {
 		this.optativasService = optativasService;
 	}
 	
 	@GetMapping(path = "/optativas")
-	public List<Optativas> getDocentes() {
+	public List<VOptativas> getDocentes() {
 		return optativasService.getOptativas();
 	}
 }
