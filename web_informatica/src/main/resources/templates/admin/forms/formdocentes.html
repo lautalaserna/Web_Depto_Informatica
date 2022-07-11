@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Docente</h1>
+          </div>
+
+          <div class="container">
+            <form th:action="@{/admin/docentes/{id}(id=${docente.id_docente})}" th:object="${docente}" method="post">      
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{nombre_completo}" name="nombre_completo" id="nombre_completo" placeholder="nombre_completo" required>
+                    <label for="nombre_completo" class="text-muted">Nombre Completo</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{dni}" name="dni" id="dni" placeholder="dni" required>
+                    <label for="dni" class="text-muted">DNI</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{email}" name="email" id="email" placeholder="email" required>
+                    <label for="email" class="text-muted">Correo Electrónico</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
+                    <label for="titulo" class="text-muted">Título</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{img_url}" name="img_url" id="img_url" placeholder="img_url" required>
+                    <label for="img_url" class="text-muted">Dirección de la Imagen</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                      <label for="username" class="text-muted">url</label>
+                  </div>
+                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
+                </div>
+                <div class="col-2"></div>
+              </div>
+            </form>
+          </div>
+        </main>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

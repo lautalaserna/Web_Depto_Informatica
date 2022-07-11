@@ -20,7 +20,7 @@
       
       <main>
         <div class="container mt-5 pb-2">
-          <h1 class="title modal-header">PPS</h1>
+          <h1 class="title modal-header">Asignatura</h1>
         </div>
         <div class="container">
           <div class="row">
@@ -29,24 +29,19 @@
               <form th:action="@{/admin/asignaturas/{id}(id=${asignatura.id_asignatura})}" th:object="${asignatura}" method="post">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" th:value="*{codigo}" name="codigo" id="codigo" placeholder="codigo" required>
-                  <label for="codigo" class="text-muted">Codigo</label>
+                  <label for="codigo" class="text-muted">Código</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
-                  <label for="titulo" class="text-muted">Titulo</label>
+                  <label for="titulo" class="text-muted">Título</label>
                 </div>
-
-                <!--combo de id area => que muestre el titulo de area-->
-                <h5 class="mb-2">id_area</h5>
+                <h5 class="mb-2">Área</h5>
                 <select class="form-select mb-3" th:field="*{id_area}" id="id_area" name="id_area">
                   <option th:each="area : ${areas}" th:value="${area.id_area}" th:text="${area.titulo}"></option>
                 </select>
-
-
-
                 <div class="form-floating mb-3">
                   <input type="number" class="form-control" th:value="*{creditos_grado}" name="creditos_grado" id="creditos_grado" placeholder="creditos_grado">
-                  <label for="creditos_grado" class="text-muted">creditos de grado</label>
+                  <label for="creditos_grado" class="text-muted">Créditos de Grado</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">

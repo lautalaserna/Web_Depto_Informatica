@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Tipo de Cargo</h1>
+          </div>
+
+          <div class="container">
+            <form th:action="@{/admin/tipo_cargo/{id}(id=${tipo_cargo.id_tipo_cargo})}" th:object="${tipo_cargo}" method="post">      
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{nombre}" name="nombre" id="nombre" placeholder="nombre" required>
+                    <label for="username" class="text-muted">Nombre</label>
+                  </div>
+                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
+                </div>
+                <div class="col-2"></div>
+              </div>
+            </form>
+          </div>
+        </main>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

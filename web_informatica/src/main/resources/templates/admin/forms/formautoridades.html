@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div th:replace="fragments/navbar"></div>
+        </header>
+
+        <main>
+          <div class="container mt-5 pb-2">
+            <h1 class="title modal-header">Autoridades</h1>
+          </div>
+
+          <div class="container">
+            <form th:action="@{/admin/autoridades/{id}(id=${autoridades.id_autoridad})}" th:object="${autoridades}" method="post">      
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{director}" name="director" id="director" placeholder="director" required>
+                    <label for="username" class="text-muted">Director</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{vicedirector}" name="vicedirector" id="vicedirector" placeholder="vicedirector" required>
+                    <label for="username" class="text-muted">Vicedirector</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                    <label for="url" class="text-muted">url</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{img_url_dir}" name="img_url_dir" id="img_url_dir" placeholder="img_url_dir">
+                    <label for="img_url_dir" class="text-muted">Dirreción de Imagen (Director)</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{img_url_vice}" name="img_url_vice" id="img_url_vice" placeholder="img_url_vice">
+                    <label for="img_url_vice" class="text-muted">Dirreción de Imagen (Vicedirector)</label>
+                  </div>
+                  <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
+                </div>
+                <div class="col-2"></div>
+              </div>
+            </form>
+          </div>
+        </main>
+
+        <!-- SCRIPTS -->
+        <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

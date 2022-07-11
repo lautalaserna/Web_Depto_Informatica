@@ -26,7 +26,7 @@
             <h1 class="sub-title modal-header ps-0">
               Trabajos Finales
               <div class="text-end">
-                <a th:href="@{|/admin/pps/editar/0|}" type="button" class="btn btn-add hovereable">
+                <a th:href="@{|/admin/trabajosfinales/editar/0|}" type="button" class="btn btn-add hovereable">
                   <h5 class="mb-0 pt-1 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
                 </a>
               </div>
@@ -42,19 +42,21 @@
                     <tr class="table-header">
                       <td><h3 class="table-header-text-mini">Titulo</h3></td>
                       <td><h3 class="table-header-text-mini">Estudiantes</h3></td>
+                      <td><h3 class="table-header-text-mini">Demandante</h3></td>
                       <td><h3 class="table-header-text-mini">Acciones</h3></td>
                     </tr>
                   </thead>
   
                   <tbody class="table-borderless" style="border-top: none !important;">
-                    <tr th:each="item :${pps}">
+                    <tr th:each="item :${trabajosfinales}">
                       <td><h5 class="py-2" th:text="${item.titulo}"></h5></td>
                       <td><h5 class="py-2" th:text="${item.estudiantes}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.demandante}"></h5></td>
                       <td>
-                        <a th:href="@{/admin/pps/editar/{id}(id=${item.id_pps})}" type="button" class="btn btn-edit hovereable mx-1">
+                        <a th:href="@{/admin/trabajosfinales/editar/{id}(id=${item.id_trabajo_final})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
                         </a>
-                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/pps/delete/{id}(id=${item.id_pps})}" type="button" class="btn btn-delete hovereable mx-1">
+                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/trabajosfinales/delete/{id}(id=${item.id_trabajo_final})}" type="button" class="btn btn-delete hovereable mx-1">
                           <img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
                         </a>
                       </td>
