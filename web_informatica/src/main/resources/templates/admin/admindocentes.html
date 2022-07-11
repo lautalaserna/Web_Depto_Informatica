@@ -49,10 +49,10 @@
                       <td><h5 class="py-2" th:text="${item.nombre_completo}"></h5></td>
                       <td><h5 class="py-2" th:text="${item.dni}"></h5></td>
                       <td>
-                        <a th:href="@{/admin/docentes/editar/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-edit hovereable mx-1">
+                        <a th:href="@{/admin/docentes/editar/{id}(id=${item.id_docente})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
                         </a>
-                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/docentes/delete/{id}(id=${item.id_calendario_academico})}" type="button" class="btn btn-delete hovereable mx-1">
+                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/docentes/delete/{id}(id=${item.id_docente})}" type="button" class="btn btn-delete hovereable mx-1">
                           <img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
                         </a>
                       </td>

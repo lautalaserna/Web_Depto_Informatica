@@ -50,7 +50,7 @@ public class AdminTipoCargoController {
 			tipocargoService.addTipoCargo(tipocargo);
 		}else {
 			TipoCargo tipocargoExistente = tipocargoService.getTipoCargo(id).get();
-			tipocargoExistente.setId_tipo_cargo(tipocargo.getId_tipo_cargo());
+			tipocargoExistente.setId_tipo_cargo(id);
 			tipocargoExistente.setNombre(tipocargo.getNombre());
 			tipocargoService.updateTipoCargo(tipocargoExistente);
 		}

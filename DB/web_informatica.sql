@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-07-2022 a las 00:41:19
+-- Tiempo de generación: 11-07-2022 a las 22:51:53
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -30,17 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `areas` (
   `id_area` int(6) NOT NULL,
   `titulo` varchar(255) DEFAULT NULL,
-  `url` varchar(4096) DEFAULT ''
+  `url` varchar(4096) DEFAULT '',
+  `id_tipo_carrera` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `areas`
 --
 
-INSERT INTO `areas` (`id_area`, `titulo`, `url`) VALUES
-(1, 'area 1', ''),
-(2, 'area 2', ''),
-(3, 'area 3', '');
+INSERT INTO `areas` (`id_area`, `titulo`, `url`, `id_tipo_carrera`, `nombre`) VALUES
+(1, 'area 1', '', 0, NULL),
+(2, 'area 2', '', 0, NULL),
+(3, 'area 3', '', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,7 @@ CREATE TABLE `cargos` (
   `id_tipo_cargo` int(6) NOT NULL,
   `id_dedicacion` int(6) NOT NULL,
   `id_docente` int(6) NOT NULL,
-  `clasificacion` varchar(1) NOT NULL
+  `clasificacion` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -147,11 +149,11 @@ CREATE TABLE `cargos` (
 --
 
 INSERT INTO `cargos` (`id_cargo`, `id_asignatura`, `id_tipo_cargo`, `id_dedicacion`, `id_docente`, `clasificacion`) VALUES
-(1, 1, 1, 1, 1, ''),
-(2, 1, 2, 1, 2, ''),
-(3, 2, 1, 1, 3, ''),
-(4, 2, 3, 1, 4, ''),
-(5, 3, 1, 1, 5, '');
+(1, 1, 1, 1, 1, 'a'),
+(2, 1, 2, 1, 2, 'a'),
+(3, 2, 1, 1, 3, 'a'),
+(4, 2, 3, 1, 4, 'a'),
+(5, 3, 1, 1, 5, 'a');
 
 -- --------------------------------------------------------
 
@@ -354,7 +356,7 @@ INSERT INTO `graduados` (`id_graduado`, `nombre_completo`, `fecha`, `url`) VALUE
 (8, 'graduado 8', '2021-05-12', NULL),
 (9, 'graduado 9', '2022-05-18', NULL),
 (10, 'graduado 10', '2022-05-25', NULL),
-(13, 'admin', '2022-01-01', NULL);
+(20, 'emmik', '2003-10-23', NULL);
 
 -- --------------------------------------------------------
 
@@ -406,7 +408,8 @@ INSERT INTO `novedades` (`id_novedad`, `fecha`, `imgurl`, `titulo`, `info`, `con
 (3, '2020-11-23', 'img/noticia.png', 'Titulo de otra noticia mas', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'N'),
 (4, '2020-11-23', 'img/noticia.png', 'Titulo de trabajo 1', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
 (5, '2020-11-27', 'img/noticia.png', 'Titulo de trabajo 2', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
-(6, '2020-12-30', 'img/noticia.png', 'Titulo de trabajo 3', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y');
+(6, '2020-12-30', 'img/noticia.png', 'Titulo de trabajo 3', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
+(7, '2022-07-09', 'img/noticia.png', 'test', 'info\r\ninfo\r\ninfo', 'cont\r\ncont\r\ncont\r\ncont\r\ncont', '', 'N');
 
 -- --------------------------------------------------------
 
@@ -416,7 +419,6 @@ INSERT INTO `novedades` (`id_novedad`, `fecha`, `imgurl`, `titulo`, `info`, `con
 
 CREATE TABLE `optativas` (
   `id_optativa` int(6) NOT NULL,
-  `id_plan_estudio` int(6) NOT NULL,
   `id_asignatura` int(6) NOT NULL,
   `cuatrimestre` int(1) NOT NULL,
   `url` varchar(4096) DEFAULT ''
@@ -426,10 +428,10 @@ CREATE TABLE `optativas` (
 -- Volcado de datos para la tabla `optativas`
 --
 
-INSERT INTO `optativas` (`id_optativa`, `id_plan_estudio`, `id_asignatura`, `cuatrimestre`, `url`) VALUES
-(1, 1, 12, 1, NULL),
-(2, 1, 13, 2, NULL),
-(3, 1, 14, 1, NULL);
+INSERT INTO `optativas` (`id_optativa`, `id_asignatura`, `cuatrimestre`, `url`) VALUES
+(1, 12, 1, NULL),
+(2, 13, 2, NULL),
+(3, 14, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -806,7 +808,6 @@ ALTER TABLE `novedades`
 --
 ALTER TABLE `optativas`
   ADD PRIMARY KEY (`id_optativa`),
-  ADD KEY `id_plan_estudio` (`id_plan_estudio`),
   ADD KEY `id_asignatura` (`id_asignatura`);
 
 --
@@ -875,7 +876,7 @@ ALTER TABLE `areas`
 -- AUTO_INCREMENT de la tabla `asignaturas`
 --
 ALTER TABLE `asignaturas`
-  MODIFY `id_asignatura` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_asignatura` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `autoridades`
@@ -893,7 +894,7 @@ ALTER TABLE `calendario_academico`
 -- AUTO_INCREMENT de la tabla `cargos`
 --
 ALTER TABLE `cargos`
-  MODIFY `id_cargo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_cargo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `carreras`
@@ -929,7 +930,7 @@ ALTER TABLE `dedicacion`
 -- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docente` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_docente` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `elecciones`
@@ -941,7 +942,7 @@ ALTER TABLE `elecciones`
 -- AUTO_INCREMENT de la tabla `graduados`
 --
 ALTER TABLE `graduados`
-  MODIFY `id_graduado` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_graduado` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `investigacion`
@@ -953,7 +954,7 @@ ALTER TABLE `investigacion`
 -- AUTO_INCREMENT de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id_novedad` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_novedad` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `optativas`
@@ -983,7 +984,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tipo_cargo`
 --
 ALTER TABLE `tipo_cargo`
-  MODIFY `id_tipo_cargo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tipo_cargo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_carrera`
@@ -1045,7 +1046,6 @@ ALTER TABLE `correlativas`
 -- Filtros para la tabla `optativas`
 --
 ALTER TABLE `optativas`
-  ADD CONSTRAINT `optativas_ibfk_1` FOREIGN KEY (`id_plan_estudio`) REFERENCES `plan_estudio` (`id_plan_estudio`),
   ADD CONSTRAINT `optativas_ibfk_2` FOREIGN KEY (`id_asignatura`) REFERENCES `asignaturas` (`id_asignatura`);
 
 --

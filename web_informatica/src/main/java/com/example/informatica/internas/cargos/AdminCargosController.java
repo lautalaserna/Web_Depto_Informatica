@@ -31,14 +31,24 @@ public class AdminCargosController {
 	private DocentesService docentesService;
 	
 	@Autowired
-	public AdminCargosController(CargosService cargosService) {
+	public AdminCargosController(CargosService cargosService, 
+									AsignaturasService asignaturasService, 
+									TipoCargoService tipocargoService,
+									DedicacionService dedicacionService,
+									DocentesService docentesService) {
 		this.cargosService = cargosService;
+		this.asignaturasService = asignaturasService;
+		this.tipocargoService = tipocargoService;
+		this.dedicacionService = dedicacionService;
+		this.docentesService = docentesService;
 	}
 	
 	//ADMIN
 	@GetMapping("/admin/cargos")
 	public String getAdminCargos(Model model) {
+		
 		List<Cargos> cargos = cargosService.getCargos();
+		
 		model.addAttribute("cargos", cargos);
 		return "admin/admincargos";
 	}

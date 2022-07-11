@@ -33,7 +33,7 @@
 								</select>
 								<h5 class="mb-2">Tipo de Cargo</h5>
 								<select class="form-select mb-3" th:field="*{id_tipo_cargo}" id="id_tipo_cargo" name="id_tipo_cargo">
-									<option th:each="tc : ${tipo_cargo}" th:value="${tc.id_tipo_cargo}" th:text="${tc.nombre}"></option>
+									<option th:each="tc : ${tipocargo}" th:value="${tc.id_tipo_cargo}" th:text="${tc.nombre}"></option>
 								</select>
 								<h5 class="mb-2">Dedicación</h5>
 								<select class="form-select mb-3" th:field="*{id_dedicacion}" id="id_dedicacion" name="id_dedicacion">

@@ -14,7 +14,6 @@ public class Optativas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_optativa;
-	private int id_plan_estudio;
 	private int id_asignatura;
 	private char cuatrimestre;
 	private String url;
@@ -23,18 +22,16 @@ public class Optativas {
 	public Optativas() {
 	}
 
-	public Optativas(int id_optativa, int id_plan_estudio, int id_asignatura, char cuatrimestre, String url) {
+	public Optativas(int id_optativa, int id_asignatura, char cuatrimestre, String url) {
 		super();
 		this.id_optativa = id_optativa;
-		this.id_plan_estudio = id_plan_estudio;
 		this.id_asignatura = id_asignatura;
 		this.cuatrimestre = cuatrimestre;
 		this.url = url;
 	}
 
-	public Optativas(int id_plan_estudio, int id_asignatura, char cuatrimestre, String url) {
+	public Optativas(int id_asignatura, char cuatrimestre, String url) {
 		super();
-		this.id_plan_estudio = id_plan_estudio;
 		this.id_asignatura = id_asignatura;
 		this.cuatrimestre = cuatrimestre;
 		this.url = url;
@@ -46,14 +43,6 @@ public class Optativas {
 
 	public void setId_optativa(int id_optativa) {
 		this.id_optativa = id_optativa;
-	}
-
-	public int getId_plan_estudio() {
-		return id_plan_estudio;
-	}
-
-	public void setId_plan_estudio(int id_plan_estudio) {
-		this.id_plan_estudio = id_plan_estudio;
 	}
 
 	public int getId_asignatura() {
