@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+      <!-- HEADER -->
+      <header>
+          <div th:replace="fragments/navbar"></div>
+      </header>
+      
+      <main>
+        <div class="container mt-5 pb-2">
+          <h1 class="title modal-header">Carrera</h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <form th:action="@{/admin/carreras/{id}(id=${carrera.id_carrera})}" th:object="${carrera}" method="post">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
+									<label for="username" class="text-muted">Título</label>
+								</div>
+								<h5 class="mb-2">Tipo de Carrera</h5>
+								<select class="form-select mb-3" th:field="*{id_tipo_carrera}" id="id_tipo_carrera" name="id_tipo_carrera">
+									<option th:each="tc : ${tipocarrera}" th:value="${tc.id_tipo_carrera}" th:text="${tc.nombre}"></option>
+								</select>
+                <div class="form-floating mb-3">
+									<input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+									<label for="url" class="text-muted">url</label>
+								</div>
+                <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>
+              </form>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- SCRIPTS -->
+      <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>
+
+
+ 

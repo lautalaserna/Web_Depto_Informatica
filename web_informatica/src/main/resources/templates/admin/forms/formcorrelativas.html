@@ -20,26 +20,22 @@
 
         <main>
           <div class="container mt-5 pb-2">
-            <h1 class="title modal-header">Consejo Alumnos</h1>
+            <h1 class="title modal-header">Materia Correlativa</h1>
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/consejoalumnos/{id}(id=${consejoalumnos.id_consejo_alumnos})}" th:object="${consejoalumnos}" method="post">      
+            <form th:action="@{/admin/correlativas/{id}(id=${correlativas.id_correlativa})}" th:object="${correlativas}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{nombre}" name="nombre" id="nombre" placeholder="nombre" required>
-                    <label for="username" class="text-muted">Nombre</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{tipo}" name="tipo" id="tipo" placeholder="tipo" required>
-                    <label for="username" class="text-muted">Tipo</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-                    <label for="url" class="text-muted">url</label>
-                  </div>
+                  <h5 class="mb-2">Materia Principal</h5>
+                  <select class="form-select mb-3" th:field="*{id_asinatura_principal}" id="id_asinatura_principal" name="id_asinatura_principal">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura_principal}" th:text="${a.titulo}"></option>
+                  </select>
+                  <h5 class="mb-2">Materia Correlativa</h5>
+                  <select class="form-select mb-3" th:field="*{id_asinatura_correlativa}" id="id_asinatura_correlativa" name="id_asinatura_correlativa">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura_correlativa}" th:text="${a.titulo}"></option>
+                  </select>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
                 <div class="col-2"></div>

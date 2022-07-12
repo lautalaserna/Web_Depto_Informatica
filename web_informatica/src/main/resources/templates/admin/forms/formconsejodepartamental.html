@@ -24,7 +24,7 @@
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/consejodepartamental/{id}(id=${consejodepartamental.id_consejodepartamental})}" th:object="${consejodepartamental}" method="post">      
+            <form th:action="@{/admin/consejodepartamental/{id}(id=${consejodepartamental.id_consejo_departamental})}" th:object="${consejodepartamental}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
@@ -36,6 +36,11 @@
                     <input type="text" class="form-control" th:value="*{tipo}" name="tipo" id="tipo" placeholder="tipo" required>
                     <label for="username" class="text-muted">Tipo</label>
                   </div>
+                  <h5 class="mb-2">Tipo</h5>
+                  <select class="form-select mb-3" th:field="*{tipo}" id="tipo" name="tipo">
+                    <option th:value="'T'" th:text="|Titular|"></option>
+                    <option th:value="'S'" th:text="|Suplente|"></option>
+                  </select>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
                     <label for="url" class="text-muted">url</label>
