@@ -25,7 +25,7 @@ public class AdminTrabajosFinalesController {
 	@GetMapping("/admin/trabajosfinales")
 	public String getAdminGraduados(Model model) {
 		List<TrabajoFinal> trabajoFinal = trabajoFinalService.getTrabajosFinales();
-		model.addAttribute("trabajosFinales", trabajoFinal);
+		model.addAttribute("trabajosfinales", trabajoFinal);
 		return "admin/admintrabajosfinales";
 	}
 	
@@ -35,14 +35,14 @@ public class AdminTrabajosFinalesController {
 		//id == 0 significa nuevo
 		if(id == 0) {
 			TrabajoFinal trabajoFinal = new TrabajoFinal();
-			model.addAttribute("trabajoFinal", trabajoFinal);
+			model.addAttribute("trabajosfinales", trabajoFinal);
 		}else {
-			model.addAttribute("trabajoFinal", trabajoFinalService.getTrabajoFinal(id).get());
+			model.addAttribute("trabajosfinales", trabajoFinalService.getTrabajoFinal(id).get());
 		}
 		return "admin/forms/formtrabajosfinales";
 	}
 	@PostMapping("/admin/trabajosfinales/{id}")
-	public String actualizarTrabajoFinal(@PathVariable int id, @ModelAttribute("trabajofinal") TrabajoFinal trabajoFinal) {
+	public String actualizarTrabajoFinal(@PathVariable int id, @ModelAttribute("trabajosfinales") TrabajoFinal trabajoFinal) {
 		
 		//id == 0 significa nuevo
 		if(id == 0) {

@@ -29,7 +29,7 @@ public class AdminCorrelativasController {
 	public String getAdminCorrelativas(Model model) {
 		List<Correlativas> correlativas = correlativasService.getCorrelativas();
 		model.addAttribute("correlativas", correlativas);
-		return "admin/adminocorrelativas";
+		return "admin/admincorrelativas";
 	}
 	
 	//CREATE or EDIT
@@ -40,14 +40,14 @@ public class AdminCorrelativasController {
 		//id == 0 significa nuevo
 		if(id == 0) {
 			Correlativas correlativa = new Correlativas();
-			model.addAttribute("correlativa", correlativa);
+			model.addAttribute("correlativas", correlativa);
 		}else {
-			model.addAttribute("correlativa", correlativasService.getCorrelativa(id).get());
+			model.addAttribute("correlativas", correlativasService.getCorrelativa(id).get());
 		}
 		return "admin/forms/formcorrelativas";
 	}
 	@PostMapping("/admin/correlativas/{id}")
-	public String actualizarCorrelativa(@PathVariable int id, @ModelAttribute("correlativa") Correlativas correlativa) {
+	public String actualizarCorrelativa(@PathVariable int id, @ModelAttribute("correlativas") Correlativas correlativa) {
 		//id == 0 significa nuevo
 		if(id == 0) {
 			correlativasService.addCorrelativa(correlativa);
