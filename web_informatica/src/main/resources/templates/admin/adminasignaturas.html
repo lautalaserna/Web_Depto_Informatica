@@ -34,13 +34,13 @@
         
           <div class="container">
             <div class="row">
-              <div class="col-2"></div>
-              <div class="col-8 mb-5">
+              <div class="col-1"></div>
+              <div class="col-10 mb-5">
                 <table class="table table-striped align-middle text-center">
                   <thead class="table-borderless">
                     <tr class="table-header">
-                      <td><h2 class="table-header-text-mini">Código</h2></td>
                       <td><h2 class="table-header-text-mini">Título</h2></td>
+                      <td><h2 class="table-header-text-mini">Código</h2></td>
                       <!-- <td><h2 class="table-header-text-mini">id_area</h2></td> -->
                       <td><h2 class="table-header-text-mini">CG</h2></td>
                       <td><h2 class="table-header-text-mini">Acciones</h2></td>
@@ -49,8 +49,8 @@
   
                   <tbody class="table-borderless" style="border-top: none !important;">
                     <tr th:each="asignatura :${asignaturas}">
-                      <td><h5 class="py-2" th:text="${asignatura.codigo}"></h5></td>
                       <td><h5 class="py-2" th:text="${asignatura.titulo}"></h5></td>
+                      <td><h5 class="py-2" th:text="${asignatura.codigo}"></h5></td>
                       <!-- <td><h5 class="py-2" th:text="${asignatura.id_area}"></h5></td> -->
                       <td><h5 class="py-2" th:text="${asignatura.creditos_grado}"></h5></td>
                       <td>

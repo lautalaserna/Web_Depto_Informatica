@@ -20,25 +20,21 @@
 
         <main>
           <div class="container mt-5 pb-2">
-            <h1 class="title modal-header">Consejo Alumnos</h1>
+            <h1 class="title modal-header">Asignatura Optativa</h1>
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/consejoalumnos/{id}(id=${consejoalumnos.id_consejo_alumnos})}" th:object="${consejoalumnos}" method="post">      
+            <form th:action="@{/admin/optativas/{id}(id=${optativas.id_optativa})}" th:object="${optativas}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
+                  <h5 class="mb-2">Asignatura</h5>
+                  <select class="form-select mb-3" th:field="*{id_asinatura}" id="id_asinatura" name="id_asinatura">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura}" th:text="${a.titulo}"></option>
+                  </select>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{nombre}" name="nombre" id="nombre" placeholder="nombre" required>
-                    <label for="username" class="text-muted">Nombre</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{tipo}" name="tipo" id="tipo" placeholder="tipo" required>
-                    <label for="username" class="text-muted">Tipo</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-                    <label for="url" class="text-muted">url</label>
+                    <input type="number" class="form-control" th:value="*{cuatrimestre}" name="cuatrimestre" id="cuatrimestre" placeholder="cuatrimestre" required>
+                    <label for="cuatrimestre" class="text-muted">Cuatrimestre</label>
                   </div>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
