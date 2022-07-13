@@ -23,10 +23,10 @@
   
           <div class="container mt-3 pb-2">
             <h1 class="sub-title modal-header ps-0">
-              Áreas
+              Plan de Estudio
               <div class="text-end">
-                <a th:href="@{|/admin/areas/editar/0|}" type="button" class="btn btn-add hovereable">
-                  <h5 class="my-0 pt-1 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
+                <a th:href="@{|/admin/planestudio/editar/0|}" type="button" class="btn btn-add hovereable">
+                  <h5 class="mb-0 pt-1 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
                 </a>
               </div>
             </h1>
@@ -34,24 +34,28 @@
         
           <div class="container">
             <div class="row">
-              <div class="col-2"></div>
-              <div class="col-8 mb-5">
+              <div class="col-1"></div>
+              <div class="col-10 mb-5 px-4">
                 <table class="table table-striped align-middle text-center">
                   <thead class="table-borderless">
                     <tr class="table-header">
-                      <td><h2 class="table-header-text-mini">Título</h2></td>
+                      <td><h2 class="table-header-text-mini">Asignatura</h2></td>
+                      <td><h2 class="table-header-text-mini">Año</h2></td>
+                      <td><h2 class="table-header-text-mini">Cuatrimestre</h2></td>
                       <td><h2 class="table-header-text-mini">Acciones</h2></td>
                     </tr>
                   </thead>
   
                   <tbody class="table-borderless" style="border-top: none !important;">
-                    <tr th:each="item : ${area}">
-                      <td><h5 class="py-2" th:text="${item.titulo}"></h5></td>
+                    <tr th:each="item :${planestudio}">
+                      <td><h5 class="py-2" th:text="${item.id_asignatura}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.anio}"></h5></td>
+                      <td><h5 class="py-2" th:text="${item.cuatrimestre}"></h5></td>
                       <td>
-                        <a th:href="@{/admin/areas/editar/{id}(id=${item.id_area})}" type="button" class="btn btn-edit hovereable mx-1">
+                        <a th:href="@{/admin/planestudio/editar/{id}(id=${item.id_plan_estudio})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
                         </a>
-                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/areas/delete/{id}(id=${item.id_area})}" type="button" class="btn btn-delete hovereable mx-1">
+                        <a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/planestudio/delete/{id}(id=${item.id_plan_estudio})}" type="button" class="btn btn-delete hovereable mx-1">
                           <img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
                         </a>
                       </td>
@@ -60,12 +64,10 @@
                 
                 </table>
               </div>
-              <div class="col-2"></div>
+              <div class="col-1"></div>
             </div>
           </div>
         </main>
-
-
         <!-- SCRIPTS -->
         <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
     </body>

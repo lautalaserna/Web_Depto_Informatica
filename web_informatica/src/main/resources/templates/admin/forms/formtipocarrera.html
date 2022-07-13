@@ -20,22 +20,22 @@
 
         <main>
           <div class="container mt-5 pb-2">
-            <h1 class="title modal-header">Área</h1>
+            <h1 class="title modal-header">Tipo de Carrera</h1>
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/areas/{id}(id=${area.id_area})}" th:object="${area}" method="post">      
+            <form th:action="@{/admin/tipocarrera/{id}(id=${tipocarrera.id_tipo_carrera})}" th:object="${tipocarrera}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
-                    <label for="username" class="text-muted">Título</label>
+                    <input type="text" class="form-control" th:value="*{nombre}" name="nombre" id="nombre" placeholder="nombre" required>
+                    <label for="username" class="text-muted">Nombre</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
-                    <label for="url" class="text-muted">url</label>
-                  </div>
+									<div class="form-floating mb-3">
+										<input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+										<label for="username" class="text-muted">url</label>
+									</div>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
                 <div class="col-2"></div>

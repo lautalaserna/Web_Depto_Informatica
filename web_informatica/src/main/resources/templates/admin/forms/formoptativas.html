@@ -24,13 +24,13 @@
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/optativas/{id}(id=${optativas.id_optativa})}" th:object="${optativas}" method="post">      
+            <form th:action="@{/admin/optativas/{id}(id=${optativa.id_optativa})}" th:object="${optativa}" method="post">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
                   <h5 class="mb-2">Asignatura</h5>
-                  <select class="form-select mb-3" th:field="*{id_asinatura}" id="id_asinatura" name="id_asinatura">
-                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura}" th:text="${a.titulo}"></option>
+                  <select class="form-select mb-3" th:field="*{id_asignatura}" id="id_asignatura" name="id_asignatura">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asignatura}" th:text="${a.titulo}"></option>
                   </select>
                   <div class="form-floating mb-3">
                     <input type="number" class="form-control" th:value="*{cuatrimestre}" name="cuatrimestre" id="cuatrimestre" placeholder="cuatrimestre" required>

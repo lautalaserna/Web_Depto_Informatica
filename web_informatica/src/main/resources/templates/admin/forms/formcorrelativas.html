@@ -29,12 +29,12 @@
                 <div class="col-2"></div>
                 <div class="col-8">
                   <h5 class="mb-2">Materia Principal</h5>
-                  <select class="form-select mb-3" th:field="*{id_asinatura_principal}" id="id_asinatura_principal" name="id_asinatura_principal">
-                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura_principal}" th:text="${a.titulo}"></option>
+                  <select class="form-select mb-3" th:field="*{id_asignatura_principal}" id="id_asignatura_principal" name="id_asignatura_principal">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asignatura_principal}" th:text="${a.titulo}"></option>
                   </select>
                   <h5 class="mb-2">Materia Correlativa</h5>
-                  <select class="form-select mb-3" th:field="*{id_asinatura_correlativa}" id="id_asinatura_correlativa" name="id_asinatura_correlativa">
-                    <option th:each="a : ${asignaturas}" th:value="${a.id_asinatura_correlativa}" th:text="${a.titulo}"></option>
+                  <select class="form-select mb-3" th:field="*{id_asignatura_correlativa}" id="id_asignatura_correlativa" name="id_asignatura_correlativa">
+                    <option th:each="a : ${asignaturas}" th:value="${a.id_asignatura_correlativa}" th:text="${a.titulo}"></option>
                   </select>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>

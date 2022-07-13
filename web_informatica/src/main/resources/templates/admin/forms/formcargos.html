@@ -27,7 +27,11 @@
             <div class="col-2"></div>
             <div class="col-8">
               <form th:action="@{/admin/cargos/{id}(id=${cargo.id_cargo})}" th:object="${cargo}" method="post">
-								<h5 class="mb-2">Asignatura</h5>
+								<h5 class="mb-2">Docente</h5>
+								<select class="form-select mb-3" th:field="*{id_docente}" id="id_docente" name="id_docente">
+									<option th:each="docente : ${docentes}" th:value="${docente.id_docente}" th:text="${docente.nombre_completo}"></option>
+								</select>
+                <h5 class="mb-2">Asignatura</h5>
 								<select class="form-select mb-3" th:field="*{id_asignatura}" id="id_asignatura" name="id_asignatura">
 									<option th:each="asignatura : ${asignaturas}" th:value="${asignatura.id_asignatura}" th:text="${asignatura.titulo}"></option>
 								</select>
@@ -38,10 +42,6 @@
 								<h5 class="mb-2">Dedicación</h5>
 								<select class="form-select mb-3" th:field="*{id_dedicacion}" id="id_dedicacion" name="id_dedicacion">
 									<option th:each="d : ${dedicacion}" th:value="${d.id_dedicacion}" th:text="${d.nombre}"></option>
-								</select>
-								<h5 class="mb-2">Docente</h5>
-								<select class="form-select mb-3" th:field="*{id_docente}" id="id_docente" name="id_docente">
-									<option th:each="docente : ${docentes}" th:value="${docente.id_docente}" th:text="${docente.nombre_completo}"></option>
 								</select>
                 
                 <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>

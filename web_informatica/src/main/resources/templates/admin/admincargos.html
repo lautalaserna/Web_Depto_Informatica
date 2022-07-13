@@ -39,18 +39,18 @@
                 <table class="table table-striped align-middle text-center">
                   <thead class="table-borderless">
                     <tr class="table-header">
+                      <td><h2 class="table-header-text-mini">Docente</h2></td>
                       <td><h2 class="table-header-text-mini">Asignatura</h2></td>
                       <td><h2 class="table-header-text-mini">Tipo</h2></td>
-                      <td><h2 class="table-header-text-mini">Docente</h2></td>
                       <td><h2 class="table-header-text-mini">Acciones</h2></td>
                     </tr>
                   </thead>
   
                   <tbody class="table-borderless" style="border-top: none !important;">
                     <tr th:each="item :${cargos}">
+                      <td><h5 class="py-2" th:text="${item.id_docente}"></h5></td>
                       <td><h5 class="py-2" th:text="${item.id_asignatura}"></h5></td>
                       <td><h5 class="py-2" th:text="${item.id_tipo_cargo}"></h5></td>
-                      <td><h5 class="py-2" th:text="${item.id_docente}"></h5></td>
                       <td>
                         <a th:href="@{/admin/cargos/editar/{id}(id=${item.id_cargo})}" type="button" class="btn btn-edit hovereable mx-1">
                           <img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">

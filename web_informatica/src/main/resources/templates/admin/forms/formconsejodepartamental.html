@@ -32,10 +32,6 @@
                     <input type="text" class="form-control" th:value="*{nombre}" name="nombre" id="nombre" placeholder="nombre" required>
                     <label for="username" class="text-muted">Nombre</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{tipo}" name="tipo" id="tipo" placeholder="tipo" required>
-                    <label for="username" class="text-muted">Tipo</label>
-                  </div>
                   <h5 class="mb-2">Tipo</h5>
                   <select class="form-select mb-3" th:field="*{tipo}" id="tipo" name="tipo">
                     <option th:value="'T'" th:text="|Titular|"></option>

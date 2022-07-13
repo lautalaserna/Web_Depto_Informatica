@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--Contenido del head-->
+        <div th:replace="fragments/inner-head"></div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="container">
+            <title>Admin Panel</title>
+        </div>
+
+    </head>
+    <body>
+      <!-- HEADER -->
+      <header>
+          <div th:replace="fragments/navbar"></div>
+      </header>
+      
+      <main>
+        <div class="container mt-5 pb-2">
+          <h1 class="title modal-header">Plan de Estudio</h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <form th:action="@{/admin/planestudio/{id}(id=${planestudio.id_plan_estudio})}" th:object="${planestudio}" method="post">
+                <h5 class="mb-2">Carrera</h5>
+                <select class="form-select mb-3" th:field="*{id_carrera}" id="id_carrera" name="id_carrera">
+                  <option th:each="carrera : ${carreras}" th:value="${carrera.id_carrera}" th:text="${carrera.titulo}"></option>
+                </select><h5 class="mb-2">Asignatura</h5>
+                <select class="form-select mb-3" th:field="*{id_asignatura}" id="id_asignatura" name="id_asignatura">
+                  <option th:each="asignatura : ${asignaturas}" th:value="${asignatura.id_asignatura}" th:text="${asignatura.titulo}"></option>
+                </select>
+								<div class="form-floating mb-3">
+                  <input type="number" class="form-control" th:value="*{anio}" name="anio" id="anio" placeholder="anio" required>
+                  <label for="anio" class="text-muted">Año</label>
+                </div>
+								<div class="form-floating mb-3">
+                  <input type="number" class="form-control" th:value="*{cuatrimestre}" name="cuatrimestre" id="cuatrimestre" placeholder="cuatrimestre" required>
+                  <label for="cuatrimestre" class="text-muted">Cuatrimestre</label>
+                </div>
+								<div class="form-floating mb-3">
+                  <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
+                  <label for="username" class="text-muted">url</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-navbar" type="submit"><h5>Guardar</h5></button>
+              </form>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- SCRIPTS -->
+      <script th:src="@{\js\bootstrap.bundle.min.js}"></script>
+    </body>
+</html>
+
+
+ 
