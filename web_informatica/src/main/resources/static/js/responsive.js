@@ -37,8 +37,8 @@ btnInstitucional.addEventListener("click",()=>{
 });
 
 btnCarrera.addEventListener("click",()=>{
-    document.body.scrollTop = 800;
-    document.documentElement.scrollTop = 800;
+    document.body.scrollTop = 950;
+    document.documentElement.scrollTop = 950;
 })
 
 btnNovedades.addEventListener("click",()=>{
