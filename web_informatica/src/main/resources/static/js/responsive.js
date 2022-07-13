@@ -48,16 +48,28 @@ btnNovedades.addEventListener("click",()=>{
 
 function responsiveSection(){
     let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    let section = document.getElementsByClassName("section");
+    let sectionCarrera = document.getElementById("section-carrera");
+    let sectionProyectos = document.getElementById("section-proyectos");
+    let btnsCarrera = document.getElementById("btns-carrera");
+    let logo = document.getElementById("logo-institucion");
     let section_img = document.getElementsByClassName("section-img");
     let btn_back_to_top = document.getElementById("btn-back-to-top");
 
     if(vw < VW_LIMIT){
         btn_back_to_top.style.display = "none";
-        for (var i = 0; i < section.length; i++) {
-            section[i].classList.remove("col-8");
-            section[i].classList.add("col-12");
-        }
+
+        logo.style.display = "none";
+
+        sectionCarrera.classList.remove("col-8");
+        sectionCarrera.classList.add("col-12");
+        
+        btnsCarrera.classList.remove("text-start");
+        btnsCarrera.classList.add("text-center");
+        
+        sectionProyectos.classList.remove("col-6");
+        sectionProyectos.classList.add("col-12");
+
+
         for (var i = 0; i < section_img.length; i++) {
             section_img[i].style.display = "none";
             section_img[i].classList.remove("col-4");
@@ -67,10 +79,17 @@ function responsiveSection(){
         if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400){
             btn_back_to_top.style.display = "block";
         }
-        for (var i = 0; i < section.length; i++) {
-            section[i].classList.remove("col-12");
-            section[i].classList.add("col-8");
-        }
+
+        logo.style.display = "block";
+
+        sectionCarrera.classList.add("col-8");
+        sectionCarrera.classList.remove("col-12");
+        
+        btnsCarrera.classList.add("text-start");
+        btnsCarrera.classList.remove("text-center");
+        
+        sectionProyectos.classList.add("col-6");
+        sectionProyectos.classList.remove("col-12");
 
         for (var i = 0; i < section_img.length; i++) {
             section_img[i].style.display = "block";
@@ -78,3 +97,37 @@ function responsiveSection(){
         }
     }
 }
+
+// function responsiveSection(){
+//     let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+//     let section = document.getElementsByClassName("section-carrera");
+//     // let section-proyecetos = document.getElementsByClassName("section-proyectos");
+//     let section_img = document.getElementsByClassName("section-img");
+//     let btn_back_to_top = document.getElementById("btn-back-to-top");
+
+//     if(vw < VW_LIMIT){
+//         btn_back_to_top.style.display = "none";
+//         for (var i = 0; i < section.length; i++) {
+//             section[i].classList.remove("col-8");
+//             section[i].classList.add("col-12");
+//         }
+//         for (var i = 0; i < section_img.length; i++) {
+//             section_img[i].style.display = "none";
+//             section_img[i].classList.remove("col-4");
+//         }
+//     }
+//     else{
+//         if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400){
+//             btn_back_to_top.style.display = "block";
+//         }
+//         for (var i = 0; i < section.length; i++) {
+//             section[i].classList.remove("col-12");
+//             section[i].classList.add("col-8");
+//         }
+
+//         for (var i = 0; i < section_img.length; i++) {
+//             section_img[i].style.display = "block";
+//             section_img[i].classList.add("col-4");
+//         }
+//     }
+// }
