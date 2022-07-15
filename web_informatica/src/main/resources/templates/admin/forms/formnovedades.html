@@ -23,8 +23,9 @@
             <h1 class="title modal-header">Novedad</h1>
           </div>
 
+
           <div class="container">
-            <form th:action="@{/admin/novedades/{id}(id=${novedad.id_novedad})}" th:object="${novedad}" method="post">      
+            <form th:action="@{/admin/novedades/{id}(id=${novedad.id_novedad})}" th:object="${novedad}" method="post" enctype="multipart/form-data">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
@@ -36,9 +37,9 @@
                     <input type="date" class="form-control" th:value="*{fecha}" name="fecha" id="fecha" placeholder="fecha en formato dd-MM-yyyy" required>
                     <label for="fecha" class="text-muted">Fecha (dd-mm-aaaa)</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{imgurl}" name="imgurl" id="imgurl" placeholder="imgurl">
-                    <label for="imgurl" class="text-muted">Dirección de la Imagen</label>
+                  <div class="input-group mb-3">
+                    <input type="file" name="image" class="form-control" id="image" accept="image/png, image/jpg, image/jpeg">
+                    <label class="input-group-text" for="image">Tamaño máximo: 1048576 bytes</label>
                   </div>
                   <div class="form-group mb-3">
                     <label for="info"><h5 class="mb-1">Información</h5></label>

@@ -16,6 +16,11 @@ async function main(){
     //preparo autoridades
     const director = document.getElementById("director");
     const vice = document.getElementById("vicedirector");
+    const imgdir = document.getElementById("imgdir");
+    const imgvice = document.getElementById("imgvice");
+
+    imgdir.src = autoridades[0].img_url_dir;
+    imgvice.src = autoridades[0].img_url_vice;
     director.innerHTML = autoridades[0].director;
     vice.innerHTML = autoridades[0].vicedirector;
 

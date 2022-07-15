@@ -24,7 +24,7 @@
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/docentes/{id}(id=${docente.id_docente})}" th:object="${docente}" method="post">      
+            <form th:action="@{/admin/docentes/{id}(id=${docente.id_docente})}" th:object="${docente}" method="post" enctype="multipart/form-data">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
@@ -44,9 +44,9 @@
                     <input type="text" class="form-control" th:value="*{titulo}" name="titulo" id="titulo" placeholder="titulo" required>
                     <label for="titulo" class="text-muted">Título</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{img_url}" name="img_url" id="img_url" placeholder="img_url" required>
-                    <label for="img_url" class="text-muted">Dirección de la Imagen</label>
+                  <div class="input-group mb-3">
+                    <input type="file" name="image" class="form-control" id="image" accept="image/png, image/jpg, image/jpeg">
+                    <label class="input-group-text" for="image">Tamaño máximo: 1048576 bytes</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">

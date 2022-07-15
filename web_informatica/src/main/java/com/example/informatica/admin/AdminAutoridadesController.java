@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.informatica.institucional.autoridades.Autoridad;
 import com.example.informatica.institucional.autoridades.AutoridadService;
@@ -15,6 +17,7 @@ import com.example.informatica.institucional.autoridades.ConsejoAlumnosService;
 import com.example.informatica.institucional.autoridades.ConsejoDepartamentalService;
 import com.example.informatica.institucional.autoridades.Consejo_Alumnos;
 import com.example.informatica.institucional.autoridades.Consejo_Departamental;
+import com.example.informatica.util.Util;
 
 @Controller
 public class AdminAutoridadesController {
@@ -58,19 +61,40 @@ public class AdminAutoridadesController {
 		return "admin/forms/formautoridades";
 	}
 	@PostMapping("/admin/autoridades/{id}")
-	public String actualizarAutoridad(@PathVariable int id, @ModelAttribute("autoridad") Autoridad autoridad) {
+	public String actualizarAutoridad(@PathVariable int id, @ModelAttribute("autoridad") Autoridad autoridad, 
+			@RequestParam("imagedir") MultipartFile imagedir, 
+			@RequestParam("imagevice") MultipartFile imagevice) {
+		
+		String imgurlPathdir = Util.saveImage(imagedir, "img/docentes");
+		String imgurlPathvice = Util.saveImage(imagevice, "img/docentes");
 		
 		//id == 0 significa nuevo
 		if(id == 0) {
+			
+			if(imgurlPathdir == null) {
+				imgurlPathdir = "img/user.png";
+			}
+			if(imgurlPathvice == null) {
+				imgurlPathvice = "img/user.png";
+			}
+			autoridad.setImg_url_dir(imgurlPathdir);
+			autoridad.setImg_url_vice(imgurlPathvice);
 			autoridadesService.addAutoridad(autoridad);
 		}else {
 			Autoridad autoridadExistente = autoridadesService.getAutoridad(id).get();
+			
+			//setea nueva imagen o existente
+			if(imgurlPathdir != null) {				
+				autoridadExistente.setImg_url_dir(imgurlPathdir);
+			}
+			if(imgurlPathvice != null) {				
+				autoridadExistente.setImg_url_vice(imgurlPathvice);
+			}
+			
 			autoridadExistente.setId_autoridad(id);
 			autoridadExistente.setDirector(autoridad.getDirector());
 			autoridadExistente.setVicedirector(autoridad.getVicedirector());
 			autoridadExistente.setUrl(autoridad.getUrl());
-			autoridadExistente.setImg_url_dir(autoridad.getImg_url_dir());
-			autoridadExistente.setImg_url_vice(autoridad.getImg_url_vice());
 			autoridadesService.updateAutoridad(autoridadExistente);
 		}
 		return "redirect:/admin/autoridades";

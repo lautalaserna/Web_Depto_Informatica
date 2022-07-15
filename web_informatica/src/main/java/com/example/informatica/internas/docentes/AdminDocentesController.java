@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.informatica.util.Util;
 
 @Controller
 public class AdminDocentesController {
@@ -41,16 +45,27 @@ public class AdminDocentesController {
 		return "admin/forms/formdocentes";
 	}
 	@PostMapping("/admin/docentes/{id}")
-	public String actualizarDocente(@PathVariable int id, @ModelAttribute("docente") Docentes docente) {
+	public String actualizarDocente(@PathVariable int id, @ModelAttribute("docente") Docentes docente, @RequestParam("image") MultipartFile image) {
+		
+		String imgurlPath = Util.saveImage(image, "img/docentes");
+		
 		//id == 0 significa nuevo
 		if(id == 0) {
+			if(imgurlPath == null) {
+				imgurlPath = "img/user.png";
+			}
+			docente.setImg_url(imgurlPath);
 			docentesService.addDocente(docente);
 		}else {
 			Docentes docenteExistente = docentesService.getDocente(id).get();
+			
+			//setea nueva imagen o existente
+			if(imgurlPath != null) {				
+				docenteExistente.setImg_url(imgurlPath);
+			}
 			docenteExistente.setId_docente(id);
 			docenteExistente.setDni(docente.getDni());
 			docenteExistente.setEmail(docente.getEmail());
-			docenteExistente.setImg_url(docente.getImg_url());
 			docenteExistente.setNombre_completo(docente.getNombre_completo());
 			docenteExistente.setTitulo(docente.getTitulo());
 			docenteExistente.setUrl(docente.getUrl());

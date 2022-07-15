@@ -24,7 +24,7 @@
           </div>
 
           <div class="container">
-            <form th:action="@{/admin/autoridad/{id}(id=${autoridad.id_autoridad})}" th:object="${autoridad}" method="post">      
+            <form th:action="@{/admin/autoridades/{id}(id=${autoridad.id_autoridad})}" th:object="${autoridad}" method="post" enctype="multipart/form-data">      
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
@@ -40,13 +40,15 @@
                     <input type="text" class="form-control" th:value="*{url}" name="url" id="url" placeholder="url">
                     <label for="url" class="text-muted">url</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{img_url_dir}" name="img_url_dir" id="img_url_dir" placeholder="img_url_dir">
-                    <label for="img_url_dir" class="text-muted">Dirreción de Imagen (Director)</label>
+                  <h5 class="mb-1">Imagen director</h5>
+                  <div class="input-group mb-3">
+                    <input type="file" name="imagedir" class="form-control" id="imagedir" accept="image/png, image/jpg, image/jpeg">
+                    <label class="input-group-text" for="imagedir">Tamaño máximo: 1048576 bytes</label>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" th:value="*{img_url_vice}" name="img_url_vice" id="img_url_vice" placeholder="img_url_vice">
-                    <label for="img_url_vice" class="text-muted">Dirreción de Imagen (Vicedirector)</label>
+                  <h5 class="mb-1">Imagen vicedirector</h5>
+                  <div class="input-group mb-3">
+                    <input type="file" name="imagevice" class="form-control" id="imagevice" accept="image/png, image/jpg, image/jpeg">
+                    <label class="input-group-text" for="imagevice">Tamaño máximo: 1048576 bytes</label>
                   </div>
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>
