@@ -3,6 +3,8 @@ package com.example.informatica.user;
 import java.util.HashMap;
 
 public class RolesWrapper {
+	boolean admin = false;
+	
 	boolean autoridades = false;
 	boolean calendario = false;
 	boolean elecciones = false;
@@ -33,8 +35,31 @@ public class RolesWrapper {
 	
 	public HashMap<String, Boolean> getRolesMap(){
 		HashMap<String, Boolean> map = new HashMap<String, Boolean>();
+		map.put("admin", this.admin);
 		
+		map.put("autoridades", this.autoridades);
+		map.put("calendario", this.calendario);
+		map.put("elecciones", this.elecciones);
+		map.put("graduados", this.graduados);
 		
+		map.put("investigacion", this.investigacion);
+		map.put("novedades", this.novedades);
+		map.put("pps", this.pps);
+		map.put("trabajosfinales", this.trabajosfinales);
+		
+		map.put("areas", this.areas);
+		map.put("asignaturas", this.asignaturas);
+		map.put("cargos", this.cargos);
+		map.put("carreras", this.carreras);
+		
+		map.put("correlativas", this.correlativas);
+		map.put("dedicacion", this.dedicacion);
+		map.put("docentes", this.docentes);
+		map.put("optativas", this.optativas);
+		
+		map.put("planestudio", this.planestudio);
+		map.put("tipocargo", this.tipocargo);
+		map.put("tipocarrera", this.tipocarrera);
 		
 		return map;
 	}
@@ -190,5 +215,15 @@ public class RolesWrapper {
 	public void setTipocarrera(boolean tipocarrera) {
 		this.tipocarrera = tipocarrera;
 	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	
+	
 
 }
