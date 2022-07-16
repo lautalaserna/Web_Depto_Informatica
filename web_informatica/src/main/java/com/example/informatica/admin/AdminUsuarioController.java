@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.informatica.user.Rol;
 import com.example.informatica.user.RolMap;
 import com.example.informatica.user.RolService;
+import com.example.informatica.user.RolesWrapper;
+import com.example.informatica.user.SingleRol;
 import com.example.informatica.user.Usuario;
 import com.example.informatica.user.UsuarioDTO;
 import com.example.informatica.user.UsuarioDetailsService;
@@ -36,20 +38,10 @@ public class AdminUsuarioController {
 		//id == 0 significa nuevo
 		if(id == 0) {
 			Usuario usuario = new Usuario();
-			UsuarioDTO usuarioDTO = new UsuarioDTO(usuario);
+			RolesWrapper wrapper = new RolesWrapper();
 			
-			model.addAttribute("usuario", usuarioDTO);
-			
-			/*
-			for(String key : usuarioDTO.getMap().keySet()) {
-				
-				System.out.println(key);
-				System.out.println(usuarioDTO.getMap().get(key));
-			}
-			*/
-			
-			//model.addAttribute("usuario", usuario);
-			//model.addAttribute("roles", rolmap.getMap());
+			model.addAttribute("usuario", usuario);
+			model.addAttribute("wrapper", wrapper);
 			
 		}else {
 			Usuario usuarioExistente = usuarioService.getUsuario(id).get();
@@ -64,18 +56,11 @@ public class AdminUsuarioController {
 		return "admin/forms/formusuarios";
 	}
 	@PostMapping("/admin/usuarios/{id}")
-	public String actualizarUsuario(@PathVariable int id, @ModelAttribute("usuario") UsuarioDTO usuario ) {
+	public String actualizarUsuario(@PathVariable int id, @ModelAttribute("usuario") Usuario usuario, @ModelAttribute("wrapper") RolesWrapper wrapper) {
 		
+		//@RequestParam("wrapper") RolesWrapper wrapper
 		//id == 0 significa nuevo
 		if(id == 0) {
-			
-			/*
-			System.out.println("DENTRO DE POST METHODD ##############################");
-			System.out.println("1. = " + usuario.getRoles().get(1).getRol() + " " + usuario.getRoles().get(1).isValue());
-			System.out.println("2. = " + usuario.getRoles().get(2).getRol() + " " + usuario.getRoles().get(2).isValue());
-			System.out.println("3. = " + usuario.getRoles().get(3).getRol() + " " + usuario.getRoles().get(3).isValue());
-			System.out.println(usuario.getUsername());
-			*/
 			
 			//usuarioService.addUsuario(usuario);
 			//rolService.updateRolesByMap(id, rolmap.getMap());

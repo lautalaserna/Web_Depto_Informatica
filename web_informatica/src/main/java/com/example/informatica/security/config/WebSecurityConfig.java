@@ -32,15 +32,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/admin","/admin/").authenticated()
 			
 			//Roles (Authorities)
-			.antMatchers("/admin/graduados/**").hasAnyAuthority("admin","graduados")
-			.antMatchers("/admin/elecciones/**").hasAnyAuthority("admin","elecciones")
-			.antMatchers("/admin/pps/**").hasAnyAuthority("admin","pps")
 			.antMatchers("/admin/autoridades/**").hasAnyAuthority("admin","autoridades")
 			.antMatchers("/admin/calendario/**").hasAnyAuthority("admin","calendario")
+			.antMatchers("/admin/elecciones/**").hasAnyAuthority("admin","elecciones")
+			.antMatchers("/admin/graduados/**").hasAnyAuthority("admin","graduados")
+			
 			.antMatchers("/admin/investigacion/**").hasAnyAuthority("admin","investigacion")
 			.antMatchers("/admin/novedades/**").hasAnyAuthority("admin","novedades")
+			.antMatchers("/admin/pps/**").hasAnyAuthority("admin","pps")
 			.antMatchers("/admin/trabajosfinales/**").hasAnyAuthority("admin","trabajosfinales")
 			
+			.antMatchers("/admin/areas/**").hasAnyAuthority("admin","areas")
+			.antMatchers("/admin/asignaturas/**").hasAnyAuthority("admin","asignaturas")
+			.antMatchers("/admin/cargos/**").hasAnyAuthority("admin","cargos")
+			.antMatchers("/admin/carreras/**").hasAnyAuthority("admin","carreras")
+			
+			.antMatchers("/admin/correlativas/**").hasAnyAuthority("admin","correlativas")
+			.antMatchers("/admin/dedicacion/**").hasAnyAuthority("admin","dedicacion")
+			.antMatchers("/admin/docentes/**").hasAnyAuthority("admin","docentes")
+			.antMatchers("/admin/optativas/**").hasAnyAuthority("admin","optativas")
+			
+			.antMatchers("/admin/planestudio/**").hasAnyAuthority("admin","planestudio")
+			.antMatchers("/admin/tipocargo/**").hasAnyAuthority("admin","tipocargo")
+			.antMatchers("/admin/tipocarrera/**").hasAnyAuthority("admin","tipocarrera")
+		
 			.and()
 			.formLogin()
 			.loginPage("/login")
