@@ -13,10 +13,4 @@ public interface IRolRepository extends JpaRepository<Rol, Integer>{
 		    nativeQuery = true)
 	List<Rol> findRolesByUserId(int id_usuario);
 	
-	@Query(value = "DELETE * FROM roles WHERE id_usuario = ?1",
-		    nativeQuery = true)
-	void deleteRolesByUserId(int id_usuario);
-	
-	
-	
 }

@@ -41,12 +41,18 @@ public class RolService {
 	}
 	
 	public void deleteRolesByUserId(int id) {
-		rolRepository.deleteRolesByUserId(id);
+		List<Rol> rolesActuales = rolRepository.findRolesByUserId(id);
+		for(Rol rolActual : rolesActuales) {
+			rolRepository.deleteById(rolActual.getId_rol());
+		}
 	}
 
 	public void updateRolesByMap(int usuario_id, HashMap<String, Boolean> map) {
 		//borrado de roles previos
-		rolRepository.deleteRolesByUserId(usuario_id);
+		List<Rol> rolesActuales = rolRepository.findRolesByUserId(usuario_id);
+		for(Rol rolActual : rolesActuales) {
+			rolRepository.deleteById(rolActual.getId_rol());
+		}
 		//asignacion de nuevos roles
 		for(String key: map.keySet()) {
 			if(map.get(key)){
