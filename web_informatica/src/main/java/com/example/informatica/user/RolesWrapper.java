@@ -1,6 +1,7 @@
 package com.example.informatica.user;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class RolesWrapper {
 	boolean admin = false;
@@ -62,6 +63,61 @@ public class RolesWrapper {
 		map.put("tipocarrera", this.tipocarrera);
 		
 		return map;
+	}
+	
+	public void setRolesbyListRol(List<Rol> list) {
+		
+		for(Rol rol : list) {
+			switch(rol.getRol()) {
+			case "admin": 			this.admin = true;
+									break;
+								
+			case "autoridades": 	this.autoridades = true;
+									break;
+			case "calendario": 		this.calendario = true;
+									break;
+			case "elecciones": 		this.elecciones = true;
+									break;
+			case "graduados": 		this.graduados = true;
+									break;
+			
+			case "investigacion": 	this.investigacion = true;
+									break;
+			case "novedades": 		this.novedades = true;
+									break;
+			case "pps": 			this.pps = true;
+									break;
+			case "trabajosfinales": this.trabajosfinales = true;
+									break;
+			
+			case "areas": 			this.areas = true;
+									break;
+			case "asignaturas": 	this.asignaturas = true;
+									break;
+			case "cargos": 			this.cargos = true;
+									break;
+			case "carreras": 		this.carreras = true;
+									break;
+			
+			case "correlativas": 	this.correlativas = true;
+									break;
+			case "dedicacion": 		this.dedicacion = true;
+									break;
+			case "docentes": 		this.docentes = true;
+									break;
+			case "optativas": 		this.optativas = true;
+									break;
+			
+			case "planestudio": 	this.planestudio = true;
+									break;
+			case "tipocargo": 		this.tipocargo = true;
+									break;
+			case "tipocarrera": 	this.tipocarrera = true;
+									break;
+			default: 
+									break;
+			}
+		}
 	}
 
 	public boolean isAutoridades() {

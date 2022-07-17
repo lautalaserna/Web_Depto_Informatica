@@ -3,6 +3,7 @@ package com.example.informatica.admin;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,51 +47,52 @@ public class AdminUsuarioController {
 		}else {
 			Usuario usuarioExistente = usuarioService.getUsuario(id).get();
 			List<Rol> rolesUsuario = rolService.getRoles(usuarioExistente.getId_usuario());
-			RolMap rolmap = new RolMap();
-			for(Rol rol : rolesUsuario ) {
-				rolmap.put(rol.getRol(), true);
-			}
+			
+			RolesWrapper wrapper = new RolesWrapper();
+			wrapper.setRolesbyListRol(rolesUsuario);
+			
 			model.addAttribute("usuario", usuarioExistente);
-			model.addAttribute("roles", rolmap.getMap());
+			model.addAttribute("wrapper", wrapper);
 		}
 		return "admin/forms/formusuarios";
 	}
 	@PostMapping("/admin/usuarios/{id}")
 	public String actualizarUsuario(@PathVariable int id, @ModelAttribute("usuario") Usuario usuario, @ModelAttribute("wrapper") RolesWrapper wrapper) {
+		//no debe existir ningun usuario con el mismo username
+		List<Usuario> usuariosExistentes = usuarioService.getUsuarios();
+		for(Usuario userExistente : usuariosExistentes) {
+			if(userExistente.getUsername().equalsIgnoreCase(usuario.getUsername())) {
+				return "usuario ya registrado";
+			}
+		}
+		//contraseña != vacio
+		if(usuario.getPassword() == null || usuario.getPassword().equals("")) {
+			return "La contraseña no puede ser vacia";
+		}
 		
-		//@RequestParam("wrapper") RolesWrapper wrapper
 		//id == 0 significa nuevo
 		if(id == 0) {
-			
-			//usuarioService.addUsuario(usuario);
-			//rolService.updateRolesByMap(id, rolmap.getMap());
-			
-			//usuarioService.addUsuario(usuario);
-			
-			/*
-			for(String key : usuariodto.getMap().keySet()) {
-				System.out.println(key);
-				System.out.println(usuariodto.getMap().get(key));
-			}
-			*/
-			
-			
+			//setear nueva contraseña
+			BCryptPasswordEncoder passGen = new BCryptPasswordEncoder();
+			usuario.setPassword(passGen.encode(usuario.getPassword()));
+			//agrego al usuario
+			usuarioService.addUsuario(usuario);
+			//obtengo su nuevo id recien generado
+			int idGenerado = usuarioService.getUsuarioByUsername(usuario.getUsername()).getId_usuario();
+			//a partir de su id asigno sus roles
+			rolService.updateRolesByMap(idGenerado, wrapper.getRolesMap());
 		}else {
-			
-			/*
 			Usuario usuarioExistente = usuarioService.getUsuario(id).get();
+			if(usuario.getPassword() != null && !usuario.getPassword().equals("")) {
+				//setear nueva password
+				BCryptPasswordEncoder passGen = new BCryptPasswordEncoder();
+				usuarioExistente.setPassword(passGen.encode(usuario.getPassword()));
+			}
 			usuarioExistente.setId_usuario(id);
 			usuarioExistente.setUsername(usuario.getUsername());
-			
-			//si la pw no viene vacia, es porque hay que editarla
-			if(!(usuario.getPassword() == null || usuario.getPassword() == "")) {
-				//usuarioExistente.setPassword(); //llamar a userdetailsservice
-			}
-			
 			//id usuario + roles nuevos
 			usuarioService.updateUsuario(usuarioExistente);
-			rolService.updateRolesByMap(id, roles.getMap());
-			*/
+			rolService.updateRolesByMap(id, wrapper.getRolesMap());
 		}
 		return "redirect:/admin/admin";
 	}

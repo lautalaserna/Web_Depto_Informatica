@@ -48,6 +48,10 @@ public class UsuarioDetailsService implements UserDetailsService {
 		return usuarioRepository.findById(id);
 	}
 	
+	public Usuario getUsuarioByUsername(String username){
+		return usuarioRepository.findByUsername(username);
+	}
+	
 	public void addUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
