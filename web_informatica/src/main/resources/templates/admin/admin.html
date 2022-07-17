@@ -22,9 +22,59 @@
           <!-- ADMIN HEADER -->
           <div th:replace="@{/fragments/admin-header}"></div>
           
-          <div class="container pt-5 text-center">
+
+					<div sec:authorize="!hasAuthority('admin')"> 
+						<div class="container pt-5 text-center">
               <h2 class="text-muted">Seleccione una tabla para editar.</h2>
-          </div>
+          	</div>
+					</div>
+
+					<div sec:authorize="hasAuthority('admin')">
+						<div class="container mt-3 pb-2">
+							<h1 class="sub-title modal-header ps-0">
+								Usuarios Disponibles
+								<div class="text-end">
+									<a th:href="@{|/admin/usuarios/editar/0|}" type="button" class="btn btn-add hovereable">
+										<h5 class="my-0 pt-1 ps-2">Nuevo <img th:src="@{/img/add.svg}" height="30" width="30" class="white-filter"></h5>
+									</a>
+								</div>
+							</h1>
+						</div>
+	
+						<div class="container">
+							<div class="row">
+								<div class="col-2"></div>
+								<div class="col-8 mb-5">
+									<table class="table table-striped align-middle text-center">
+										<thead class="table-borderless">
+											<tr class="table-header">
+												<td><h2 class="table-header-text-mini">Usuario</h2></td>
+												<td><h2 class="table-header-text-mini">Acciones</h2></td>
+											</tr>
+										</thead>
+		
+										<tbody class="table-borderless" style="border-top: none !important;">
+											<tr th:each="item : ${usuarios}">
+												<td><h5 class="py-2" th:text="${item.username}"></h5></td>
+												<td>
+													<a th:href="@{/admin/usuarios/editar/{id}(id=${item.id_usuario})}" type="button" class="btn btn-edit hovereable mx-1">
+														<img th:src="@{/img/edit-pen.svg}" height="20" width="20" class="white-filter">
+													</a>
+													<a onclick="return confirm('Seguro que desea eliminar este item?');" th:href="@{/admin/usuarios/delete/{id}(id=${item.id_usuario})}" type="button" class="btn btn-delete hovereable mx-1">
+														<img th:src="@{/img/trash.svg}" height="20" width="20" class="white-filter">
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									
+									</table>
+								</div>
+								<div class="col-2"></div>
+							</div>
+						</div>
+					</div>
+        </main>
+
         </main>
         
         <!-- SCRIPTS -->

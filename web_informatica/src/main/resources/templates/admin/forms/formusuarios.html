@@ -28,111 +28,113 @@
               <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8">
-
-
-                  <!--USERNAME-->
-                  <div class="form-group row">
-                    <label class="col-4 col-form-label">Nombre de usuario</label>
-                    <div class="col-8">
-                        <input type="text" th:field="*{username}" class="form-control"
-                                required minlength="2" maxlength="20" />
-                    </div>
+                  
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{username}" name="username" id="username" placeholder="username" required minlength="2" maxlength="20">
+                    <label for="username" class="text-muted">Nombre de Usuario</label>
                   </div>
 
-                  <!--USERNAME-->
-                  <div class="form-group row">
-                    <label class="col-4 col-form-label">Contraseña</label>
-                    <div class="col-8">
-                        <input type="password" th:field="*{password}" class="form-control"
-                                required minlength="2" maxlength="20" />
-                    </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" th:value="*{password}" name="password" id="password" placeholder="password" required minlength="2" maxlength="20">
+                    <label for="password" class="text-muted">Ingrese una nueva Contraseña</label>
                   </div>
 
-
-                  <label class="col-4 col-form-label">Roles</label>
+                  <h1 class="small-title modal-header ps-0">Permisos</h1>
+                  
                   <div th:object="${wrapper}">
-                    <!--###-->
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{autoridades}" th:checked="*{autoridades}" />
-                      <label class="form-check-label" for="autoridades">Autoridades</label>
+
+                    <div class="row ps-5 pb-4 pt-2">
+                      <div class="col-6">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{admin}" th:checked="*{admin}" disabled />
+                          <label class="form-check-label" for="admin">Admin</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{autoridades}" th:checked="*{autoridades}" />
+                          <label class="form-check-label" for="autoridades">Autoridades</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{calendario}" th:checked="*{calendario}"/>
+                          <label class="form-check-label">Calendario</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{elecciones}" th:checked="*{elecciones}"/>
+                          <label class="form-check-label">Elecciones</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{graduados}" th:checked="*{graduados}"/>
+                          <label class="form-check-label">Graduados</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{investigacion}" th:checked="*{investigacion}" />
+                          <label class="form-check-label" for="investigacion">Investigacion</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{novedades}" th:checked="*{novedades}" />
+                          <label class="form-check-label" for="novedades">Novedades</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{pps}" th:checked="*{pps}"/>
+                          <label class="form-check-label">PPS</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{trabajosfinales}" th:checked="*{trabajosfinales}" />
+                          <label class="form-check-label" for="trabajosfinales">Trabajos finales</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{areas}" th:checked="*{areas}" />
+                          <label class="form-check-label" for="areas">Areas</label>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{asignaturas}" th:checked="*{asignaturas}" />
+                          <label class="form-check-label" for="asignaturas">Asignaturas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{cargos}" th:checked="*{cargos}" />
+                          <label class="form-check-label" for="cargos">Cargos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{carreras}" th:checked="*{carreras}" />
+                          <label class="form-check-label" for="carreras">Carreras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{correlativas}" th:checked="*{correlativas}" />
+                          <label class="form-check-label" for="correlativas">Correlativas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{dedicacion}" th:checked="*{dedicacion}" />
+                          <label class="form-check-label" for="dedicacion">Dedicacion</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{docentes}" th:checked="*{docentes}" />
+                          <label class="form-check-label" for="docentes">Docentes</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{optativas}" th:checked="*{optativas}" />
+                          <label class="form-check-label" for="optativas">Optativas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{planestudio}" th:checked="*{planestudio}" />
+                          <label class="form-check-label" for="planestudio">Plan de estudio</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{tipocargo}" th:checked="*{tipocargo}" />
+                          <label class="form-check-label" for="tipocargo">Tipo de cargo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" th:field="*{tipocarrera}" th:checked="*{tipocarrera}" />
+                          <label class="form-check-label" for="tipocarrera">Tipo de carrera</label>
+                        </div>
+                      </div>
+                      </div>
                     </div>
-                    <div>
-                      <input type="checkbox" th:field="*{calendario}" th:checked="*{calendario}"/>
-                      <label>Calendario</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" th:field="*{elecciones}" th:checked="*{elecciones}"/>
-                      <label>Elecciones</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" th:field="*{graduados}" th:checked="*{graduados}"/>
-                      <label>Graduados</label>
-                    </div>
-                    <!--###-->
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{investigacion}" th:checked="*{investigacion}" />
-                      <label class="form-check-label" for="investigacion">Investigacion</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{novedades}" th:checked="*{novedades}" />
-                      <label class="form-check-label" for="novedades">Novedades</label>
-                    </div>
-                    <div>
-                      <input type="checkbox" th:field="*{pps}" th:checked="*{pps}"/>
-                      <label>PPS</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{trabajosfinales}" th:checked="*{trabajosfinales}" />
-                      <label class="form-check-label" for="trabajosfinales">Trabajos finales</label>
-                    </div>
-                    <!--###-->
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{areas}" th:checked="*{areas}" />
-                      <label class="form-check-label" for="areas">Areas</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{asignaturas}" th:checked="*{asignaturas}" />
-                      <label class="form-check-label" for="asignaturas">Asignaturas</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{cargos}" th:checked="*{cargos}" />
-                      <label class="form-check-label" for="cargos">Cargos</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{carreras}" th:checked="*{carreras}" />
-                      <label class="form-check-label" for="carreras">Carreras</label>
-                    </div>
-                    <!--###-->
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{correlativas}" th:checked="*{correlativas}" />
-                      <label class="form-check-label" for="correlativas">Correlativas</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{dedicacion}" th:checked="*{dedicacion}" />
-                      <label class="form-check-label" for="dedicacion">Dedicacion</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{docentes}" th:checked="*{docentes}" />
-                      <label class="form-check-label" for="docentes">Docentes</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{optativas}" th:checked="*{optativas}" />
-                      <label class="form-check-label" for="optativas">Optativas</label>
-                    </div>
-                    <!--###-->
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{planestudio}" th:checked="*{planestudio}" />
-                      <label class="form-check-label" for="planestudio">Plan de estudio</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{tipocargo}" th:checked="*{tipocargo}" />
-                      <label class="form-check-label" for="tipocargo">Tipo de cargo</label>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" th:field="*{tipocarrera}" th:checked="*{tipocarrera}" />
-                      <label class="form-check-label" for="tipocarrera">Tipo de carrera</label>
-                    </div>
-                  </div>
+
+
+                   
+                    
+                    
 
                   <button class="btn btn-navbar w-100" type="submit"><h5>Guardar</h5></button>
                 </div>

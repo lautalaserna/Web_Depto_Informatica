@@ -6,41 +6,32 @@
           <h5 class="pt-2">Tablas Disponibles <img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter"></h5>
         </a>
         <ul class="dropdown-menu dropdown-menu-tablas">
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/autoridades|}">Autoridades</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/calendario|}">Calendario Académico</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/elecciones|}">Elecciones</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/graduados|}">Graduados</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/investigacion|}">Investigación</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/novedades|}">Novedades</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/pps|}">PPS</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/trabajosfinales|}">Trabajos Finales</a></li>
-          <!--Internas-->
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/areas|}">Areas</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/asignaturas|}">Asignaturas</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/cargos|}">Cargos</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/carreras|}">Carreras</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/correlativas|}">Correlativas</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/dedicacion|}">Dedicacion</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/docentes|}">Docentes</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/optativas|}">Optativas</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/planestudio|}">Plan Estudio</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/tipocargo|}">Tipos de Cargo</a></li>
-          <li><a class="dropdown-item dd-space" th:href="@{|/admin/tipocarrera|}">Tipos de Carrera</a></li>
-
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('areas')"><a class="dropdown-item dd-space" th:href="@{|/admin/areas|}">Areas</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('asignaturas')"><a class="dropdown-item dd-space" th:href="@{|/admin/asignaturas|}">Asignaturas</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('autoridades')"><a class="dropdown-item dd-space" th:href="@{|/admin/autoridades|}">Autoridades</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('calendario')"><a class="dropdown-item dd-space" th:href="@{|/admin/calendario|}">Calendario Académico</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('cargos')"><a class="dropdown-item dd-space" th:href="@{|/admin/cargos|}">Cargos</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('carreras')"><a class="dropdown-item dd-space" th:href="@{|/admin/carreras|}">Carreras</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('correlativas')"><a class="dropdown-item dd-space" th:href="@{|/admin/correlativas|}">Correlativas</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('dedicacion')"><a class="dropdown-item dd-space" th:href="@{|/admin/dedicacion|}">Dedicacion</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('docentes')"><a class="dropdown-item dd-space" th:href="@{|/admin/docentes|}">Docentes</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('elecciones')"><a class="dropdown-item dd-space" th:href="@{|/admin/elecciones|}">Elecciones</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('graduados')"><a class="dropdown-item dd-space" th:href="@{|/admin/graduados|}">Graduados</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('investigacion')"><a class="dropdown-item dd-space" th:href="@{|/admin/investigacion|}">Investigación</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('novedades')"><a class="dropdown-item dd-space" th:href="@{|/admin/novedades|}">Novedades</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('optativas')"><a class="dropdown-item dd-space" th:href="@{|/admin/optativas|}">Optativas</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('planestudio')"><a class="dropdown-item dd-space" th:href="@{|/admin/planestudio|}">Plan Estudio</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('pps')"><a class="dropdown-item dd-space" th:href="@{|/admin/pps|}">PPS</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('tipocargo')"><a class="dropdown-item dd-space" th:href="@{|/admin/tipocargo|}">Tipos de Cargo</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('tipocarrera')"><a class="dropdown-item dd-space" th:href="@{|/admin/tipocarrera|}">Tipos de Carrera</a></li>
+          <li sec:authorize="hasAuthority('admin') || hasAuthority('trabajosfinales')"><a class="dropdown-item dd-space" th:href="@{|/admin/trabajosfinales|}">Trabajos Finales</a></li>
         </ul>
-      </div>
-      
-      <!-- <div class="text-end">
-        <a type="button" class="btn btn-style rounded px-4" data-bs-toggle="dropdown" aria-expanded="false">
-          <h5 class="pt-2">Roles<img th:src="@{/img/arrow-down.svg}" height="20" width="20" class="white-filter"></h5>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-tablas">
+        <!-- <ul class="dropdown-menu dropdown-menu-tablas">
           <li th:each="authority : ${#authentication.getAuthorities()}">
             <a class="dropdown-item dd-space" th:href="@{/admin/{rol}(rol=${authority})}" th:text="${authority}"></a>
           </li>
-        </ul>
-      </div> -->
-
+        </ul> -->
+      </div>
     </h1>
 </div>
 
