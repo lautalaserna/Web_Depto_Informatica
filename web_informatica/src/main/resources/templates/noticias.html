@@ -20,14 +20,17 @@
       </div>
 
       <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container">
+        <div class="container mb-3 titulo-novedad" style="padding-left: 20px;">
+          <a class="h2 titulo-noticia" th:text="|${noticia.titulo} ${noticia.fecha}|" th:href="@{|/novedad?id=${noticia.id_novedad}|}"></a>
+        </div>
         <div class="row">
-          <div class="col-4 text-center">
+          <div class="col-4 text-start img-novedad">
             <a th:href="@{|/novedad?id=${noticia.id_novedad}|}" type="button" class="btn">
               <img th:src="${noticia.imgurl}" class="rounded img-fluid news">
             </a>
           </div>
-          <div class="col-8 text-start" style="position:relative;">
-            <h2 th:text="${noticia.titulo}" style="font-weight: 400;"></h2>
+          <div class="col-8 text-start desc-novedad" style="position:relative;">
+            <a class="h2 titulo-noticia" th:text="${noticia.titulo}" th:href="@{|/novedad?id=${noticia.id_novedad}|}"></a>
             <h4 th:text="${noticia.info}" class="lead"></h4>
             <div class="" style="position:absolute; bottom:0px; right: 20px;">
               <h4 th:text="${noticia.fecha}" class="lead" style="font-style: italic;"></h4>
@@ -62,23 +65,6 @@
 
     <!-- SCRIPTS -->
     <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="js\responsive-novedades.js"></script>
   </body>
 </html>
-
-
-    <!-- <div th:if="${!list.isEmpty()}" th:each="noticia : ${list}" class="container my-5">
-      <div class="header-investigacion">
-          <h4 th:text="| ${noticia.fecha} ${noticia.titulo}"></h4>
-      </div>
-      <div class="p-4 body-investigacion">
-          <div class="container">
-              <p th:text="${noticia.info}" class="lead"></p>
-          </div>
-
-          <div class="text-end">
-            <a th:href="@{|/novedad?id=${noticia.id_novedad}|}" type="button" class="btn btn-section-size btn-style rounded text-center">
-              <h4 class="pt-1">Ver</h4>
-            </a>
-          </div>
-      </div>
-    </div> -->
