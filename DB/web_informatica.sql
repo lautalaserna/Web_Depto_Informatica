@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 17-07-2022 a las 00:23:14
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-08-2022 a las 01:31:11
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -100,7 +100,7 @@ CREATE TABLE `autoridades` (
 --
 
 INSERT INTO `autoridades` (`id_autoridad`, `director`, `vicedirector`, `url`, `img_url_dir`, `img_url_vice`) VALUES
-(1, 'Lic. Carlos Alberto Rico', 'Lic. Valeria Dicrocce', '', 'img/docentes/90121wallpaper_ubuntu_3.jpeg', 'img/docentes/376300nasa.jpeg');
+(1, 'Lic. Carlos Alberto Rico', 'Lic. Valeria Dicrocce', '', 'img\\user.png', 'img\\user.png');
 
 -- --------------------------------------------------------
 
@@ -173,7 +173,7 @@ CREATE TABLE `carreras` (
 --
 
 INSERT INTO `carreras` (`id_carrera`, `titulo`, `id_tipo_carrera`, `url`) VALUES
-(1, 'Ingeniería en informática', 1, '');
+(1, 'Ingeniería en Informática', 1, '');
 
 -- --------------------------------------------------------
 
@@ -293,13 +293,12 @@ CREATE TABLE `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docente`, `nombre_completo`, `dni`, `email`, `titulo`, `img_url`, `url`) VALUES
-(1, 'docente1', '1231231', 'docente1@facultad.com', 'Lic.', 'img/docentes/596985samurai.jpeg', ''),
-(2, 'docente2', '12312318', 'docente2@facultad.com', 'Lic.', 'img/docentes/551586samurai.jpeg', ''),
-(3, 'docente 3', '1231231', 'docente3@fi.unmdp.edu.ar', 'Ing. en informática', 'img/user.png', ''),
-(4, 'docente 2', '2231231', 'docente2@fi.edu', 'Ing.', 'img/user.png', ''),
-(5, 'docente 3', '3231231', 'docente3@fi.edu', 'Ing.', 'img/user.png', ''),
-(6, 'docente 4', '4231231', 'docente4@fi.edu', 'Ing.', 'img/user.png', ''),
-(7, 'docente 5', '5231231', 'docente5@fi.edu', 'Ing.', 'img/user.png', '');
+(1, 'docente 1', '12312312', 'docente1@facultad.com', 'Lic.', 'img/user.png', ''),
+(2, 'docente 2', '12312312', 'docente2@facultad.com', 'Lic.', 'img/user.png', ''),
+(3, 'docente 3', '12312313', 'docente3@fi.unmdp.edu.ar', 'Ing.', 'img/user.png', ''),
+(4, 'docente 4', '22312314', 'docente2@fi.edu.ar', 'Ing.', 'img/user.png', ''),
+(5, 'docente 5', '12312321', 'docente3@fi.edu.ar', 'Ing.', 'img/user.png', ''),
+(6, 'docente 6', '123123123', 'docente6@fi.edu.ar', 'Ing.', 'img/user.png', '');
 
 -- --------------------------------------------------------
 
@@ -355,8 +354,7 @@ INSERT INTO `graduados` (`id_graduado`, `nombre_completo`, `fecha`, `url`) VALUE
 (7, 'graduado 7', '2020-04-27', NULL),
 (8, 'graduado 8', '2021-05-12', NULL),
 (9, 'graduado 9', '2022-05-18', NULL),
-(10, 'graduado 10', '2022-05-25', NULL),
-(20, 'emmik', '2003-10-23', NULL);
+(10, 'graduado 10', '2022-05-25', NULL);
 
 -- --------------------------------------------------------
 
@@ -408,10 +406,7 @@ INSERT INTO `novedades` (`id_novedad`, `fecha`, `imgurl`, `titulo`, `info`, `con
 (3, '2020-11-23', 'img/noticia.png', 'Titulo de otra noticia mas', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'N'),
 (4, '2020-11-23', 'img/noticia.png', 'Titulo de trabajo 1', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
 (5, '2020-11-27', 'img/noticia.png', 'Titulo de trabajo 2', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
-(6, '2020-12-30', 'img/noticia.png', 'Titulo de trabajo 3', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y'),
-(7, '2022-07-09', 'img/noticia.png', 'test', 'info\r\ninfo\r\ninfo', 'cont\r\ncont\r\ncont\r\ncont\r\ncont', '', 'N'),
-(22, '2022-07-15', 'img/novedades/nasa.jpeg', 'IMAGEN278', 'd', 'd', '', 'N'),
-(23, '2022-07-16', 'img/noticia.png', 'newline', 'esta\r\nes\r\ninformacion\r\nde\r\nnoticia', 'este es contenido en una linea\r\neste en otra linea\r\ny este en otra mas!', '', 'N');
+(6, '2020-12-30', 'img/noticia.png', 'Titulo de trabajo 3', 'Esta es una breve descripcion que tendra la noticia para mostrarse antes de apliarla, a modo de resumen general del contenido de la noticia', 'What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '', 'Y');
 
 -- --------------------------------------------------------
 
@@ -521,9 +516,21 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id_rol`, `id_usuario`, `rol`) VALUES
-(1, 2, 'graduados'),
-(2, 2, 'elecciones'),
-(3, 1, 'admin');
+(3, 1, 'admin'),
+(4, 4, 'graduados'),
+(5, 4, 'investigacion'),
+(6, 4, 'trabajosfinales'),
+(7, 4, 'calendario'),
+(8, 4, 'areas'),
+(9, 4, 'autoridades'),
+(10, 4, 'pps'),
+(11, 4, 'novedades'),
+(12, 4, 'elecciones'),
+(41, 2, 'dedicacion'),
+(42, 2, 'carreras'),
+(43, 2, 'correlativas'),
+(44, 2, 'optativas'),
+(45, 2, 'docentes');
 
 -- --------------------------------------------------------
 
@@ -562,7 +569,7 @@ CREATE TABLE `tipo_carrera` (
 --
 
 INSERT INTO `tipo_carrera` (`id_tipo_carrera`, `url`, `nombre`) VALUES
-(1, '', 'ingenieria');
+(1, '', 'Ingeniería');
 
 -- --------------------------------------------------------
 
@@ -606,29 +613,17 @@ INSERT INTO `trabajos_finales` (`id_trabajo_final`, `titulo`, `estudiantes`, `de
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `roles` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `username`, `password`, `roles`) VALUES
-(1, 'admin', '$2a$10$ccoaJ4m65gLiIdGM5Cxt8OOXw2m3zv.RYh8yAeerh6vLBMTWRCWey', 'admin'),
-(2, 'test', '$2a$10$BQGZIvFxGWzei6DEGhJhEuF9d/4cQBGLph13Q8KcTh1Vn/kOdTEU.', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vista_correlativas`
---
-
-CREATE TABLE `vista_correlativas` (
-  `id_docente` int(11) NOT NULL,
-  `asignatura` varchar(255) DEFAULT NULL,
-  `id_asignatura` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `usuarios` (`id_usuario`, `username`, `password`) VALUES
+(1, 'admin', '$2a$10$ccoaJ4m65gLiIdGM5Cxt8OOXw2m3zv.RYh8yAeerh6vLBMTWRCWey'),
+(2, 'test', '$2a$10$BQGZIvFxGWzei6DEGhJhEuF9d/4cQBGLph13Q8KcTh1Vn/kOdTEU.'),
+(4, 'usertest', '$2a$10$07waKyDt73xmOMcdsZC.RemqPtJt6i9KoaWz1jfdCub3Xzoe4508i');
 
 -- --------------------------------------------------------
 
@@ -683,7 +678,7 @@ CREATE TABLE `vista_plan_estudio` (
 --
 DROP TABLE IF EXISTS `vista_docentes`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_docentes`  AS SELECT DISTINCT `d`.`id_docente` AS `id_docente`, `d`.`img_url` AS `img_url`, `d`.`nombre_completo` AS `nombre_completo`, `d`.`email` AS `email`, `d`.`titulo` AS `titulo`, CASE WHEN `c`.`id_tipo_cargo` = 1 THEN `a`.`titulo` ELSE NULL END AS `asignatura` FROM ((`docentes` `d` join `cargos` `c` on(`c`.`id_docente` = `d`.`id_docente`)) join `asignaturas` `a` on(`c`.`id_asignatura` = `a`.`id_asignatura`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_docentes`  AS SELECT DISTINCT `d`.`id_docente` AS `id_docente`, `d`.`img_url` AS `img_url`, `d`.`nombre_completo` AS `nombre_completo`, `d`.`email` AS `email`, `d`.`titulo` AS `titulo`, CASE WHEN `c`.`id_tipo_cargo` = 1 THEN `a`.`titulo` ELSE NULL END AS `asignatura` FROM ((`docentes` `d` left join `cargos` `c` on(`c`.`id_docente` = `d`.`id_docente`)) left join `asignaturas` `a` on(`c`.`id_asignatura` = `a`.`id_asignatura`)) ;
 
 -- --------------------------------------------------------
 
@@ -859,12 +854,6 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `UKm2dvbwfge291euvmk6vkkocao` (`username`);
 
 --
--- Indices de la tabla `vista_correlativas`
---
-ALTER TABLE `vista_correlativas`
-  ADD PRIMARY KEY (`id_docente`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -932,7 +921,7 @@ ALTER TABLE `dedicacion`
 -- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docente` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_docente` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `elecciones`
@@ -980,7 +969,7 @@ ALTER TABLE `pps`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_rol` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_cargo`
@@ -1004,13 +993,7 @@ ALTER TABLE `trabajos_finales`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `vista_correlativas`
---
-ALTER TABLE `vista_correlativas`
-  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
