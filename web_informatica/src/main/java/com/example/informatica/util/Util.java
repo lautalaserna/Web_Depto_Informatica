@@ -24,16 +24,19 @@ public class Util {
 		int randomNumber = (int) ((Math.random() * (1000000 - 0)) + 0);
 		String random = String.valueOf(randomNumber);
 		
-		String baseDir = "src/main/resources/static";
+		//String baseDir = "src/main/resources/static";
+		String baseDir = "static";
+		//String completeDir = baseDir + "/" + imgurlDir;
 		String completeDir = baseDir + "/" + imgurlDir;
 		
 		//imagen
 		Path filePath = Paths.get(completeDir,random+image.getOriginalFilename());
 		Path databasePath = Paths.get(imgurlDir,random+image.getOriginalFilename());
 		
+		
 		OutputStream os;
 		try {
-			os = Files.newOutputStream(filePath);
+			os = Files.newOutputStream(filePath.toAbsolutePath());
 			os.write(image.getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();

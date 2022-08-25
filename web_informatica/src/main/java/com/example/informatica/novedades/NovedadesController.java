@@ -28,7 +28,8 @@ public class NovedadesController {
 	@GetMapping(value="/noticias")
 	public String noticias(@RequestParam Map<String, Object> params, Model model) {
 		int page = params.get("page") != null ? (Integer.valueOf(params.get("page").toString())-1):0;
-		PageRequest pageRequest = PageRequest.of(page, 2);
+		//cantidad de noticias por pagina = 10
+		PageRequest pageRequest = PageRequest.of(page, 10);
 		Page<Novedades> pageNoticias = novedadesService.getPageNoticias(pageRequest);
 		
 		int totalpages = pageNoticias.getTotalPages();
@@ -61,7 +62,8 @@ public class NovedadesController {
 	@GetMapping(value="/bolsatrabajo")
 	public String bolsatrabajo(@RequestParam Map<String, Object> params, Model model) {
 		int page = params.get("page") != null ? (Integer.valueOf(params.get("page").toString())-1):0;
-		PageRequest pageRequest = PageRequest.of(page, 2);
+		//cantidad de noticias por pagina = 10
+		PageRequest pageRequest = PageRequest.of(page, 10);
 		Page<Novedades> pageTrabajos = novedadesService.getPageTrabajos(pageRequest);
 		
 		int totalpages = pageTrabajos.getTotalPages();

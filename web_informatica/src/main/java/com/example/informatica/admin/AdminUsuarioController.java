@@ -69,20 +69,15 @@ public class AdminUsuarioController {
 				return "La contraseña no puede ser vacia";
 			}
 			
-			System.out.println("##################### 1111");
-			
 			//setear nueva contraseña
 			BCryptPasswordEncoder passGen = new BCryptPasswordEncoder();
 			usuario.setPassword(passGen.encode(usuario.getPassword()));
 			//agrego al usuario
 			usuarioService.addUsuario(usuario);
-			System.out.println("##################### 2222");
 			//obtengo su nuevo id recien generado
 			int idGenerado = usuarioService.getUsuarioByUsername(usuario.getUsername()).getId_usuario();
 			//a partir de su id asigno sus roles
-			System.out.println("##################### 3333");
 			rolService.updateRolesByMap(idGenerado, wrapper.getRolesMap());
-			System.out.println("##################### 4444");
 		}else {
 			Usuario usuarioExistente = usuarioService.getUsuario(id).get();
 			if(usuario.getPassword() != null && !usuario.getPassword().equals("")) {
@@ -94,7 +89,10 @@ public class AdminUsuarioController {
 			usuarioExistente.setUsername(usuario.getUsername());
 			//id usuario + roles nuevos
 			usuarioService.updateUsuario(usuarioExistente);
-			rolService.updateRolesByMap(id, wrapper.getRolesMap());
+			
+			if(!isAdmin(id)) {				
+				rolService.updateRolesByMap(id, wrapper.getRolesMap());
+			}
 		}
 		return "redirect:/admin";
 	}
@@ -117,6 +115,18 @@ public class AdminUsuarioController {
 			}
 		}
 		return "redirect:/admin";
+	}
+	
+	public boolean isAdmin(int id) {
+		boolean isadmin = false;
+		List<Rol> roles = rolService.getRoles(id);
+		//recorre los roles de un usuario para saber si posee el rol "admin" == super usuario
+		for(Rol rol : roles) {
+			if(rol.getRol().equalsIgnoreCase("admin")) {
+				isadmin = true;
+			}
+		}
+		return isadmin;
 	}
 }
 				

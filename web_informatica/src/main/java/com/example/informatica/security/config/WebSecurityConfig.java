@@ -32,6 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/admin","/admin/").authenticated()
 			
 			//Roles (Authorities)
+			.antMatchers("/admin/usuarios/**").hasAnyAuthority("admin")
+			
 			.antMatchers("/admin/autoridades/**").hasAnyAuthority("admin","autoridades")
 			.antMatchers("/admin/calendario/**").hasAnyAuthority("admin","calendario")
 			.antMatchers("/admin/elecciones/**").hasAnyAuthority("admin","elecciones")
