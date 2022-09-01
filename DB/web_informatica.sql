@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2022 a las 01:31:11
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Servidor: localhost
+-- Tiempo de generación: 27-08-2022 a las 00:58:34
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -293,7 +293,7 @@ CREATE TABLE `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docente`, `nombre_completo`, `dni`, `email`, `titulo`, `img_url`, `url`) VALUES
-(1, 'docente 1', '12312312', 'docente1@facultad.com', 'Lic.', 'img/user.png', ''),
+(1, 'docente 1', '12312312', 'docente1@facultad.com', 'Lic.', 'img/docentes/766560helt.png', ''),
 (2, 'docente 2', '12312312', 'docente2@facultad.com', 'Lic.', 'img/user.png', ''),
 (3, 'docente 3', '12312313', 'docente3@fi.unmdp.edu.ar', 'Ing.', 'img/user.png', ''),
 (4, 'docente 4', '22312314', 'docente2@fi.edu.ar', 'Ing.', 'img/user.png', ''),
@@ -628,6 +628,18 @@ INSERT INTO `usuarios` (`id_usuario`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `vista_correlativas`
+--
+
+CREATE TABLE `vista_correlativas` (
+  `id_docente` int(11) NOT NULL,
+  `asignatura` varchar(255) DEFAULT NULL,
+  `id_asignatura` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura Stand-in para la vista `vista_docentes`
 -- (Véase abajo para la vista actual)
 --
@@ -678,7 +690,7 @@ CREATE TABLE `vista_plan_estudio` (
 --
 DROP TABLE IF EXISTS `vista_docentes`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_docentes`  AS SELECT DISTINCT `d`.`id_docente` AS `id_docente`, `d`.`img_url` AS `img_url`, `d`.`nombre_completo` AS `nombre_completo`, `d`.`email` AS `email`, `d`.`titulo` AS `titulo`, CASE WHEN `c`.`id_tipo_cargo` = 1 THEN `a`.`titulo` ELSE NULL END AS `asignatura` FROM ((`docentes` `d` left join `cargos` `c` on(`c`.`id_docente` = `d`.`id_docente`)) left join `asignaturas` `a` on(`c`.`id_asignatura` = `a`.`id_asignatura`)) ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_docentes`  AS SELECT DISTINCT `d`.`id_docente` AS `id_docente`, `d`.`img_url` AS `img_url`, `d`.`nombre_completo` AS `nombre_completo`, `d`.`email` AS `email`, `d`.`titulo` AS `titulo`, CASE WHEN `c`.`id_tipo_cargo` = 1 THEN `a`.`titulo` ELSE NULL END AS `asignatura` FROM ((`docentes` `d` left join `cargos` `c` on(`c`.`id_docente` = `d`.`id_docente`)) left join `asignaturas` `a` on(`c`.`id_asignatura` = `a`.`id_asignatura`)) ;
 
 -- --------------------------------------------------------
 
@@ -687,7 +699,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vista_optativas`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_optativas`  AS SELECT `o`.`id_optativa` AS `id_optativa`, `a`.`titulo` AS `asignatura`, `a`.`codigo` AS `codigo`, `a`.`creditos_grado` AS `creditos_grado`, `o`.`cuatrimestre` AS `cuatrimestre`, coalesce(group_concat(`a2`.`titulo` separator ', '),'') AS `correlativas` FROM (((`asignaturas` `a` left join `correlativas` `c` on(`a`.`id_asignatura` = `c`.`id_asignatura_principal`)) left join `asignaturas` `a2` on(`a2`.`id_asignatura` = `c`.`id_asignatura_correlativa`)) join `optativas` `o` on(`a`.`id_asignatura` = `o`.`id_asignatura`)) GROUP BY `a`.`id_asignatura` ORDER BY `a`.`titulo` ASC ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_optativas`  AS SELECT `o`.`id_optativa` AS `id_optativa`, `a`.`titulo` AS `asignatura`, `a`.`codigo` AS `codigo`, `a`.`creditos_grado` AS `creditos_grado`, `o`.`cuatrimestre` AS `cuatrimestre`, coalesce(group_concat(`a2`.`titulo` separator ', '),'') AS `correlativas` FROM (((`asignaturas` `a` left join `correlativas` `c` on(`a`.`id_asignatura` = `c`.`id_asignatura_principal`)) left join `asignaturas` `a2` on(`a2`.`id_asignatura` = `c`.`id_asignatura_correlativa`)) join `optativas` `o` on(`a`.`id_asignatura` = `o`.`id_asignatura`)) GROUP BY `a`.`id_asignatura` ORDER BY `a`.`titulo` ASC ;
 
 -- --------------------------------------------------------
 
@@ -696,7 +708,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vista_plan_estudio`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_plan_estudio`  AS SELECT `pe`.`id_plan_estudio` AS `id_plan_estudio`, `pe`.`anio` AS `anio`, `pe`.`cuatrimestre` AS `cuatrimestre`, `a`.`titulo` AS `asignatura`, `a`.`codigo` AS `codigo`, `a`.`creditos_grado` AS `creditos_grado`, coalesce(group_concat(`a2`.`titulo` separator ', '),'') AS `correlativas` FROM (((`asignaturas` `a` left join `correlativas` `c` on(`a`.`id_asignatura` = `c`.`id_asignatura_principal`)) left join `asignaturas` `a2` on(`a2`.`id_asignatura` = `c`.`id_asignatura_correlativa`)) join `plan_estudio` `pe` on(`pe`.`id_asignatura` = `a`.`id_asignatura`)) GROUP BY `a`.`id_asignatura` ORDER BY `pe`.`anio` ASC, `pe`.`cuatrimestre` ASC, `a`.`titulo` ASC ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_plan_estudio`  AS SELECT `pe`.`id_plan_estudio` AS `id_plan_estudio`, `pe`.`anio` AS `anio`, `pe`.`cuatrimestre` AS `cuatrimestre`, `a`.`titulo` AS `asignatura`, `a`.`codigo` AS `codigo`, `a`.`creditos_grado` AS `creditos_grado`, coalesce(group_concat(`a2`.`titulo` separator ', '),'') AS `correlativas` FROM (((`asignaturas` `a` left join `correlativas` `c` on(`a`.`id_asignatura` = `c`.`id_asignatura_principal`)) left join `asignaturas` `a2` on(`a2`.`id_asignatura` = `c`.`id_asignatura_correlativa`)) join `plan_estudio` `pe` on(`pe`.`id_asignatura` = `a`.`id_asignatura`)) GROUP BY `a`.`id_asignatura` ORDER BY `pe`.`anio` ASC, `pe`.`cuatrimestre` ASC, `a`.`titulo` ASC ;
 
 --
 -- Índices para tablas volcadas
@@ -854,6 +866,12 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `UKm2dvbwfge291euvmk6vkkocao` (`username`);
 
 --
+-- Indices de la tabla `vista_correlativas`
+--
+ALTER TABLE `vista_correlativas`
+  ADD PRIMARY KEY (`id_docente`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -994,6 +1012,12 @@ ALTER TABLE `trabajos_finales`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `vista_correlativas`
+--
+ALTER TABLE `vista_correlativas`
+  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
